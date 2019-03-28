@@ -1,0 +1,6256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MatrixWindow</class>
+ <widget class="QDialog" name="MatrixWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>698</width>
+    <height>642</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>610</y>
+     <width>91</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Finalizar Turno</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>610</y>
+     <width>101</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Verificar Palabra</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn1">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn2">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn3">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn4">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn5">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn6">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn7">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn8">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn9">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Btn10">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>607</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl1">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>ArrowCursor</cursorShape>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>3</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl2">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl3">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl4">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl5">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl6">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl7">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl11">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl10">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl9">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl8">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl12">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl13">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl14">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl15">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>37</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl18">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl28">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl17">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl25">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl16">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl23">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl19">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl24">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl27">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl20">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl22">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl29">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl30">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl21">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl26">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>75</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl33">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl43">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl32">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl40">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl31">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl38">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl34">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl39">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl42">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl35">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl37">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl44">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl45">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl36">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl41">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>113</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl48">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl58">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl47">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl55">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl46">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl53">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl49">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl54">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl57">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl50">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl52">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl59">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl60">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl51">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl56">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>151</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl63">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl73">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl62">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl70">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl61">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl68">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl64">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl69">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl72">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl65">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl67">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl74">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl75">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl66">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl71">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>189</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl78">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl88">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl77">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl85">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl76">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl83">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl79">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl84">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl87">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl80">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl82">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl89">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl90">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl81">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl86">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>227</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl93">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl103">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl92">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl100">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl91">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl98">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl94">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl99">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl102">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl95">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl97">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl104">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl105">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl96">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl101">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>265</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl108">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl118">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl107">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl115">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl106">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl113">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl109">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl114">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl117">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl110">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl112">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl119">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl120">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl111">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl116">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>303</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl123">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl133">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl122">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl130">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl121">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl128">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl124">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl129">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl132">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl125">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl127">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl134">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl135">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl126">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl131">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>341</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl138">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl148">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl137">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl145">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl136">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl143">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl139">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl144">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl147">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl140">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl142">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl149">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl150">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl141">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl146">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>379</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl153">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl163">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl152">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl160">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl151">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl158">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl154">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl159">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl162">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl155">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl157">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl164">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl165">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl156">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl161">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>417</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl168">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl178">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl167">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl175">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl166">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl173">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl169">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl174">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl177">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl170">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl172">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl179">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl180">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl171">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl176">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>455</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl183">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl193">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl182">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl190">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl181">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl188">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl184">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl189">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl192">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl185">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl187">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl194">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl195">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl186">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl191">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>493</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl198">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl208">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl197">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl205">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl196">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl203">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl199">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl204">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl207">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl200">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl202">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl209">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl210">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl201">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl206">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>531</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl213">
+   <property name="geometry">
+    <rect>
+     <x>113</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl223">
+   <property name="geometry">
+    <rect>
+     <x>493</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl212">
+   <property name="geometry">
+    <rect>
+     <x>75</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl220">
+   <property name="geometry">
+    <rect>
+     <x>379</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl211">
+   <property name="geometry">
+    <rect>
+     <x>37</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl218">
+   <property name="geometry">
+    <rect>
+     <x>303</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl214">
+   <property name="geometry">
+    <rect>
+     <x>151</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl219">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl222">
+   <property name="geometry">
+    <rect>
+     <x>455</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl215">
+   <property name="geometry">
+    <rect>
+     <x>189</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl217">
+   <property name="geometry">
+    <rect>
+     <x>265</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl224">
+   <property name="geometry">
+    <rect>
+     <x>531</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl225">
+   <property name="geometry">
+    <rect>
+     <x>569</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl216">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Lbl221">
+   <property name="geometry">
+    <rect>
+     <x>417</x>
+     <y>569</y>
+     <width>36</width>
+     <height>36</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Lohit Tamil</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::WinPanel</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="indent">
+    <number>5</number>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
