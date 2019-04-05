@@ -28,12 +28,20 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     matrixwindow.cpp \
-    instructions.cpp
+    instructions.cpp \
+    List.cpp \
+    Node.cpp \
+    nodelist.cpp \
+    listnode.cpp
 
 HEADERS += \
         mainwindow.h \
     matrixwindow.h \
-    instructions.h
+    instructions.h \
+    List.h \
+    Node.h \
+    nodelist.h \
+    listnode.h
 
 FORMS += \
         mainwindow.ui \

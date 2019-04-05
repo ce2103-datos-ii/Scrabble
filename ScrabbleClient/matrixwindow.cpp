@@ -2,8 +2,17 @@
 #include "ui_matrixwindow.h"
 #include <QPixmap>
 #include <QMouseEvent>
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include "listnode.h"
 
+using namespace std;
 static string b = "";
+static string g [15][15];
+static ListNode *listh = new ListNode();
+
 
 MatrixWindow::MatrixWindow(QWidget *parent) :
     QDialog(parent),
@@ -21,18 +30,28 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setStyleSheet("background-color:gray");
     ui->Btn9->setStyleSheet("background-color:gray");
     ui->Btn10->setStyleSheet("background-color:gray");
-    ui->Btn1->setText("A");
+    string hum[26] {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    srand(time(NULL));
+    ui->Btn1->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn2->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn3->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn4->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn5->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn6->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn7->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn8->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
+
 }
 
-MatrixWindow::~MatrixWindow()
-{
+MatrixWindow::~MatrixWindow(){
     delete ui;
 }
 
 
 
-void MatrixWindow::on_pushButton_2_clicked()
-{
+void MatrixWindow::on_pushButton_2_clicked(){
     QString a = "";
     a = ui->Btn1->text();
     cout << a.toStdString() << endl;
@@ -45,683 +64,736 @@ void MatrixWindow::mousePressEvent(QMouseEvent *event){
     this->posX = event->x();
     this->posY = event->y();
     if (posX>37&&posX<75&&posY>37&&posY<75){
-        ui->Lbl1->setText(ui->Btn1->text());
+        validatespace(0,0,b,*(ui->Lbl1));
     }
     if (posX>75&&posX<113&&posY>37&&posY<75){
-        ui->Lbl2->setText(ui->Btn1->text());
+        validatespace(1,0,b,*(ui->Lbl2));
     }
     if (posX>113&&posX<151&&posY>37&&posY<75){
-        ui->Lbl3->setText(ui->Btn1->text());
+        validatespace(2,0,b,*(ui->Lbl3));
     }
     if (posX>151&&posX<189&&posY>37&&posY<75){
-        ui->Lbl4->setText(ui->Btn1->text());
+        validatespace(3,0,b,*(ui->Lbl4));
     }
     if (posX>189&&posX<227&&posY>37&&posY<75){
-        ui->Lbl5->setText(ui->Btn1->text());
+        validatespace(4,0,b,*(ui->Lbl5));
     }
     if (posX>227&&posX<265&&posY>37&&posY<75){
-        ui->Lbl6->setText(ui->Btn1->text());
+        validatespace(5,0,b,*(ui->Lbl6));
     }
     if (posX>265&&posX<303&&posY>37&&posY<75){
-        ui->Lbl7->setText(ui->Btn1->text());
+        validatespace(6,0,b,*(ui->Lbl7));
     }
     if (posX>303&&posX<341&&posY>37&&posY<75){
-        ui->Lbl8->setText(ui->Btn1->text());
+        validatespace(7,0,b,*(ui->Lbl8));
     }
     if (posX>341&&posX<379&&posY>37&&posY<75){
-        ui->Lbl9->setText(ui->Btn1->text());
+        validatespace(8,0,b,*(ui->Lbl9));
     }
     if (posX>379&&posX<417&&posY>37&&posY<75){
-        ui->Lbl10->setText(ui->Btn1->text());
+        validatespace(9,0,b,*(ui->Lbl10));
     }
     if (posX>417&&posX<455&&posY>37&&posY<75){
-        ui->Lbl11->setText(ui->Btn1->text());
+        validatespace(10,0,b,*(ui->Lbl11));
     }
     if (posX>455&&posX<493&&posY>37&&posY<75){
-        ui->Lbl12->setText(ui->Btn1->text());
+        validatespace(11,0,b,*(ui->Lbl12));
     }
     if (posX>493&&posX<531&&posY>37&&posY<75){
-        ui->Lbl13->setText(ui->Btn1->text());
+        validatespace(12,0,b,*(ui->Lbl13));
     }
     if (posX>531&&posX<569&&posY>37&&posY<75){
-        ui->Lbl14->setText(ui->Btn1->text());
+        validatespace(13,0,b,*(ui->Lbl14));
     }
     if (posX>569&&posX<607&&posY>37&&posY<75){
-        ui->Lbl15->setText(ui->Btn1->text());
+        validatespace(14,0,b,*(ui->Lbl15));
     }
     if (posX>37&&posX<75&&posY>75&&posY<113){
-        ui->Lbl16->setText(ui->Btn1->text());
+        validatespace(0,1,b,*(ui->Lbl16));
     }
     if (posX>75&&posX<113&&posY>75&&posY<113){
-        ui->Lbl17->setText(ui->Btn1->text());
+        validatespace(1,1,b,*(ui->Lbl17));
     }
     if (posX>113&&posX<151&&posY>75&&posY<113){
-        ui->Lbl18->setText(ui->Btn1->text());
+        validatespace(2,1,b,*(ui->Lbl18));
     }
     if (posX>151&&posX<189&&posY>75&&posY<113){
-        ui->Lbl19->setText(ui->Btn1->text());
+        validatespace(3,1,b,*(ui->Lbl19));
     }
     if (posX>189&&posX<227&&posY>75&&posY<113){
-        ui->Lbl20->setText(ui->Btn1->text());
+        validatespace(4,1,b,*(ui->Lbl20));
     }
     if (posX>227&&posX<265&&posY>75&&posY<113){
-        ui->Lbl21->setText(ui->Btn1->text());
+        validatespace(5,1,b,*(ui->Lbl21));
     }
     if (posX>265&&posX<303&&posY>75&&posY<113){
-        ui->Lbl22->setText(ui->Btn1->text());
+        validatespace(6,1,b,*(ui->Lbl22));
     }
     if (posX>303&&posX<341&&posY>75&&posY<113){
-        ui->Lbl23->setText(ui->Btn1->text());
+        validatespace(7,1,b,*(ui->Lbl23));
     }
     if (posX>341&&posX<379&&posY>75&&posY<113){
-        ui->Lbl24->setText(ui->Btn1->text());
+        validatespace(8,1,b,*(ui->Lbl24));
     }
     if (posX>379&&posX<417&&posY>75&&posY<113){
-        ui->Lbl25->setText(ui->Btn1->text());
+        validatespace(9,1,b,*(ui->Lbl25));
     }
     if (posX>417&&posX<455&&posY>75&&posY<113){
-        ui->Lbl26->setText(ui->Btn1->text());
+        validatespace(10,1,b,*(ui->Lbl26));
     }
     if (posX>455&&posX<493&&posY>75&&posY<113){
-        ui->Lbl27->setText(ui->Btn1->text());
+        validatespace(11,1,b,*(ui->Lbl27));
     }
     if (posX>493&&posX<531&&posY>75&&posY<113){
-        ui->Lbl28->setText(ui->Btn1->text());
+        validatespace(12,1,b,*(ui->Lbl28));
     }
     if (posX>531&&posX<569&&posY>75&&posY<113){
-        ui->Lbl29->setText(ui->Btn1->text());
+        validatespace(13,1,b,*(ui->Lbl29));
     }
     if (posX>569&&posX<607&&posY>75&&posY<113){
-        ui->Lbl30->setText(ui->Btn1->text());
+        validatespace(14,1,b,*(ui->Lbl30));
     }
     if (posX>37&&posX<75&&posY>113&&posY<151){
-        ui->Lbl31->setText(ui->Btn1->text());
+        validatespace(0,2,b,*(ui->Lbl31));
     }
     if (posX>75&&posX<113&&posY>113&&posY<151){
-        ui->Lbl32->setText(ui->Btn1->text());
+        validatespace(1,2,b,*(ui->Lbl32));
     }
     if (posX>113&&posX<151&&posY>113&&posY<151){
-        ui->Lbl33->setText(ui->Btn1->text());
+        validatespace(2,2,b,*(ui->Lbl33));
     }
     if (posX>151&&posX<189&&posY>113&&posY<151){
-        ui->Lbl34->setText(ui->Btn1->text());
+        validatespace(3,2,b,*(ui->Lbl34));
     }
     if (posX>189&&posX<227&&posY>113&&posY<151){
-        ui->Lbl35->setText(ui->Btn1->text());
+        validatespace(4,2,b,*(ui->Lbl35));
     }
     if (posX>227&&posX<265&&posY>113&&posY<151){
-        ui->Lbl36->setText(ui->Btn1->text());
+        validatespace(5,2,b,*(ui->Lbl36));
     }
     if (posX>265&&posX<303&&posY>113&&posY<151){
-        ui->Lbl37->setText(ui->Btn1->text());
+        validatespace(6,2,b,*(ui->Lbl37));
     }
     if (posX>303&&posX<341&&posY>113&&posY<151){
-        ui->Lbl38->setText(ui->Btn1->text());
+        validatespace(7,2,b,*(ui->Lbl38));
     }
     if (posX>341&&posX<379&&posY>113&&posY<151){
-        ui->Lbl39->setText(ui->Btn1->text());
+        validatespace(8,2,b,*(ui->Lbl39));
     }
     if (posX>379&&posX<417&&posY>113&&posY<151){
-        ui->Lbl40->setText(ui->Btn1->text());
+        validatespace(9,2,b,*(ui->Lbl40));
     }
     if (posX>417&&posX<455&&posY>113&&posY<151){
-        ui->Lbl41->setText(ui->Btn1->text());
+        validatespace(10,2,b,*(ui->Lbl41));
     }
     if (posX>455&&posX<493&&posY>113&&posY<151){
-        ui->Lbl42->setText(ui->Btn1->text());
+        validatespace(11,2,b,*(ui->Lbl42));
     }
     if (posX>493&&posX<531&&posY>113&&posY<151){
-        ui->Lbl43->setText(ui->Btn1->text());
+        validatespace(12,2,b,*(ui->Lbl43));
     }
     if (posX>531&&posX<569&&posY>113&&posY<151){
-        ui->Lbl44->setText(ui->Btn1->text());
+        validatespace(13,2,b,*(ui->Lbl44));
     }
     if (posX>569&&posX<607&&posY>113&&posY<151){
-        ui->Lbl45->setText(ui->Btn1->text());
+        validatespace(14,2,b,*(ui->Lbl45));
     }
     if (posX>37&&posX<75&&posY>151&&posY<189){
-        ui->Lbl46->setText(ui->Btn1->text());
+        validatespace(0,3,b,*(ui->Lbl46));
     }
     if (posX>75&&posX<113&&posY>151&&posY<189){
-        ui->Lbl47->setText(ui->Btn1->text());
+        validatespace(1,3,b,*(ui->Lbl47));
     }
     if (posX>113&&posX<151&&posY>151&&posY<189){
-        ui->Lbl48->setText(ui->Btn1->text());
+        validatespace(2,3,b,*(ui->Lbl48));
     }
     if (posX>151&&posX<189&&posY>151&&posY<189){
-        ui->Lbl49->setText(ui->Btn1->text());
+        validatespace(3,3,b,*(ui->Lbl49));
     }
     if (posX>189&&posX<227&&posY>151&&posY<189){
-        ui->Lbl50->setText(ui->Btn1->text());
+        validatespace(4,3,b,*(ui->Lbl50));
     }
     if (posX>227&&posX<265&&posY>151&&posY<189){
-        ui->Lbl51->setText(ui->Btn1->text());
+        validatespace(5,3,b,*(ui->Lbl51));
     }
     if (posX>265&&posX<303&&posY>151&&posY<189){
-        ui->Lbl52->setText(ui->Btn1->text());
+        validatespace(6,3,b,*(ui->Lbl52));
     }
     if (posX>303&&posX<341&&posY>151&&posY<189){
-        ui->Lbl53->setText(ui->Btn1->text());
+        validatespace(7,3,b,*(ui->Lbl53));
     }
     if (posX>341&&posX<379&&posY>151&&posY<189){
-        ui->Lbl54->setText(ui->Btn1->text());
+        validatespace(8,3,b,*(ui->Lbl54));
     }
     if (posX>379&&posX<417&&posY>151&&posY<189){
-        ui->Lbl55->setText(ui->Btn1->text());
+        validatespace(9,3,b,*(ui->Lbl55));
     }
     if (posX>417&&posX<455&&posY>151&&posY<189){
-        ui->Lbl56->setText(ui->Btn1->text());
+        validatespace(10,3,b,*(ui->Lbl56));
     }
     if (posX>455&&posX<493&&posY>151&&posY<189){
-        ui->Lbl57->setText(ui->Btn1->text());
+        validatespace(11,3,b,*(ui->Lbl57));
     }
     if (posX>493&&posX<531&&posY>151&&posY<189){
-        ui->Lbl58->setText(ui->Btn1->text());
+        validatespace(12,3,b,*(ui->Lbl58));
     }
     if (posX>531&&posX<569&&posY>151&&posY<189){
-        ui->Lbl59->setText(ui->Btn1->text());
+        validatespace(13,3,b,*(ui->Lbl59));
     }
     if (posX>569&&posX<607&&posY>151&&posY<189){
-        ui->Lbl60->setText(ui->Btn1->text());
+        validatespace(14,3,b,*(ui->Lbl60));
     }
     if (posX>37&&posX<75&&posY>189&&posY<227){
-        ui->Lbl61->setText(ui->Btn1->text());
+        validatespace(0,4,b,*(ui->Lbl61));
     }
     if (posX>75&&posX<113&&posY>189&&posY<227){
-        ui->Lbl62->setText(ui->Btn1->text());
+        validatespace(1,4,b,*(ui->Lbl62));
     }
     if (posX>113&&posX<151&&posY>189&&posY<227){
-        ui->Lbl63->setText(ui->Btn1->text());
+        validatespace(2,4,b,*(ui->Lbl63));
     }
     if (posX>151&&posX<189&&posY>189&&posY<227){
-        ui->Lbl64->setText(ui->Btn1->text());
+        validatespace(3,4,b,*(ui->Lbl64));
     }
     if (posX>189&&posX<227&&posY>189&&posY<227){
-        ui->Lbl65->setText(ui->Btn1->text());
+        validatespace(4,4,b,*(ui->Lbl65));
     }
     if (posX>227&&posX<265&&posY>189&&posY<227){
-        ui->Lbl66->setText(ui->Btn1->text());
+        validatespace(5,4,b,*(ui->Lbl66));
     }
     if (posX>265&&posX<303&&posY>189&&posY<227){
-        ui->Lbl67->setText(ui->Btn1->text());
+        validatespace(6,4,b,*(ui->Lbl67));
     }
     if (posX>303&&posX<341&&posY>189&&posY<227){
-        ui->Lbl68->setText(ui->Btn1->text());
+        validatespace(7,4,b,*(ui->Lbl68));
     }
     if (posX>341&&posX<379&&posY>189&&posY<227){
-        ui->Lbl69->setText(ui->Btn1->text());
+        validatespace(8,4,b,*(ui->Lbl69));
     }
     if (posX>379&&posX<417&&posY>189&&posY<227){
-        ui->Lbl70->setText(ui->Btn1->text());
+        validatespace(9,4,b,*(ui->Lbl70));
     }
     if (posX>417&&posX<455&&posY>189&&posY<227){
-        ui->Lbl71->setText(ui->Btn1->text());
+        validatespace(10,4,b,*(ui->Lbl71));
     }
     if (posX>455&&posX<493&&posY>189&&posY<227){
-        ui->Lbl72->setText(ui->Btn1->text());
+        validatespace(11,4,b,*(ui->Lbl72));
     }
     if (posX>493&&posX<531&&posY>189&&posY<227){
-        ui->Lbl73->setText(ui->Btn1->text());
+        validatespace(12,4,b,*(ui->Lbl73));
     }
     if (posX>531&&posX<569&&posY>189&&posY<227){
-        ui->Lbl74->setText(ui->Btn1->text());
+        validatespace(13,4,b,*(ui->Lbl74));
     }
     if (posX>569&&posX<607&&posY>189&&posY<227){
-        ui->Lbl75->setText(ui->Btn1->text());
+        validatespace(14,4,b,*(ui->Lbl75));
     }
     if (posX>37&&posX<75&&posY>227&&posY<265){
-        ui->Lbl76->setText(ui->Btn1->text());
+        validatespace(0,5,b,*(ui->Lbl76));
     }
     if (posX>75&&posX<113&&posY>227&&posY<265){
-        ui->Lbl77->setText(ui->Btn1->text());
+        validatespace(1,5,b,*(ui->Lbl77));
     }
     if (posX>113&&posX<151&&posY>227&&posY<265){
-        ui->Lbl78->setText(ui->Btn1->text());
+        validatespace(2,5,b,*(ui->Lbl78));
     }
     if (posX>151&&posX<189&&posY>227&&posY<265){
-        ui->Lbl79->setText(ui->Btn1->text());
+        validatespace(3,5,b,*(ui->Lbl79));
     }
     if (posX>189&&posX<227&&posY>227&&posY<265){
-        ui->Lbl80->setText(ui->Btn1->text());
+        validatespace(4,5,b,*(ui->Lbl80));
     }
     if (posX>227&&posX<265&&posY>227&&posY<265){
-        ui->Lbl81->setText(ui->Btn1->text());
+        validatespace(5,5,b,*(ui->Lbl81));
     }
     if (posX>265&&posX<303&&posY>227&&posY<265){
-        ui->Lbl82->setText(ui->Btn1->text());
+        validatespace(6,5,b,*(ui->Lbl82));
     }
     if (posX>303&&posX<341&&posY>227&&posY<265){
-        ui->Lbl83->setText(ui->Btn1->text());
+        validatespace(7,5,b,*(ui->Lbl83));
     }
     if (posX>341&&posX<379&&posY>227&&posY<265){
-        ui->Lbl84->setText(ui->Btn1->text());
+        validatespace(8,5,b,*(ui->Lbl84));
     }
     if (posX>379&&posX<417&&posY>227&&posY<265){
-        ui->Lbl85->setText(ui->Btn1->text());
+        validatespace(9,5,b,*(ui->Lbl85));
     }
     if (posX>417&&posX<455&&posY>227&&posY<265){
-        ui->Lbl86->setText(ui->Btn1->text());
+        validatespace(10,5,b,*(ui->Lbl86));
     }
     if (posX>455&&posX<493&&posY>227&&posY<265){
-        ui->Lbl87->setText(ui->Btn1->text());
+        validatespace(11,5,b,*(ui->Lbl87));
     }
     if (posX>493&&posX<531&&posY>227&&posY<265){
-        ui->Lbl88->setText(ui->Btn1->text());
+        validatespace(12,5,b,*(ui->Lbl88));
     }
     if (posX>531&&posX<569&&posY>227&&posY<265){
-        ui->Lbl89->setText(ui->Btn1->text());
+        validatespace(13,5,b,*(ui->Lbl89));
     }
     if (posX>569&&posX<607&&posY>227&&posY<265){
-        ui->Lbl90->setText(ui->Btn1->text());
+        validatespace(14,5,b,*(ui->Lbl90));
     }
     if (posX>37&&posX<75&&posY>265&&posY<303){
-        ui->Lbl91->setText(ui->Btn1->text());
+        validatespace(0,6,b,*(ui->Lbl91));
     }
     if (posX>75&&posX<113&&posY>265&&posY<303){
-        ui->Lbl92->setText(ui->Btn1->text());
+        validatespace(1,6,b,*(ui->Lbl92));
     }
     if (posX>113&&posX<151&&posY>265&&posY<303){
-        ui->Lbl93->setText(ui->Btn1->text());
+        validatespace(2,6,b,*(ui->Lbl93));
     }
     if (posX>151&&posX<189&&posY>265&&posY<303){
-        ui->Lbl94->setText(ui->Btn1->text());
+        validatespace(3,6,b,*(ui->Lbl94));
     }
     if (posX>189&&posX<227&&posY>265&&posY<303){
-        ui->Lbl95->setText(ui->Btn1->text());
+        validatespace(4,6,b,*(ui->Lbl95));
     }
     if (posX>227&&posX<265&&posY>265&&posY<303){
-        ui->Lbl96->setText(ui->Btn1->text());
+        validatespace(5,6,b,*(ui->Lbl96));
     }
     if (posX>265&&posX<303&&posY>265&&posY<303){
-        ui->Lbl97->setText(ui->Btn1->text());
+        validatespace(6,6,b,*(ui->Lbl97));
     }
     if (posX>303&&posX<341&&posY>265&&posY<303){
-        ui->Lbl98->setText(ui->Btn1->text());
+        validatespace(7,6,b,*(ui->Lbl98));
     }
     if (posX>341&&posX<379&&posY>265&&posY<303){
-        ui->Lbl99->setText(ui->Btn1->text());
+        validatespace(8,6,b,*(ui->Lbl99));
     }
     if (posX>379&&posX<417&&posY>265&&posY<303){
-        ui->Lbl100->setText(ui->Btn1->text());
+        validatespace(9,6,b,*(ui->Lbl100));
     }
     if (posX>417&&posX<455&&posY>265&&posY<303){
-        ui->Lbl101->setText(ui->Btn1->text());
+        validatespace(10,6,b,*(ui->Lbl101));
     }
     if (posX>455&&posX<493&&posY>265&&posY<303){
-        ui->Lbl102->setText(ui->Btn1->text());
+        validatespace(11,6,b,*(ui->Lbl102));
     }
     if (posX>493&&posX<531&&posY>265&&posY<303){
-        ui->Lbl103->setText(ui->Btn1->text());
+        validatespace(12,6,b,*(ui->Lbl103));
     }
     if (posX>531&&posX<569&&posY>265&&posY<303){
-        ui->Lbl104->setText(ui->Btn1->text());
+        validatespace(13,6,b,*(ui->Lbl104));
     }
     if (posX>569&&posX<607&&posY>265&&posY<303){
-        ui->Lbl105->setText(ui->Btn1->text());
+        validatespace(14,6,b,*(ui->Lbl105));
     }
     if (posX>37&&posX<75&&posY>303&&posY<341){
-        ui->Lbl106->setText(ui->Btn1->text());
+        validatespace(0,7,b,*(ui->Lbl106));
     }
     if (posX>75&&posX<113&&posY>303&&posY<341){
-        ui->Lbl107->setText(ui->Btn1->text());
+        validatespace(1,7,b,*(ui->Lbl107));
     }
     if (posX>113&&posX<151&&posY>303&&posY<341){
-        ui->Lbl108->setText(ui->Btn1->text());
+        validatespace(2,7,b,*(ui->Lbl108));
     }
     if (posX>151&&posX<189&&posY>303&&posY<341){
-        ui->Lbl109->setText(ui->Btn1->text());
+        validatespace(3,7,b,*(ui->Lbl109));
     }
     if (posX>189&&posX<227&&posY>303&&posY<341){
-        ui->Lbl110->setText(ui->Btn1->text());
+        validatespace(4,7,b,*(ui->Lbl110));
     }
     if (posX>227&&posX<265&&posY>303&&posY<341){
-        ui->Lbl111->setText(ui->Btn1->text());
+        validatespace(5,7,b,*(ui->Lbl111));
     }
     if (posX>265&&posX<303&&posY>303&&posY<341){
-        ui->Lbl112->setText(ui->Btn1->text());
+        validatespace(6,7,b,*(ui->Lbl112));
     }
     if (posX>303&&posX<341&&posY>303&&posY<341){
-        ui->Lbl113->setText(ui->Btn1->text());
+        validatespace(7,7,b,*(ui->Lbl113));
     }
     if (posX>341&&posX<379&&posY>303&&posY<341){
-        ui->Lbl114->setText(ui->Btn1->text());
+        validatespace(8,7,b,*(ui->Lbl114));
     }
     if (posX>379&&posX<417&&posY>303&&posY<341){
-        ui->Lbl115->setText(ui->Btn1->text());
+        validatespace(9,7,b,*(ui->Lbl115));
     }
     if (posX>417&&posX<455&&posY>303&&posY<341){
-        ui->Lbl116->setText(ui->Btn1->text());
+        validatespace(10,7,b,*(ui->Lbl116));
     }
     if (posX>455&&posX<493&&posY>303&&posY<341){
-        ui->Lbl117->setText(ui->Btn1->text());
+        validatespace(11,7,b,*(ui->Lbl117));
     }
     if (posX>493&&posX<531&&posY>303&&posY<341){
-        ui->Lbl118->setText(ui->Btn1->text());
+        validatespace(12,7,b,*(ui->Lbl118));
     }
     if (posX>531&&posX<569&&posY>303&&posY<341){
-        ui->Lbl119->setText(ui->Btn1->text());
+        validatespace(13,7,b,*(ui->Lbl119));
     }
     if (posX>569&&posX<607&&posY>303&&posY<341){
-        ui->Lbl120->setText(ui->Btn1->text());
+        validatespace(14,7,b,*(ui->Lbl120));
     }
     if (posX>37&&posX<75&&posY>341&&posY<379){
-        ui->Lbl121->setText(ui->Btn1->text());
+        validatespace(0,8,b,*(ui->Lbl121));
     }
     if (posX>75&&posX<113&&posY>341&&posY<379){
-        ui->Lbl122->setText(ui->Btn1->text());
+        validatespace(1,8,b,*(ui->Lbl122));
     }
     if (posX>113&&posX<151&&posY>341&&posY<379){
-        ui->Lbl123->setText(ui->Btn1->text());
+        validatespace(2,8,b,*(ui->Lbl123));
     }
     if (posX>151&&posX<189&&posY>341&&posY<379){
-        ui->Lbl124->setText(ui->Btn1->text());
+        validatespace(3,8,b,*(ui->Lbl124));
     }
     if (posX>189&&posX<227&&posY>341&&posY<379){
-        ui->Lbl125->setText(ui->Btn1->text());
+        validatespace(4,8,b,*(ui->Lbl125));
     }
     if (posX>227&&posX<265&&posY>341&&posY<379){
-        ui->Lbl126->setText(ui->Btn1->text());
+        validatespace(5,8,b,*(ui->Lbl126));
     }
     if (posX>265&&posX<303&&posY>341&&posY<379){
-        ui->Lbl127->setText(ui->Btn1->text());
+        validatespace(6,8,b,*(ui->Lbl127));
     }
     if (posX>303&&posX<341&&posY>341&&posY<379){
-        ui->Lbl128->setText(ui->Btn1->text());
+        validatespace(7,8,b,*(ui->Lbl128));
     }
     if (posX>341&&posX<379&&posY>341&&posY<379){
-        ui->Lbl129->setText(ui->Btn1->text());
+        validatespace(8,8,b,*(ui->Lbl129));
     }
     if (posX>379&&posX<417&&posY>341&&posY<379){
-        ui->Lbl130->setText(ui->Btn1->text());
+        validatespace(9,8,b,*(ui->Lbl130));
     }
     if (posX>417&&posX<455&&posY>341&&posY<379){
-        ui->Lbl131->setText(ui->Btn1->text());
+        validatespace(10,8,b,*(ui->Lbl131));
     }
     if (posX>455&&posX<493&&posY>341&&posY<379){
-        ui->Lbl132->setText(ui->Btn1->text());
+        validatespace(11,8,b,*(ui->Lbl132));
     }
     if (posX>493&&posX<531&&posY>341&&posY<379){
-        ui->Lbl133->setText(ui->Btn1->text());
+        validatespace(12,8,b,*(ui->Lbl133));
     }
     if (posX>531&&posX<569&&posY>341&&posY<379){
-        ui->Lbl134->setText(ui->Btn1->text());
+        validatespace(13,8,b,*(ui->Lbl134));
     }
     if (posX>569&&posX<607&&posY>341&&posY<379){
-        ui->Lbl135->setText(ui->Btn1->text());
+        validatespace(14,8,b,*(ui->Lbl135));
     }
     if (posX>37&&posX<75&&posY>379&&posY<417){
-        ui->Lbl136->setText(ui->Btn1->text());
+        validatespace(0,9,b,*(ui->Lbl136));
     }
     if (posX>75&&posX<113&&posY>379&&posY<417){
-        ui->Lbl137->setText(ui->Btn1->text());
+        validatespace(1,9,b,*(ui->Lbl137));
     }
     if (posX>113&&posX<151&&posY>379&&posY<417){
-        ui->Lbl138->setText(ui->Btn1->text());
+        validatespace(2,9,b,*(ui->Lbl138));
     }
     if (posX>151&&posX<189&&posY>379&&posY<417){
-        ui->Lbl139->setText(ui->Btn1->text());
+        validatespace(3,9,b,*(ui->Lbl139));
     }
     if (posX>189&&posX<227&&posY>379&&posY<417){
-        ui->Lbl140->setText(ui->Btn1->text());
+        validatespace(4,9,b,*(ui->Lbl140));
     }
     if (posX>227&&posX<265&&posY>379&&posY<417){
-        ui->Lbl141->setText(ui->Btn1->text());
+        validatespace(5,9,b,*(ui->Lbl141));
     }
     if (posX>265&&posX<303&&posY>379&&posY<417){
-        ui->Lbl142->setText(ui->Btn1->text());
+        validatespace(6,9,b,*(ui->Lbl142));
     }
     if (posX>303&&posX<341&&posY>379&&posY<417){
-        ui->Lbl143->setText(ui->Btn1->text());
+        validatespace(7,9,b,*(ui->Lbl143));
     }
     if (posX>341&&posX<379&&posY>379&&posY<417){
-        ui->Lbl144->setText(ui->Btn1->text());
+        validatespace(8,9,b,*(ui->Lbl144));
     }
     if (posX>379&&posX<417&&posY>379&&posY<417){
-        ui->Lbl145->setText(ui->Btn1->text());
+        validatespace(9,9,b,*(ui->Lbl145));
     }
     if (posX>417&&posX<455&&posY>379&&posY<417){
-        ui->Lbl146->setText(ui->Btn1->text());
+        validatespace(10,9,b,*(ui->Lbl146));
     }
     if (posX>455&&posX<493&&posY>379&&posY<417){
-        ui->Lbl147->setText(ui->Btn1->text());
+        validatespace(11,9,b,*(ui->Lbl147));
     }
     if (posX>493&&posX<531&&posY>379&&posY<417){
-        ui->Lbl148->setText(ui->Btn1->text());
+        validatespace(12,9,b,*(ui->Lbl148));
     }
     if (posX>531&&posX<569&&posY>379&&posY<417){
-        ui->Lbl149->setText(ui->Btn1->text());
+        validatespace(13,9,b,*(ui->Lbl149));
     }
     if (posX>569&&posX<607&&posY>379&&posY<417){
-        ui->Lbl150->setText(ui->Btn1->text());
+        validatespace(14,9,b,*(ui->Lbl150));
     }
     if (posX>37&&posX<75&&posY>417&&posY<455){
-        ui->Lbl151->setText(ui->Btn1->text());
+        validatespace(0,10,b,*(ui->Lbl151));
     }
     if (posX>75&&posX<113&&posY>417&&posY<455){
-        ui->Lbl152->setText(ui->Btn1->text());
+        validatespace(1,10,b,*(ui->Lbl152));
     }
     if (posX>113&&posX<151&&posY>417&&posY<455){
-        ui->Lbl153->setText(ui->Btn1->text());
+        validatespace(2,10,b,*(ui->Lbl153));
     }
     if (posX>151&&posX<189&&posY>417&&posY<455){
-        ui->Lbl154->setText(ui->Btn1->text());
+        validatespace(3,10,b,*(ui->Lbl154));
     }
     if (posX>189&&posX<227&&posY>417&&posY<455){
-        ui->Lbl155->setText(ui->Btn1->text());
+        validatespace(4,10,b,*(ui->Lbl155));
     }
     if (posX>227&&posX<265&&posY>417&&posY<455){
-        ui->Lbl156->setText(ui->Btn1->text());
+        validatespace(5,10,b,*(ui->Lbl156));
     }
     if (posX>265&&posX<303&&posY>417&&posY<455){
-        ui->Lbl157->setText(ui->Btn1->text());
+        validatespace(6,10,b,*(ui->Lbl157));
     }
     if (posX>303&&posX<341&&posY>417&&posY<455){
-        ui->Lbl158->setText(ui->Btn1->text());
+        validatespace(7,10,b,*(ui->Lbl158));
     }
     if (posX>341&&posX<379&&posY>417&&posY<455){
-        ui->Lbl159->setText(ui->Btn1->text());
+        validatespace(8,10,b,*(ui->Lbl159));
     }
     if (posX>379&&posX<417&&posY>417&&posY<455){
-        ui->Lbl160->setText(ui->Btn1->text());
+        validatespace(9,10,b,*(ui->Lbl160));
     }
     if (posX>417&&posX<455&&posY>417&&posY<455){
-        ui->Lbl161->setText(ui->Btn1->text());
+        validatespace(10,10,b,*(ui->Lbl161));
     }
     if (posX>455&&posX<493&&posY>417&&posY<455){
-        ui->Lbl162->setText(ui->Btn1->text());
+        validatespace(11,10,b,*(ui->Lbl162));
     }
     if (posX>493&&posX<531&&posY>417&&posY<455){
-        ui->Lbl163->setText(ui->Btn1->text());
+        validatespace(12,10,b,*(ui->Lbl163));
     }
     if (posX>531&&posX<569&&posY>417&&posY<455){
-        ui->Lbl164->setText(ui->Btn1->text());
+        validatespace(13,10,b,*(ui->Lbl164));
     }
     if (posX>569&&posX<607&&posY>417&&posY<455){
-        ui->Lbl165->setText(ui->Btn1->text());
+        validatespace(14,10,b,*(ui->Lbl165));
     }
     if (posX>37&&posX<75&&posY>455&&posY<493){
-        ui->Lbl166->setText(ui->Btn1->text());
+        validatespace(0,11,b,*(ui->Lbl166));
     }
     if (posX>75&&posX<113&&posY>455&&posY<493){
-        ui->Lbl167->setText(ui->Btn1->text());
+        validatespace(1,11,b,*(ui->Lbl167));
     }
     if (posX>113&&posX<151&&posY>455&&posY<493){
-        ui->Lbl168->setText(ui->Btn1->text());
+        validatespace(2,11,b,*(ui->Lbl168));
     }
     if (posX>151&&posX<189&&posY>455&&posY<493){
-        ui->Lbl169->setText(ui->Btn1->text());
+        validatespace(3,11,b,*(ui->Lbl169));
     }
     if (posX>189&&posX<227&&posY>455&&posY<493){
-        ui->Lbl170->setText(ui->Btn1->text());
+        validatespace(4,11,b,*(ui->Lbl170));
     }
     if (posX>227&&posX<265&&posY>455&&posY<493){
-        ui->Lbl171->setText(ui->Btn1->text());
+        validatespace(5,11,b,*(ui->Lbl171));
     }
     if (posX>265&&posX<303&&posY>455&&posY<493){
-        ui->Lbl172->setText(ui->Btn1->text());
+        validatespace(6,11,b,*(ui->Lbl172));
     }
     if (posX>303&&posX<341&&posY>455&&posY<493){
-        ui->Lbl173->setText(ui->Btn1->text());
+        validatespace(7,11,b,*(ui->Lbl173));
     }
     if (posX>341&&posX<379&&posY>455&&posY<493){
-        ui->Lbl174->setText(ui->Btn1->text());
+        validatespace(8,11,b,*(ui->Lbl174));
     }
     if (posX>379&&posX<417&&posY>455&&posY<493){
-        ui->Lbl175->setText(ui->Btn1->text());
+        validatespace(9,11,b,*(ui->Lbl175));
     }
     if (posX>417&&posX<455&&posY>455&&posY<493){
-        ui->Lbl176->setText(ui->Btn1->text());
+        validatespace(10,11,b,*(ui->Lbl176));
     }
     if (posX>455&&posX<493&&posY>455&&posY<493){
-        ui->Lbl177->setText(ui->Btn1->text());
+        validatespace(11,11,b,*(ui->Lbl177));
     }
     if (posX>493&&posX<531&&posY>455&&posY<493){
-        ui->Lbl178->setText(ui->Btn1->text());
+        validatespace(12,11,b,*(ui->Lbl178));
     }
     if (posX>531&&posX<569&&posY>455&&posY<493){
-        ui->Lbl179->setText(ui->Btn1->text());
+        validatespace(13,11,b,*(ui->Lbl179));
     }
     if (posX>569&&posX<607&&posY>455&&posY<493){
-        ui->Lbl180->setText(ui->Btn1->text());
+        validatespace(14,11,b,*(ui->Lbl180));
     }
     if (posX>37&&posX<75&&posY>493&&posY<531){
-        ui->Lbl181->setText(ui->Btn1->text());
+        validatespace(0,12,b,*(ui->Lbl181));
     }
     if (posX>75&&posX<113&&posY>493&&posY<531){
-        ui->Lbl182->setText(ui->Btn1->text());
+        validatespace(1,12,b,*(ui->Lbl182));
     }
     if (posX>113&&posX<151&&posY>493&&posY<531){
-        ui->Lbl183->setText(ui->Btn1->text());
+        validatespace(2,12,b,*(ui->Lbl183));
     }
     if (posX>151&&posX<189&&posY>493&&posY<531){
-        ui->Lbl184->setText(ui->Btn1->text());
+        validatespace(3,12,b,*(ui->Lbl184));
     }
     if (posX>189&&posX<227&&posY>493&&posY<531){
-        ui->Lbl185->setText(ui->Btn1->text());
+        validatespace(4,12,b,*(ui->Lbl185));
     }
     if (posX>227&&posX<265&&posY>493&&posY<531){
-        ui->Lbl186->setText(ui->Btn1->text());
+        validatespace(5,12,b,*(ui->Lbl186));
     }
     if (posX>265&&posX<303&&posY>493&&posY<531){
-        ui->Lbl187->setText(ui->Btn1->text());
+        validatespace(6,12,b,*(ui->Lbl187));
     }
     if (posX>303&&posX<341&&posY>493&&posY<531){
-        ui->Lbl188->setText(ui->Btn1->text());
+        validatespace(7,12,b,*(ui->Lbl188));
     }
     if (posX>341&&posX<379&&posY>493&&posY<531){
-        ui->Lbl189->setText(ui->Btn1->text());
+        validatespace(8,12,b,*(ui->Lbl189));
     }
     if (posX>379&&posX<417&&posY>493&&posY<531){
-        ui->Lbl190->setText(ui->Btn1->text());
+        validatespace(9,12,b,*(ui->Lbl190));
     }
     if (posX>417&&posX<455&&posY>493&&posY<531){
-        ui->Lbl191->setText(ui->Btn1->text());
+        validatespace(10,12,b,*(ui->Lbl191));
     }
     if (posX>455&&posX<493&&posY>493&&posY<531){
-        ui->Lbl192->setText(ui->Btn1->text());
+        validatespace(11,12,b,*(ui->Lbl192));
     }
     if (posX>493&&posX<531&&posY>493&&posY<531){
-        ui->Lbl193->setText(ui->Btn1->text());
+        validatespace(12,12,b,*(ui->Lbl193));
     }
     if (posX>531&&posX<569&&posY>493&&posY<531){
-        ui->Lbl194->setText(ui->Btn1->text());
+        validatespace(13,12,b,*(ui->Lbl194));
     }
     if (posX>569&&posX<607&&posY>493&&posY<531){
-        ui->Lbl195->setText(ui->Btn1->text());
+        validatespace(14,12,b,*(ui->Lbl195));
     }
     if (posX>37&&posX<75&&posY>531&&posY<569){
-        ui->Lbl196->setText(ui->Btn1->text());
+        validatespace(0,13,b,*(ui->Lbl196));
     }
     if (posX>75&&posX<113&&posY>531&&posY<569){
-        ui->Lbl197->setText(ui->Btn1->text());
+        validatespace(1,13,b,*(ui->Lbl197));
     }
     if (posX>113&&posX<151&&posY>531&&posY<569){
-        ui->Lbl198->setText(ui->Btn1->text());
+        validatespace(2,13,b,*(ui->Lbl198));
     }
     if (posX>151&&posX<189&&posY>531&&posY<569){
-        ui->Lbl199->setText(ui->Btn1->text());
+        validatespace(3,13,b,*(ui->Lbl199));
     }
     if (posX>189&&posX<227&&posY>531&&posY<569){
-        ui->Lbl200->setText(ui->Btn1->text());
+        validatespace(4,13,b,*(ui->Lbl200));
     }
     if (posX>227&&posX<265&&posY>531&&posY<569){
-        ui->Lbl201->setText(ui->Btn1->text());
+        validatespace(5,13,b,*(ui->Lbl201));
     }
     if (posX>265&&posX<303&&posY>531&&posY<569){
-        ui->Lbl202->setText(ui->Btn1->text());
+        validatespace(6,13,b,*(ui->Lbl202));
     }
     if (posX>303&&posX<341&&posY>531&&posY<569){
-        ui->Lbl203->setText(ui->Btn1->text());
+        validatespace(7,13,b,*(ui->Lbl203));
     }
     if (posX>341&&posX<379&&posY>531&&posY<569){
-        ui->Lbl204->setText(ui->Btn1->text());
+        validatespace(8,13,b,*(ui->Lbl204));
     }
     if (posX>379&&posX<417&&posY>531&&posY<569){
-        ui->Lbl205->setText(ui->Btn1->text());
+        validatespace(9,13,b,*(ui->Lbl205));
     }
     if (posX>417&&posX<455&&posY>531&&posY<569){
-        ui->Lbl206->setText(ui->Btn1->text());
+        validatespace(10,13,b,*(ui->Lbl206));
     }
     if (posX>455&&posX<493&&posY>531&&posY<569){
-        ui->Lbl207->setText(ui->Btn1->text());
+        validatespace(11,13,b,*(ui->Lbl207));
     }
     if (posX>493&&posX<531&&posY>531&&posY<569){
-        ui->Lbl208->setText(ui->Btn1->text());
+        validatespace(12,13,b,*(ui->Lbl208));
     }
     if (posX>531&&posX<569&&posY>531&&posY<569){
-        ui->Lbl209->setText(ui->Btn1->text());
+        validatespace(13,13,b,*(ui->Lbl209));
     }
     if (posX>569&&posX<607&&posY>531&&posY<569){
-        ui->Lbl210->setText(ui->Btn1->text());
+        validatespace(14,13,b,*(ui->Lbl210));
     }
     if (posX>37&&posX<75&&posY>569&&posY<607){
-        ui->Lbl211->setText(ui->Btn1->text());
+        validatespace(0,14,b,*(ui->Lbl211));
     }
     if (posX>75&&posX<113&&posY>569&&posY<607){
-        ui->Lbl212->setText(ui->Btn1->text());
+        validatespace(1,14,b,*(ui->Lbl212));
     }
     if (posX>113&&posX<151&&posY>569&&posY<607){
-        ui->Lbl213->setText(ui->Btn1->text());
+        validatespace(2,14,b,*(ui->Lbl213));
     }
     if (posX>151&&posX<189&&posY>569&&posY<607){
-        ui->Lbl214->setText(ui->Btn1->text());
+        validatespace(3,14,b,*(ui->Lbl214));
     }
     if (posX>189&&posX<227&&posY>569&&posY<607){
-        ui->Lbl215->setText(ui->Btn1->text());
+        validatespace(4,14,b,*(ui->Lbl215));
     }
     if (posX>227&&posX<265&&posY>569&&posY<607){
-        ui->Lbl216->setText(ui->Btn1->text());
+        validatespace(5,14,b,*(ui->Lbl216));
     }
     if (posX>265&&posX<303&&posY>569&&posY<607){
-        ui->Lbl217->setText(ui->Btn1->text());
+        validatespace(6,14,b,*(ui->Lbl217));
     }
     if (posX>303&&posX<341&&posY>569&&posY<607){
-        ui->Lbl218->setText(ui->Btn1->text());
+        validatespace(7,14,b,*(ui->Lbl218));
     }
     if (posX>341&&posX<379&&posY>569&&posY<607){
-        ui->Lbl219->setText(ui->Btn1->text());
+        validatespace(8,14,b,*(ui->Lbl219));
     }
     if (posX>379&&posX<417&&posY>569&&posY<607){
-        ui->Lbl220->setText(ui->Btn1->text());
+        validatespace(9,14,b,*(ui->Lbl220));
     }
     if (posX>417&&posX<455&&posY>569&&posY<607){
-        ui->Lbl221->setText(ui->Btn1->text());
+        validatespace(10,14,b,*(ui->Lbl221));
     }
     if (posX>455&&posX<493&&posY>569&&posY<607){
-        ui->Lbl222->setText(ui->Btn1->text());
+        validatespace(11,14,b,*(ui->Lbl222));
     }
     if (posX>493&&posX<531&&posY>569&&posY<607){
-        ui->Lbl223->setText(ui->Btn1->text());
+        validatespace(12,14,b,*(ui->Lbl223));
     }
     if (posX>531&&posX<569&&posY>569&&posY<607){
-        ui->Lbl224->setText(ui->Btn1->text());
+        validatespace(13,14,b,*(ui->Lbl224));
     }
     if (posX>569&&posX<607&&posY>569&&posY<607){
-        ui->Lbl225->setText(ui->Btn1->text());
+        validatespace(14,14,b,*(ui->Lbl225));
     }
-
+}
+void MatrixWindow::validatespace(int column, int row, string element, QLabel &label){
+    if (g[row][column] == ""){
+        if(listh->m_head != NULL){
+            listh->del_by_data(column,row);
+        }
+        listh->add_head(element,column,row);
+        listh->print();
+        label.setText(QString::fromStdString(b));
+        b = "";
+    }
 }
 
 void MatrixWindow::on_Btn1_clicked(){
-    ui->Lbl11->setText(ui->Btn1->text());
+    b = ui->Btn1->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn2_clicked(){
+    b = ui->Btn2->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn3_clicked(){
+    b = ui->Btn3->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn4_clicked(){
+    b = ui->Btn4->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn5_clicked(){
+    b = ui->Btn5->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn6_clicked(){
+    b = ui->Btn6->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn7_clicked(){
+    b = ui->Btn7->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn8_clicked(){
+    b = ui->Btn8->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn9_clicked(){
+    b = ui->Btn9->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_Btn10_clicked(){
+    b = ui->Btn10->text().toUtf8().constData();
+}
+
+void MatrixWindow::on_pushButton_clicked(){
+
+    while(listh->m_head != NULL){
+
+    }
 }

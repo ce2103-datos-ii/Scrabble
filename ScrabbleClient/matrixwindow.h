@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <iostream>
+#include <QLabel>
 using namespace std;
 
 namespace Ui {
@@ -24,6 +25,28 @@ private slots:
     void on_pushButton_2_clicked();
     void on_Btn1_clicked();
     void mousePressEvent(QMouseEvent *ev);
+    void validatespace(int column, int row, string element, QLabel &label);
+
+
+    void on_Btn2_clicked();
+
+    void on_Btn3_clicked();
+
+    void on_Btn4_clicked();
+
+    void on_Btn5_clicked();
+
+    void on_Btn6_clicked();
+
+    void on_Btn7_clicked();
+
+    void on_Btn8_clicked();
+
+    void on_Btn9_clicked();
+
+    void on_Btn10_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MatrixWindow *ui;
