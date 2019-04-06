@@ -15,6 +15,8 @@ static ListNode *listh = new ListNode();
 static int currentRow = NULL;
 static int currentColumn = NULL;
 
+QString qs;
+
 MatrixWindow::MatrixWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MatrixWindow)
@@ -43,6 +45,7 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
+    qs = ui->Lbl1->text();
 }
 
 MatrixWindow::~MatrixWindow(){
@@ -739,25 +742,42 @@ void MatrixWindow::mousePressEvent(QMouseEvent *event){
         validatespace(14,14,b,*(ui->Lbl225));
     }
 }
+
 void MatrixWindow::validatespace(int column, int row, string element, QLabel &label){
     if(listh->m_head == NULL){
         validatespaceAux(column, row, element, label);
     }
     else if (listh->m_head->next == NULL) {
         if((listh->m_head->row) + 1 == row && (listh->m_head->column) == column){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
             currentRow = 1;
         }
         else if((listh->m_head->row) - 1 == row && (listh->m_head->column) == column){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
             currentRow = -1;
         }
         else if ((listh->m_head->column + 1 == column && listh->m_head->row == row )){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
             currentColumn = 1;
         }
         else if(listh->m_head->column - 1 == column && listh->m_head->row == row ){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
             currentColumn = -1;
         }
         else if(listh->m_head->row == row && column == listh->m_head->column){
@@ -769,14 +789,31 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
             validatespaceAux(column, row, element, label);
         }
         else if(currentRow == 1 && row == listh->m_head->row + 1 && column == listh->m_head->column){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
         }else if (currentRow == -1 && row == listh->m_head->row -1 && column == listh->m_head->column) {
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
         }
         else if(currentColumn == 1 && column == listh->m_head->column +1 && row == listh->m_head->row){
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
         }else if (currentColumn == -1 && column == listh->m_head->column -1 && row == listh->m_head->row) {
-            validatespaceAux(column, row, element, label);
+            if(label.text() != qs){
+                listh->add_head(label.text().toUtf8().constData(), column, row);
+            }else{
+                validatespaceAux(column, row, element, label);
+            }
         }
     }
 }
