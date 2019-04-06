@@ -6,13 +6,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "listnode.h"
+
 
 using namespace std;
 static string b = "";
 static string g [15][15];
 static ListNode *listh = new ListNode();
-
+static int currentRow = NULL;
+static int currentColumn = NULL;
 
 MatrixWindow::MatrixWindow(QWidget *parent) :
     QDialog(parent),
@@ -42,7 +43,6 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
-
 }
 
 MatrixWindow::~MatrixWindow(){
@@ -740,7 +740,49 @@ void MatrixWindow::mousePressEvent(QMouseEvent *event){
     }
 }
 void MatrixWindow::validatespace(int column, int row, string element, QLabel &label){
-    if (g[row][column] == ""){
+    if(listh->m_head == NULL){
+        validatespaceAux(column, row, element, label);
+    }
+    else if (listh->m_head->next == NULL) {
+        if((listh->m_head->row) + 1 == row && (listh->m_head->column) == column){
+            validatespaceAux(column, row, element, label);
+            currentRow = 1;
+        }
+        else if((listh->m_head->row) - 1 == row && (listh->m_head->column) == column){
+            validatespaceAux(column, row, element, label);
+            currentRow = -1;
+        }
+        else if ((listh->m_head->column + 1 == column && listh->m_head->row == row )){
+            validatespaceAux(column, row, element, label);
+            currentColumn = 1;
+        }
+        else if(listh->m_head->column - 1 == column && listh->m_head->row == row ){
+            validatespaceAux(column, row, element, label);
+            currentColumn = -1;
+        }
+        else if(listh->m_head->row == row && column == listh->m_head->column){
+            validatespaceAux(column, row, element, label);
+        }
+    }
+    else if(listh->m_head->next != NULL){
+        if(listh->m_head->row == row && column == listh->m_head->column){
+            validatespaceAux(column, row, element, label);
+        }
+        else if(currentRow == 1 && row == listh->m_head->row + 1 && column == listh->m_head->column){
+            validatespaceAux(column, row, element, label);
+        }else if (currentRow == -1 && row == listh->m_head->row -1 && column == listh->m_head->column) {
+            validatespaceAux(column, row, element, label);
+        }
+        else if(currentColumn == 1 && column == listh->m_head->column +1 && row == listh->m_head->row){
+            validatespaceAux(column, row, element, label);
+        }else if (currentColumn == -1 && column == listh->m_head->column -1 && row == listh->m_head->row) {
+            validatespaceAux(column, row, element, label);
+        }
+    }
+}
+
+void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel &label){
+    if (g[row][column] == "" && element != ""){
         if(listh->m_head != NULL){
             listh->del_by_data(column,row);
         }
@@ -749,6 +791,13 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
         label.setText(QString::fromStdString(b));
         b = "";
     }
+}
+
+string MatrixWindow::transformer(ListNode list, string word){
+    //while(){
+
+    //}
+    return word;
 }
 
 void MatrixWindow::on_Btn1_clicked(){
@@ -791,9 +840,13 @@ void MatrixWindow::on_Btn10_clicked(){
     b = ui->Btn10->text().toUtf8().constData();
 }
 
+
+
 void MatrixWindow::on_pushButton_clicked(){
-
-    while(listh->m_head != NULL){
-
+    NodeList *tempNode = listh->m_head;
+    while(tempNode != NULL){
+        g[tempNode->row][tempNode->column] = tempNode->element;
+        tempNode = tempNode->next;
     }
+    listh->del_all();
 }

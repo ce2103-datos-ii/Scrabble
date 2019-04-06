@@ -4,6 +4,7 @@
 #include <QDialog>
 #include <iostream>
 #include <QLabel>
+#include "listnode.h"
 using namespace std;
 
 namespace Ui {
@@ -26,7 +27,8 @@ private slots:
     void on_Btn1_clicked();
     void mousePressEvent(QMouseEvent *ev);
     void validatespace(int column, int row, string element, QLabel &label);
-
+    void validatespaceAux(int column, int row, string element, QLabel &label);
+    string transformer(ListNode list, string word);
 
     void on_Btn2_clicked();
 
