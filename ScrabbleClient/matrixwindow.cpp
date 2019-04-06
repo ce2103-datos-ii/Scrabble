@@ -12,6 +12,7 @@ using namespace std;
 static string b = "";
 static string g [15][15];
 static ListNode *listh = new ListNode();
+static ListNode *listscore = new ListNode();
 static int currentRow = NULL;
 static int currentColumn = NULL;
 
@@ -734,7 +735,11 @@ void MatrixWindow::mousePressEvent(QMouseEvent *event){
 
 void MatrixWindow::validatespace(int column, int row, string element, QLabel &label){
     if(listh->m_head == NULL){
-        validatespaceAux(column, row, element, label);
+        if(label.text() != qs){
+            listh->add_head(label.text().toUtf8().constData(), column, row);
+        }else{
+            validatespaceAux(column, row, element, label);
+        }
     }
     else if (listh->m_head->next == NULL) {
         if((listh->m_head->row) + 1 == row && (listh->m_head->column) == column){
@@ -812,8 +817,15 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
         if(listh->m_head != NULL){
             listh->del_by_data(column,row);
         }
+        if(listscore->m_head != NULL){
+            listscore->del_by_data(column,row);
+        }
+        listscore->add_head(element,column,row);
         listh->add_head(element,column,row);
+        cout << "list h" << endl;
         listh->print();
+        cout << "list score" << endl;
+        listscore->print();
         label.setText(QString::fromStdString(b));
         b = "";
     }
@@ -825,12 +837,18 @@ void MatrixWindow::on_pushButton_2_clicked(){
 
 
 string MatrixWindow::transformer(ListNode list, string word){
-
+    string wordscore = "";
+    NodeList *temp = listscore->m_head;
     while(list.m_head != NULL){
         word =list.m_head->element + word;
         list.m_head = list.m_head->next;
     }
-    cout<<word<<endl;
+    while(temp != NULL){
+        wordscore = temp->element + wordscore;
+        temp = temp->next;
+    }
+    cout << word <<endl;
+    cout << wordscore <<endl;
     return word;
 }
 
@@ -883,4 +901,5 @@ void MatrixWindow::on_pushButton_clicked(){
         tempNode = tempNode->next;
     }
     listh->del_all();
+    listscore->del_all();
 }
