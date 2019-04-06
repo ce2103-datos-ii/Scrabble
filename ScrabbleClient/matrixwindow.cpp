@@ -52,17 +52,6 @@ MatrixWindow::~MatrixWindow(){
     delete ui;
 }
 
-
-
-void MatrixWindow::on_pushButton_2_clicked(){
-    QString a = "";
-    a = ui->Btn1->text();
-    cout << a.toStdString() << endl;
-    ui->Btn1->setText("B");
-    a = ui->Btn1->text();
-    b = a.toStdString();
-}
-
 void MatrixWindow::mousePressEvent(QMouseEvent *event){
     this->posX = event->x();
     this->posY = event->y();
@@ -830,10 +819,18 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
     }
 }
 
-string MatrixWindow::transformer(ListNode list, string word){
-    //while(){
+void MatrixWindow::on_pushButton_2_clicked(){
+    transformer(*listh, "");
+}
 
-    //}
+
+string MatrixWindow::transformer(ListNode list, string word){
+
+    while(list.m_head != NULL){
+        word =list.m_head->element + word;
+        list.m_head = list.m_head->next;
+    }
+    cout<<word<<endl;
     return word;
 }
 
