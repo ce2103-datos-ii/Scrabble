@@ -4,6 +4,9 @@
 
 #include "JsonParser.h"
 
+Players players;
+
+
 string JsonParser::jsonSend(const char* json) {
     json = "{\n"
            "    \"turn\": false,\n"
@@ -35,14 +38,20 @@ void JsonParser::jsonReceive(const char* json) {
 
     }
     if (d["id"] == 1){
-        player1.setScore(d["score"].GetInt());
-        player1.setTurn(false);
-        player2.setTurn(true);
+        players.player1.setScore(d["score"].GetInt());
+        players.player1.setTurn(false);
+        players.player2.setTurn(true);
     } else if (d["id"] == 2){
-
+        players.player2.setScore(d["score"].GetInt());
+        players.player2.setTurn(false);
+        players.player3.setTurn(true);
     } else if (d["id"] == 3){
-
+        players.player3.setScore(d["score"].GetInt());
+        players.player3.setTurn(false);
+        players.player4.setTurn(true);
     } else if (d["id"] == 4){
-
+        players.player4.setScore(d["score"].GetInt());
+        players.player4.setTurn(false);
+        players.player1.setTurn(true);
     }
 }

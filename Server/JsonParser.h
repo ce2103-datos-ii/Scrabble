@@ -7,11 +7,12 @@
 
 #include <iostream>
 
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/stringbuffer.h"
+#include "../rapidjson/document.h"
+#include "../rapidjson/writer.h"
+#include "../rapidjson/stringbuffer.h"
 #include "Player.h"
 #include "FileReader.h"
+#include "Players.h"
 
 using namespace rapidjson;
 using namespace std;
@@ -23,10 +24,6 @@ private:
 
 public:
     static char* json;
-    static Player player1;
-    static Player player2;
-    static Player player3;
-    static Player player4;
 
     string jsonSend(const char*);
     void jsonReceive(const char*);

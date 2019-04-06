@@ -25,5 +25,5 @@ void Player::setTurn(bool turn) {
 }
 
 int Player::getId() const {
-    return 0;
+    return id;
 }
