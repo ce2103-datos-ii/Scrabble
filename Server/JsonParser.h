@@ -13,6 +13,7 @@
 #include "Player.h"
 #include "FileReader.h"
 #include "Players.h"
+#include "HashMap.h"
 
 using namespace rapidjson;
 using namespace std;
@@ -23,10 +24,12 @@ private:
     FileReader fileReader;
 
 public:
+    static int cont;
+    static Players* players = new Players();
     static char* json;
 
-    string jsonSend(const char*);
-    void jsonReceive(const char*);
+//    void jsonSend(const char*);
+    string jsonReceive(const char*);
 
 };
 

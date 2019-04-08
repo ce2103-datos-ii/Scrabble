@@ -24,6 +24,10 @@ void Player::setTurn(bool turn) {
     Player::turn = turn;
 }
 
-int Player::getId() const {
-    return id;
+Player::~Player() {
+
+}
+
+void Player::setId(const string &id) {
+    Player::id = id;
 }

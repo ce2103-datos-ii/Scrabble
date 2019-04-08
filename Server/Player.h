@@ -15,9 +15,12 @@ private:
     char tiles[10];
     int score;
     bool turn;
-    int id;
+    string id;
+public:
+    void setId(const string &id);
 
 public:
+    virtual ~Player();
 
     const char *getTiles() const;
 
