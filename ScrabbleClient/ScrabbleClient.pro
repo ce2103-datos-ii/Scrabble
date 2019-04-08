@@ -32,7 +32,8 @@ SOURCES += \
     List.cpp \
     Node.cpp \
     nodelist.cpp \
-    listnode.cpp
+    listnode.cpp \
+    client.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -41,12 +42,14 @@ HEADERS += \
     List.h \
     Node.h \
     nodelist.h \
-    listnode.h
+    listnode.h \
+    client.h
 
 FORMS += \
         mainwindow.ui \
     matrixwindow.ui \
-    instructions.ui
+    instructions.ui \
+    connection.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

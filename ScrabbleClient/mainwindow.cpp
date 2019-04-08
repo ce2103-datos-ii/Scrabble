@@ -3,6 +3,7 @@
 #include "matrixwindow.h"
 #include "instructions.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -15,15 +16,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    this->hide();
-    MatrixWindow matrixWindow;
-    matrixWindow.setModal(true);
-    matrixWindow.exec();
-    this->close();
-}
-
 void MainWindow::on_pushButton_2_clicked()
 {
     this->hide();
@@ -31,4 +23,22 @@ void MainWindow::on_pushButton_2_clicked()
     instructionWindow.setModal(true);
     instructionWindow.exec();
     this->show();
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    const char* l = "Connected";
+    string a = ui->lineEdit->text().toUtf8().constData(); // nombre
+    string b = ui->lineEdit_2->text().toUtf8().constData(); // numero de jugadores
+    string c = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
+
+    client = new Client(true,0,true);
+    client->connection();
+    client->comunication(l);
+    this->hide();
+    MatrixWindow matrixWindow;
+    matrixWindow.setModal(true);
+    matrixWindow.exec();
+    this->close();
+
 }

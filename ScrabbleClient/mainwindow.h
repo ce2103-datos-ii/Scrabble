@@ -2,6 +2,15 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <thread>
+#include "client.h"
+#include <iostream>
+#include "connection.h"
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
 
 namespace Ui {
 class MainWindow;
@@ -14,11 +23,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    Client* client;
+    int code;
 private slots:
-    void on_pushButton_clicked();
 
     void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
 
 private:
     Ui::MainWindow *ui;
