@@ -63,7 +63,6 @@ void HashMap::createLetterList() {
     string allLetters[23] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
     for (int i = 0; i < 93; i++){
         int randomNum = rand() % 23;
-        cout << randomNum << endl;
         if (lettersMap.at(allLetters[randomNum]) != 0){
 //            cout << lettersList[i] << endl;
 //            cout << allLetters[randomNum] + to_string(lettersMap[allLetters[randomNum]]) << endl;
@@ -74,6 +73,7 @@ void HashMap::createLetterList() {
         }
     }
 }
+
 
 
 int HashMap::checkWordScore(string str) {
@@ -89,12 +89,21 @@ int HashMap::checkWordScore(string str) {
 //    return lettersList;
 //}
 
-string HashMap::arrayToString() {
+string HashMap::lettersArrayToString() {
     string str = "[";
     for (int i = 0; i <= 92; i++) {
         str += lettersList[i] + ", ";
     }
     str += "]";
+    return str;
+}
+
+string HashMap::lettersToSend(string letters) {
+    string str;
+    for (int i = 0; i < letters.length(); i++){
+        str += lettersList[posLetterList];
+        posLetterList++;
+    }
     return str;
 }
 

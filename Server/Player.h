@@ -16,10 +16,24 @@ private:
     int score;
     bool turn;
     string id;
+    int port;
+    int playerSocket;
+public:
+    void setPlayerSocket(int playerSocket);
+
+public:
+    int getPlayerSocket() const;
+
+public:
+    const string &getId() const;
+
+    int getPort() const;
+
+    void setPort(int port);
+
 public:
     void setId(const string &id);
 
-public:
     virtual ~Player();
 
     const char *getTiles() const;
@@ -31,8 +45,6 @@ public:
     bool isTurn() const;
 
     void setTurn(bool turn);
-
-    int getId() const;
 
 };
 

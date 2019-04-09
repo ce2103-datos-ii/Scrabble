@@ -24,82 +24,102 @@
 
 using namespace std;
 
-int Communication::connection()
+int Communication::connection(int port)
 {
-    // Create a socket
-    int listening = socket(AF_INET, SOCK_STREAM, 0);
-    if (listening == -1)
-    {
-        cerr << "Can't create a socket! Quitting" << endl;
-        return -1;
-    }
-
-    // Bind the ip address and port to a socket
-    sockaddr_in hint;
-    hint.sin_family = AF_INET;
-    hint.sin_port = htons(54000);
-    inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
-
-    bind(listening, (sockaddr*)&hint, sizeof(hint));
-
-    // Tell Winsock the socket is for listening
-    listen(listening, SOMAXCONN);
-
-    // Wait for a connection
-    sockaddr_in client;
-    socklen_t clientSize = sizeof(client);
-
-    int clientSocket = accept(listening, (sockaddr*)&client, &clientSize);
-
-    char host[NI_MAXHOST];      // Client's remote name
-    char service[NI_MAXSERV];   // Service (i.e. port) the client is connect on
-
-    memset(host, 0, NI_MAXHOST); // same as memset(host, 0, NI_MAXHOST);
-    memset(service, 0, NI_MAXSERV);
-
-    if (getnameinfo((sockaddr*)&client, sizeof(client), host, NI_MAXHOST, service, NI_MAXSERV, 0) == 0)
-    {
-        cout << host << " connected on port " << service << endl;
-    }
-    else
-    {
-        inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
-        cout << host << " connected on port " << ntohs(client.sin_port) << endl;
-    }
-
-    // Close listening socket
-    close(listening);
-
-    // While loop: accept and echo message back to client
-    char buf[4096];
-
-    while (true)
-    {
-        memset(buf, 0, 4096);
-
-        // Wait for client to send data
-        long bytesReceived = recv(clientSocket, buf, 4096, 0);
-        if (bytesReceived == -1)
-        {
-            cerr << "Error in recv(). Quitting" << endl;
-            break;
+    if (port != 54000){
+        // Create a socket
+        int listening = socket(AF_INET, SOCK_STREAM, 0);
+        cout << "1" << endl;
+        if (listening == -1) {
+            cout << "2" << endl;
+            cerr << "Can't create a socket! Quitting" << endl;
+            cout << "3" << endl;
+            return -1;
         }
 
-        if (bytesReceived == 0)
-        {
-            cout << "Client disconnected " << endl;
-            break;
+        // Bind the ip address and port to a socket
+        sockaddr_in hint;
+        cout << "4" << endl;
+        hint.sin_family = AF_INET;
+        cout << "5" << endl;
+        hint.sin_port = htons(port);
+        cout << "6" << endl;
+        inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
+        cout << "7" << endl;
+
+        bind(listening, (sockaddr *) &hint, sizeof(hint));
+        cout << "8" << endl;
+
+        // Tell Winsock the socket is for listening
+        listen(listening, SOMAXCONN);
+        cout << "9" << endl;
+
+        // Wait for a connection
+        sockaddr_in client;
+        cout << "10" << endl;
+        socklen_t clientSize = sizeof(client);
+
+        cout<<"Holaaa"<<endl;
+        int clientSocket = accept(listening, (sockaddr *) &client, &clientSize);
+        cout<<"Hola"<<endl;
+
+        char host[NI_MAXHOST];      // Client's remote name
+        char service[NI_MAXSERV];   // Service (i.e. port) the client is connect on
+
+        memset(host, 0, NI_MAXHOST); // same as memset(host, 0, NI_MAXHOST);
+        memset(service, 0, NI_MAXSERV);
+
+        if (getnameinfo((sockaddr *) &client, sizeof(client), host, NI_MAXHOST, service, NI_MAXSERV, 0) == 0) {
+            cout << host << " connected on port " << service << endl;
+        } else {
+            inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
+            cout << host << " connected on port " << ntohs(client.sin_port) << endl;
         }
 
-        cout << string(buf, 0, bytesReceived) << endl;
+        // Close listening socket
+        close(listening);
 
+        return clientSocket;
+    }else{
+        // Create a socket
+        int listening = socket(AF_INET, SOCK_STREAM, 0);
+        if (listening == -1) {
+            cerr << "Can't create a socket! Quitting" << endl;
+            return -1;
+        }
 
-        // Echo message back to client
-        send(clientSocket, buf, sizeof(buf) + 1, 0);
+        // Bind the ip address and port to a socket
+        sockaddr_in hint;
+        hint.sin_family = AF_INET;
+        hint.sin_port = htons(port);
+        inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
+
+        bind(listening, (sockaddr *) &hint, sizeof(hint));
+
+        // Tell Winsock the socket is for listening
+        listen(listening, SOMAXCONN);
+
+        // Wait for a connection
+        sockaddr_in client;
+        socklen_t clientSize = sizeof(client);
+
+        int clientSocket = accept(listening, (sockaddr *) &client, &clientSize);
+
+        char host[NI_MAXHOST];      // Client's remote name
+        char service[NI_MAXSERV];   // Service (i.e. port) the client is connect on
+
+        memset(host, 0, NI_MAXHOST); // same as memset(host, 0, NI_MAXHOST);
+        memset(service, 0, NI_MAXSERV);
+
+        if (getnameinfo((sockaddr *) &client, sizeof(client), host, NI_MAXHOST, service, NI_MAXSERV, 0) == 0) {
+            cout << host << " connected on port " << service << endl;
+        } else {
+            inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
+            cout << host << " connected on port " << ntohs(client.sin_port) << endl;
+        }
+
+        // Close listening socket
+        close(listening);
+        return clientSocket;
     }
-
-    // Close the socket
-    close(clientSocket);
-
-    return 0;
 }

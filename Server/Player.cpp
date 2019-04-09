@@ -31,3 +31,23 @@ Player::~Player() {
 void Player::setId(const string &id) {
     Player::id = id;
 }
+
+const string &Player::getId() const {
+    return id;
+}
+
+int Player::getPort() const {
+    return port;
+}
+
+void Player::setPort(int port) {
+    Player::port = port;
+}
+
+int Player::getPlayerSocket() const {
+    return playerSocket;
+}
+
+void Player::setPlayerSocket(int playerSocket) {
+    Player::playerSocket = playerSocket;
+}

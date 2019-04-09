@@ -4,6 +4,8 @@
 //#include "JsonParser.h"
 #include "Server/HashMap.h"
 #include "Server/List.h"
+#include "Server/Communication.h"
+#include "Server/JsonParser.h"
 
 using namespace std;
 
@@ -12,7 +14,7 @@ int main(){
     hashMap.createScoreMap();
     hashMap.createLetterMap();
     hashMap.createLetterList();
-    cout << hashMap.arrayToString() << endl;
-    cout << to_string(hashMap.checkWordScore("hola")) << endl;
+    JsonParser jsonParser;
+    jsonParser.jsonReceive();
     return 0;
 }

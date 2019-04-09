@@ -14,6 +14,23 @@
 #include "FileReader.h"
 #include "Players.h"
 #include "HashMap.h"
+#include "Communication.h"
+#include <stdio.h>
+#include <sys/socket.h>
+#include <stdlib.h>
+#include <netinet/in.h>
+#include <string.h>
+#include <iostream>
+#include <sys/types.h>
+#include <unistd.h>
+#include <iostream>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <string.h>
+#include <string>
 
 using namespace rapidjson;
 using namespace std;
@@ -22,14 +39,17 @@ class JsonParser {
 
 private:
     FileReader fileReader;
-
+    int ports[4] = {54001, 54002, 54003, 54003};
 public:
-    static int cont;
-    static Players* players = new Players();
+    int checkJsonSize(string);
+    const char* charArrayToConstChar(char ch[]);
+
+    int cont = 0;
+//    extern Players players;
     static char* json;
 
 //    void jsonSend(const char*);
-    string jsonReceive(const char*);
+    const char* jsonReceive();
 
 };
 

@@ -9,7 +9,7 @@
 class Communication {
 
 public:
-    int connection();
+    int connection(int socket);
 };
 
 

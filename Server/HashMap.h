@@ -17,6 +17,7 @@ class HashMap {
 private:
     map<string, int> wordsMap;
     map<string, int> lettersMap;
+    int posLetterList = 0;
 
 public:
     string lettersList[94];
@@ -24,8 +25,9 @@ public:
     void createScoreMap();
     void createLetterMap();
     void createLetterList();
-    string arrayToString();
+    string lettersArrayToString();
     int checkWordScore(string);
+    string lettersToSend(string letters);
 
 };
 

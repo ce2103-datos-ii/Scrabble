@@ -20,13 +20,14 @@ private:
     int playerCount;
     int code;
     HashMap hashMap;
-    extern Players *players;
     const char* jsonPlayer1 = "{\n"
                               "    \"turn\": false,\n"
                               "    \"score\": 3\n"
                               "    \"id\": 0\n"
                               "    \"matrix\": null\n"
                               "    \"letters\": []\n"
+                              "    \"word\": null\n"
+                              "    \"port\": 54001\n"
                               "}";
     const char* jsonPlayer2 = "{\n"
                               "    \"turn\": false,\n"
@@ -34,6 +35,8 @@ private:
                               "    \"id\": 0\n"
                               "    \"matrix\": null\n"
                               "    \"letters\": []\n"
+                              "    \"word\": null\n"
+                              "    \"port\": 54001\n"
                               "}";
     const char* jsonPlayer3 = "{\n"
                               "    \"turn\": false,\n"
@@ -41,6 +44,8 @@ private:
                               "    \"id\": 0\n"
                               "    \"matrix\": null\n"
                               "    \"letters\": []\n"
+                              "    \"word\": null\n"
+                              "    \"port\": 54001\n"
                               "}";
     const char* jsonPlayer4 = "{\n"
                               "    \"turn\": false,\n"
@@ -48,6 +53,8 @@ private:
                               "    \"id\": 0\n"
                               "    \"matrix\": null\n"
                               "    \"letters\": []\n"
+                              "    \"word\": null\n"
+                              "    \"port\": 54001\n"
                               "}";
 public:
     void manageTurns();
@@ -56,10 +63,18 @@ public:
     int getPlayerCount() const;
     void setPlayerCount(int playerCount);
     void deletePlayers();
+    void setPorts();
     Player *player1 = new Player;
     Player *player2 = new Player;
     Player *player3 = new Player;
     Player *player4 = new Player;
+
+public:
+    static Players &shared_instance() {static Players players; return players;}
+
+private:
+    // Make constructor private. Only shared_instance() method will create an instance.
+    Players() {/*whatever initialisation you need*/}
 
 };
 
