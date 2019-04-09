@@ -5,6 +5,7 @@
 #include <iostream>
 #include <QLabel>
 #include "listnode.h"
+#include "mainwindow.h"
 using namespace std;
 
 namespace Ui {
@@ -28,7 +29,8 @@ private slots:
     void mousePressEvent(QMouseEvent *ev);
     void validatespace(int column, int row, string element, QLabel &label);
     void validatespaceAux(int column, int row, string element, QLabel &label);
-    string transformer(ListNode list, string word);
+    string transformer(ListNode list, string word, string letters);
+    void update();
 
     void on_Btn2_clicked();
 
@@ -49,6 +51,8 @@ private slots:
     void on_Btn10_clicked();
 
     void on_pushButton_clicked();
+
+    void on_EndTurn_clicked();
 
 private:
     Ui::MatrixWindow *ui;

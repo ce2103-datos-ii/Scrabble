@@ -51,6 +51,8 @@ FORMS += \
     instructions.ui \
     connection.ui
 
+INCLUDEPATH += "/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson"
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

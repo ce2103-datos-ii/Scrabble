@@ -1156,12 +1156,6 @@ void MatrixWindow::on_EndTurn_clicked(){
     listscore->del_all();
 }
 
-
-
-
-
-
-
 void MatrixWindow::on_Btn1_clicked(){
     b = ui->Btn1->text().toUtf8().constData();
 }

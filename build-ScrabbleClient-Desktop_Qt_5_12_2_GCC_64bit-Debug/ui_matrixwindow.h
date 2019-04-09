@@ -20,7 +20,7 @@ QT_BEGIN_NAMESPACE
 class Ui_MatrixWindow
 {
 public:
-    QPushButton *pushButton;
+    QPushButton *EndTurn;
     QPushButton *pushButton_2;
     QPushButton *Btn1;
     QPushButton *Btn2;
@@ -263,9 +263,9 @@ public:
         if (MatrixWindow->objectName().isEmpty())
             MatrixWindow->setObjectName(QString::fromUtf8("MatrixWindow"));
         MatrixWindow->resize(641, 642);
-        pushButton = new QPushButton(MatrixWindow);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(0, 610, 91, 25));
+        EndTurn = new QPushButton(MatrixWindow);
+        EndTurn->setObjectName(QString::fromUtf8("EndTurn"));
+        EndTurn->setGeometry(QRect(0, 610, 91, 25));
         pushButton_2 = new QPushButton(MatrixWindow);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
         pushButton_2->setGeometry(QRect(540, 610, 101, 25));
@@ -1667,7 +1667,7 @@ public:
     void retranslateUi(QDialog *MatrixWindow)
     {
         MatrixWindow->setWindowTitle(QApplication::translate("MatrixWindow", "Dialog", nullptr));
-        pushButton->setText(QApplication::translate("MatrixWindow", "Finalizar Turno", nullptr));
+        EndTurn->setText(QApplication::translate("MatrixWindow", "Finalizar Turno", nullptr));
         pushButton_2->setText(QApplication::translate("MatrixWindow", "Verificar Palabra", nullptr));
         Btn1->setText(QString());
         Btn2->setText(QString());

@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../ScrabbleClient -I. -I../../5.12.2/gcc_64/include -I../../5.12.2/gcc_64/include/QtWidgets -I../../5.12.2/gcc_64/include/QtGui -I../../5.12.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../5.12.2/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../ScrabbleClient -I. -I../../../rapidjson-master/include/rapidjson -I../../5.12.2/gcc_64/include -I../../5.12.2/gcc_64/include/QtWidgets -I../../5.12.2/gcc_64/include/QtGui -I../../5.12.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../5.12.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -850,7 +850,7 @@ moc_mainwindow.cpp: ../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qdialog.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/mainwindow.h -o moc_mainwindow.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/mainwindow.h -o moc_mainwindow.cpp
 
 moc_matrixwindow.cpp: ../ScrabbleClient/matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
@@ -962,9 +962,16 @@ moc_matrixwindow.cpp: ../ScrabbleClient/matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qframe.h \
 		../ScrabbleClient/listnode.h \
 		../ScrabbleClient/nodelist.h \
+		../ScrabbleClient/mainwindow.h \
+		../../5.12.2/gcc_64/include/QtWidgets/QMainWindow \
+		../../5.12.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../5.12.2/gcc_64/include/QtGui/qicon.h \
+		../ScrabbleClient/client.h \
+		../ScrabbleClient/connection.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/matrixwindow.h -o moc_matrixwindow.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/matrixwindow.h -o moc_matrixwindow.cpp
 
 moc_instructions.cpp: ../ScrabbleClient/instructions.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
@@ -1073,7 +1080,7 @@ moc_instructions.cpp: ../ScrabbleClient/instructions.h \
 		../../5.12.2/gcc_64/include/QtGui/qtouchdevice.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/instructions.h -o moc_instructions.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/instructions.h -o moc_instructions.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1486,6 +1493,13 @@ matrixwindow.o: ../ScrabbleClient/matrixwindow.cpp ../ScrabbleClient/matrixwindo
 		../../5.12.2/gcc_64/include/QtWidgets/qframe.h \
 		../ScrabbleClient/listnode.h \
 		../ScrabbleClient/nodelist.h \
+		../ScrabbleClient/mainwindow.h \
+		../../5.12.2/gcc_64/include/QtWidgets/QMainWindow \
+		../../5.12.2/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../5.12.2/gcc_64/include/QtGui/qicon.h \
+		../ScrabbleClient/client.h \
+		../ScrabbleClient/connection.h \
 		ui_matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtCore/QVariant \
 		../../5.12.2/gcc_64/include/QtWidgets/QApplication \
@@ -1498,7 +1512,6 @@ matrixwindow.o: ../ScrabbleClient/matrixwindow.cpp ../ScrabbleClient/matrixwindo
 		../../5.12.2/gcc_64/include/QtWidgets/QPushButton \
 		../../5.12.2/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../../5.12.2/gcc_64/include/QtGui/QPixmap \
 		../../5.12.2/gcc_64/include/QtGui/QMouseEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o matrixwindow.o ../ScrabbleClient/matrixwindow.cpp

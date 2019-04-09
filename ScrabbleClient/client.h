@@ -9,7 +9,12 @@
 #include <string.h>
 #include <string>
 #include <iostream>
+#include "rapidjson.h"
+#include "document.h"
+#include "writer.h"
+#include "stringbuffer.h"
 
+using namespace rapidjson;
 using namespace std;
 
 class Client
@@ -19,9 +24,10 @@ public:
     bool turn;
     int flag;
     int sock;
+    int port;
     const char* dataServ;
     Client(bool in, int flag, bool turn);
-    int connection();
+    int connection(int port);
     void comunication(const char* word);
 private:
     void setData(char* data);
