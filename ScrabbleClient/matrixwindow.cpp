@@ -37,17 +37,17 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setStyleSheet("background-color:gray");
     ui->Btn9->setStyleSheet("background-color:gray");
     ui->Btn10->setStyleSheet("background-color:gray");
-    string hum[26] {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    string hum[26] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     srand(time(NULL));
-    ui->Btn1->setText(QString::fromStdString(hum[15]));
-    ui->Btn2->setText(QString::fromStdString(hum[4]));
-    ui->Btn3->setText(QString::fromStdString(hum[17]));
-    ui->Btn4->setText(QString::fromStdString(hum[17]));
-    ui->Btn5->setText(QString::fromStdString(hum[14]));
+    ui->Btn1->setText(QString::fromStdString("a"));
+    ui->Btn2->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn3->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn4->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn5->setText(QString::fromStdString("a"));
     ui->Btn6->setText(QString::fromStdString(hum[rand()%26]));
     ui->Btn7->setText(QString::fromStdString(hum[rand()%26]));
     ui->Btn8->setText(QString::fromStdString(hum[rand()%26]));
-    ui->Btn9->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn9->setText(QString::fromStdString("l"));
     ui->Btn10->setText(QString::fromStdString(hum[rand()%26]));
     qs = ui->Lbl1->text();
 }
@@ -1129,8 +1129,8 @@ void MatrixWindow::on_EndTurn_clicked(){
         g[tempNode->row][tempNode->column] = tempNode->element;
         tempNode = tempNode->next;
     }
-    for (int i = 0; i == 15; i++){
-        for (int n = 0; n == 15; n++){
+    for (int i = 0; i < 15; i++){
+        for (int n = 0; n < 15; n++){
             gAux += g[i][n];
             if (n == 14)
                 gAux += "}, {";

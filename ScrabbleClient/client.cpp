@@ -40,6 +40,7 @@ void Client::comunication(const char* word){
     Document d;
     if(in == true){
         if(flag == 0){
+            cout<<word<<endl;
             int sendRes = send(sock, word, sizeOfWord , 0);
             int bytesReceived = recv(sock, buf, 4096, 0);
             newWord = bytesTransformer(bytesReceived,buf,newWord);
@@ -55,18 +56,19 @@ void Client::comunication(const char* word){
             flag = 1;
         }else{
             if(turn){
+                cout<<word<<endl;
                 cout << "9" << endl;
-                int sendRes = send(sock, word, sizeOfWord, 0);
+                int sendRes = send(this->sock, word, sizeOfWord, 0);
                 cout << sendRes <<endl;
-                //memset(buf, 0, 4096);
-                int bytesReceived = recv(sock, buf, 4096, 0);
+                memset(buf, 0, 4096);
+                int bytesReceived = recv(this->sock, buf, 4096, 0);
                 cout << bytesReceived << "10" << endl;
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
                 this->dataServ = (newWord).c_str();
                 d.Parse(dataServ);
                 turn = d["turn"].GetBool();
             }else{
-                //memset(buf, 0, 4096);
+                memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
                 this->dataServ = (newWord).c_str();
