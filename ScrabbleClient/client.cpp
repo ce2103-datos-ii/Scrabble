@@ -36,6 +36,7 @@ void Client::comunication(const char* word){
         sizeOfWord++;
     }
     char buf[4096];
+    memset(buf, 0, 4096);
     Document d;
     if(in == true){
         if(flag == 0){

@@ -28,6 +28,8 @@ public:
     explicit MatrixWindow(QWidget *parent = nullptr);
     ~MatrixWindow();
     Client *client;
+    string id;
+    int score;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -35,7 +37,8 @@ private slots:
     void mousePressEvent(QMouseEvent *ev);
     void validatespace(int column, int row, string element, QLabel &label);
     void validatespaceAux(int column, int row, string element, QLabel &label);
-    string transformer(ListNode list, string word, string letters);
+    string transformerWord(ListNode list, string word);
+    string transformerLetters(string letters);
     void update();
     void PlayerTurn();
 

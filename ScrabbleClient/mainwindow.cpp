@@ -84,12 +84,11 @@ void MainWindow::on_pushButton_4_clicked()
     client->connection(53000);
     client->comunication(buffer.GetString());
     this->hide();
-    cout << "bghnj" <<endl;
     MatrixWindow matrixWindow;
-            cout << "bghnj" <<endl;
-    this->client = matrixWindow.client;
+    matrixWindow.client = this->client;
+    matrixWindow.id = name;
+    matrixWindow.score = 0;
     matrixWindow.setModal(true);
-            cout << "bghnj" <<endl;
     matrixWindow.exec();
     this->close();
 

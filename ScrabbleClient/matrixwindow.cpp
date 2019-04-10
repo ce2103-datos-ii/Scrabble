@@ -1103,24 +1103,27 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
     }
 }
 
-string MatrixWindow::transformer(ListNode list, string word, string letters){
-    NodeList *temp = listscore->m_head;
+string MatrixWindow::transformerWord(ListNode list, string word){
     while(list.m_head != NULL){
         word =list.m_head->element + word;
         list.m_head = list.m_head->next;
     }
+    return word;
+}
+
+string MatrixWindow::transformerLetters(string letters){
+    NodeList *temp = listscore->m_head;
     while(temp != NULL){
         letters = temp->element + letters;
         temp = temp->next;
     }
-    return word, letters;
+    return letters;
 }
 
 void MatrixWindow::on_EndTurn_clicked(){
     string gAux = "[{";
-    string word;
-    string letters;
-    transformer(*listh, word, letters);
+    string word = transformerWord(*listh, "");
+    string letters = transformerLetters("");
     NodeList *tempNode = listh->m_head;
     while(tempNode != NULL){
         g[tempNode->row][tempNode->column] = tempNode->element;
@@ -1138,15 +1141,20 @@ void MatrixWindow::on_EndTurn_clicked(){
             gAux += "}]";
     }
     const char* jsonClient = "{\n"
+                                 "    \"id\": 0,\n"
+                                 "    \"score\": 0,\n"
                                  "    \"word\": 0,\n"
                                  "    \"letters\": null,\n"
                                  "    \"matrix\": 0\n"
                                  "}";
     Document d;
     d.Parse(jsonClient);
-    d["word"].SetString(StringRef(word.c_str()));
-    d["letters"].SetString(StringRef(letters.c_str()));
-    d["matrix"].SetString(StringRef(gAux.c_str()));
+    assert(d.IsObject());
+    d["word"].SetString(word.data(), word.size(), d.GetAllocator());
+    d["letters"].SetString(letters.data(), letters.size(), d.GetAllocator());
+    d["matrix"].SetString(gAux.data(), gAux.size(), d.GetAllocator());
+    d["id"].SetString(this->id.data(), this->id.size(), d.GetAllocator());
+    d["score"].SetInt(this->score);
     StringBuffer buffer;
     buffer.Clear();
     Writer<StringBuffer> writer(buffer);
