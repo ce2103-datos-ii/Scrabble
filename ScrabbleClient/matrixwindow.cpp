@@ -39,18 +39,17 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn10->setStyleSheet("background-color:gray");
     string hum[26] {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     srand(time(NULL));
-    ui->Btn1->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn2->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn3->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn4->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn5->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn6->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn7->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn8->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn1->setText(QString::fromStdString(hum[15]));
+    ui->Btn2->setText(QString::fromStdString(hum[4]));
+    ui->Btn3->setText(QString::fromStdString(hum[17]));
+    ui->Btn4->setText(QString::fromStdString(hum[17]));
+    ui->Btn5->setText(QString::fromStdString(hum[14]));
+    ui->Btn6->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn7->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn8->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn9->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn10->setText(QString::fromStdString(hum[rand()%26]));
     qs = ui->Lbl1->text();
-    PlayerTurn();
 }
 
 void MatrixWindow::PlayerTurn(){
@@ -855,7 +854,7 @@ void MatrixWindow::update(){
     }
     for(i = 0; i<15;i++){
         for(n = 0; n<15; n++){
-             g[i][n] = Matrix[i][n];
+            g[i][n] = Matrix[i][n];
         }
     }
     ui->Lbl1->setText(QString::fromStdString(Matrix[0][0]));
@@ -1104,24 +1103,27 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
     }
 }
 
-string MatrixWindow::transformer(ListNode list, string word, string letters){
-    NodeList *temp = listscore->m_head;
+string MatrixWindow::transformerWord(ListNode list, string word){
     while(list.m_head != NULL){
         word =list.m_head->element + word;
         list.m_head = list.m_head->next;
     }
+    return word;
+}
+
+string MatrixWindow::transformerLetters(string letters){
+    NodeList *temp = listscore->m_head;
     while(temp != NULL){
         letters = temp->element + letters;
         temp = temp->next;
     }
-    return word, letters;
+    return letters;
 }
 
 void MatrixWindow::on_EndTurn_clicked(){
     string gAux = "[{";
-    string word;
-    string letters;
-    transformer(*listh, word, letters);
+    string word = transformerWord(*listh, "");
+    string letters = transformerLetters("");
     NodeList *tempNode = listh->m_head;
     while(tempNode != NULL){
         g[tempNode->row][tempNode->column] = tempNode->element;
@@ -1139,23 +1141,37 @@ void MatrixWindow::on_EndTurn_clicked(){
             gAux += "}]";
     }
     const char* jsonClient = "{\n"
-                                 "    \"word\": 0,\n"
-                                 "    \"letters\": null,\n"
-                                 "    \"matrix\": 0\n"
-                                 "}";
+                             "    \"id\": 0,\n"
+                             "    \"score\": 0,\n"
+                             "    \"word\": 0,\n"
+                             "    \"letters\": null,\n"
+                             "    \"turn\": true,\n"
+                             "    \"matrix\": 0\n"
+                             "}";
     Document d;
     d.Parse(jsonClient);
-    d["word"].SetString(StringRef(word.c_str()));
-    d["letters"].SetString(StringRef(letters.c_str()));
-    d["matrix"].SetString(StringRef(gAux.c_str()));
+    cout << "1" << endl;
+    assert(d.IsObject());
+    cout << "2" << endl;
+    d["word"].SetString(word.data(), word.size(), d.GetAllocator());
+    cout << "3" << endl;
+    d["letters"].SetString(letters.data(), letters.size(), d.GetAllocator());
+    cout << "4" << endl;
+    d["matrix"].SetString(gAux.data(), gAux.size(), d.GetAllocator());
+    cout << "5" << endl;
+    d["id"].SetString(this->id.data(), this->id.size(), d.GetAllocator());
+    cout << "6" << endl;
+    d["score"].SetInt(this->score);
+    cout << "7" << endl;
     StringBuffer buffer;
     buffer.Clear();
     Writer<StringBuffer> writer(buffer);
     d.Accept(writer);
+    cout << "8" << endl;
+    cout << buffer.GetString() << endl;
     MatrixWindow::client->comunication(buffer.GetString());
     listh->del_all();
     listscore->del_all();
-    PlayerTurn();
 
 }
 

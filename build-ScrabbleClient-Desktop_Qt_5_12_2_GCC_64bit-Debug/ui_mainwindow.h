@@ -35,6 +35,7 @@ public:
     QLabel *label_2;
     QLabel *label_3;
     QLineEdit *lineEdit_3;
+    QLabel *label_4;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -49,7 +50,7 @@ public:
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pushButton_2 = new QPushButton(centralWidget);
         pushButton_2->setObjectName(QString::fromUtf8("pushButton_2"));
-        pushButton_2->setGeometry(QRect(440, 180, 61, 51));
+        pushButton_2->setGeometry(QRect(440, 200, 61, 51));
         QFont font;
         font.setBold(true);
         font.setWeight(75);
@@ -70,19 +71,22 @@ public:
         pushButton_4->setGeometry(QRect(10, 210, 111, 25));
         lineEdit = new QLineEdit(centralWidget);
         lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setGeometry(QRect(10, 120, 113, 25));
+        lineEdit->setGeometry(QRect(10, 90, 113, 25));
         lineEdit_2 = new QLineEdit(centralWidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
-        lineEdit_2->setGeometry(QRect(10, 150, 113, 25));
+        lineEdit_2->setGeometry(QRect(10, 120, 113, 25));
         label_2 = new QLabel(centralWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(130, 130, 54, 17));
+        label_2->setGeometry(QRect(130, 90, 54, 17));
         label_3 = new QLabel(centralWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(130, 150, 181, 17));
+        label_3->setGeometry(QRect(130, 120, 131, 17));
         lineEdit_3 = new QLineEdit(centralWidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setGeometry(QRect(140, 210, 113, 25));
+        lineEdit_3->setGeometry(QRect(10, 150, 113, 25));
+        label_4 = new QLabel(centralWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(130, 150, 54, 17));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -108,7 +112,8 @@ public:
         pushButton_3->setText(QApplication::translate("MainWindow", "Crear Juego", nullptr));
         pushButton_4->setText(QApplication::translate("MainWindow", "Unirse", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Nombre", nullptr));
-        label_3->setText(QApplication::translate("MainWindow", "Numero de jugadores o c\303\263digo", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Numero de jugadores", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "C\303\263digo", nullptr));
     } // retranslateUi
 
 };

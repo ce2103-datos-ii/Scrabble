@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MatrixWindow_t {
-    QByteArrayData data[32];
-    char stringdata0[389];
+    QByteArrayData data[33];
+    char stringdata0[401];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,36 +46,38 @@ QT_MOC_LITERAL(11, 118, 7), // "element"
 QT_MOC_LITERAL(12, 126, 7), // "QLabel&"
 QT_MOC_LITERAL(13, 134, 5), // "label"
 QT_MOC_LITERAL(14, 140, 16), // "validatespaceAux"
-QT_MOC_LITERAL(15, 157, 11), // "transformer"
-QT_MOC_LITERAL(16, 169, 8), // "ListNode"
-QT_MOC_LITERAL(17, 178, 4), // "list"
-QT_MOC_LITERAL(18, 183, 4), // "word"
-QT_MOC_LITERAL(19, 188, 7), // "letters"
-QT_MOC_LITERAL(20, 196, 6), // "update"
-QT_MOC_LITERAL(21, 203, 15), // "on_Btn2_clicked"
-QT_MOC_LITERAL(22, 219, 15), // "on_Btn3_clicked"
-QT_MOC_LITERAL(23, 235, 15), // "on_Btn4_clicked"
-QT_MOC_LITERAL(24, 251, 15), // "on_Btn5_clicked"
-QT_MOC_LITERAL(25, 267, 15), // "on_Btn6_clicked"
-QT_MOC_LITERAL(26, 283, 15), // "on_Btn7_clicked"
-QT_MOC_LITERAL(27, 299, 15), // "on_Btn8_clicked"
-QT_MOC_LITERAL(28, 315, 15), // "on_Btn9_clicked"
-QT_MOC_LITERAL(29, 331, 16), // "on_Btn10_clicked"
-QT_MOC_LITERAL(30, 348, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(31, 370, 18) // "on_EndTurn_clicked"
+QT_MOC_LITERAL(15, 157, 15), // "transformerWord"
+QT_MOC_LITERAL(16, 173, 8), // "ListNode"
+QT_MOC_LITERAL(17, 182, 4), // "list"
+QT_MOC_LITERAL(18, 187, 4), // "word"
+QT_MOC_LITERAL(19, 192, 18), // "transformerLetters"
+QT_MOC_LITERAL(20, 211, 7), // "letters"
+QT_MOC_LITERAL(21, 219, 6), // "update"
+QT_MOC_LITERAL(22, 226, 10), // "PlayerTurn"
+QT_MOC_LITERAL(23, 237, 15), // "on_Btn2_clicked"
+QT_MOC_LITERAL(24, 253, 15), // "on_Btn3_clicked"
+QT_MOC_LITERAL(25, 269, 15), // "on_Btn4_clicked"
+QT_MOC_LITERAL(26, 285, 15), // "on_Btn5_clicked"
+QT_MOC_LITERAL(27, 301, 15), // "on_Btn6_clicked"
+QT_MOC_LITERAL(28, 317, 15), // "on_Btn7_clicked"
+QT_MOC_LITERAL(29, 333, 15), // "on_Btn8_clicked"
+QT_MOC_LITERAL(30, 349, 15), // "on_Btn9_clicked"
+QT_MOC_LITERAL(31, 365, 16), // "on_Btn10_clicked"
+QT_MOC_LITERAL(32, 382, 18) // "on_EndTurn_clicked"
 
     },
     "MatrixWindow\0on_pushButton_2_clicked\0"
     "\0on_Btn1_clicked\0mousePressEvent\0"
     "QMouseEvent*\0ev\0validatespace\0column\0"
     "row\0string\0element\0QLabel&\0label\0"
-    "validatespaceAux\0transformer\0ListNode\0"
-    "list\0word\0letters\0update\0on_Btn2_clicked\0"
+    "validatespaceAux\0transformerWord\0"
+    "ListNode\0list\0word\0transformerLetters\0"
+    "letters\0update\0PlayerTurn\0on_Btn2_clicked\0"
     "on_Btn3_clicked\0on_Btn4_clicked\0"
     "on_Btn5_clicked\0on_Btn6_clicked\0"
     "on_Btn7_clicked\0on_Btn8_clicked\0"
     "on_Btn9_clicked\0on_Btn10_clicked\0"
-    "on_pushButton_clicked\0on_EndTurn_clicked"
+    "on_EndTurn_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -85,7 +87,7 @@ static const uint qt_meta_data_MatrixWindow[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      19,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -93,24 +95,25 @@ static const uint qt_meta_data_MatrixWindow[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x08 /* Private */,
-       3,    0,  105,    2, 0x08 /* Private */,
-       4,    1,  106,    2, 0x08 /* Private */,
-       7,    4,  109,    2, 0x08 /* Private */,
-      14,    4,  118,    2, 0x08 /* Private */,
-      15,    3,  127,    2, 0x08 /* Private */,
-      20,    0,  134,    2, 0x08 /* Private */,
-      21,    0,  135,    2, 0x08 /* Private */,
-      22,    0,  136,    2, 0x08 /* Private */,
-      23,    0,  137,    2, 0x08 /* Private */,
-      24,    0,  138,    2, 0x08 /* Private */,
-      25,    0,  139,    2, 0x08 /* Private */,
-      26,    0,  140,    2, 0x08 /* Private */,
-      27,    0,  141,    2, 0x08 /* Private */,
-      28,    0,  142,    2, 0x08 /* Private */,
-      29,    0,  143,    2, 0x08 /* Private */,
-      30,    0,  144,    2, 0x08 /* Private */,
-      31,    0,  145,    2, 0x08 /* Private */,
+       1,    0,  109,    2, 0x08 /* Private */,
+       3,    0,  110,    2, 0x08 /* Private */,
+       4,    1,  111,    2, 0x08 /* Private */,
+       7,    4,  114,    2, 0x08 /* Private */,
+      14,    4,  123,    2, 0x08 /* Private */,
+      15,    2,  132,    2, 0x08 /* Private */,
+      19,    1,  137,    2, 0x08 /* Private */,
+      21,    0,  140,    2, 0x08 /* Private */,
+      22,    0,  141,    2, 0x08 /* Private */,
+      23,    0,  142,    2, 0x08 /* Private */,
+      24,    0,  143,    2, 0x08 /* Private */,
+      25,    0,  144,    2, 0x08 /* Private */,
+      26,    0,  145,    2, 0x08 /* Private */,
+      27,    0,  146,    2, 0x08 /* Private */,
+      28,    0,  147,    2, 0x08 /* Private */,
+      29,    0,  148,    2, 0x08 /* Private */,
+      30,    0,  149,    2, 0x08 /* Private */,
+      31,    0,  150,    2, 0x08 /* Private */,
+      32,    0,  151,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -118,7 +121,8 @@ static const uint qt_meta_data_MatrixWindow[] = {
     QMetaType::Void, 0x80000000 | 5,    6,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, 0x80000000 | 10, 0x80000000 | 12,    8,    9,   11,   13,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, 0x80000000 | 10, 0x80000000 | 12,    8,    9,   11,   13,
-    0x80000000 | 10, 0x80000000 | 16, 0x80000000 | 10, 0x80000000 | 10,   17,   18,   19,
+    0x80000000 | 10, 0x80000000 | 16, 0x80000000 | 10,   17,   18,
+    0x80000000 | 10, 0x80000000 | 10,   20,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -141,24 +145,26 @@ void MatrixWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         auto *_t = static_cast<MatrixWindow *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_pushButton_2_clicked(); break;
         case 1: _t->on_Btn1_clicked(); break;
         case 2: _t->mousePressEvent((*reinterpret_cast< QMouseEvent*(*)>(_a[1]))); break;
         case 3: _t->validatespace((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< string(*)>(_a[3])),(*reinterpret_cast< QLabel(*)>(_a[4]))); break;
         case 4: _t->validatespaceAux((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< string(*)>(_a[3])),(*reinterpret_cast< QLabel(*)>(_a[4]))); break;
-        case 5: { string _r = _t->transformer((*reinterpret_cast< ListNode(*)>(_a[1])),(*reinterpret_cast< string(*)>(_a[2])),(*reinterpret_cast< string(*)>(_a[3])));
+        case 5: { string _r = _t->transformerWord((*reinterpret_cast< ListNode(*)>(_a[1])),(*reinterpret_cast< string(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
-        case 6: _t->update(); break;
-        case 7: _t->on_Btn2_clicked(); break;
-        case 8: _t->on_Btn3_clicked(); break;
-        case 9: _t->on_Btn4_clicked(); break;
-        case 10: _t->on_Btn5_clicked(); break;
-        case 11: _t->on_Btn6_clicked(); break;
-        case 12: _t->on_Btn7_clicked(); break;
-        case 13: _t->on_Btn8_clicked(); break;
-        case 14: _t->on_Btn9_clicked(); break;
-        case 15: _t->on_Btn10_clicked(); break;
-        case 17: _t->on_EndTurn_clicked(); break;
+        case 6: { string _r = _t->transformerLetters((*reinterpret_cast< string(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< string*>(_a[0]) = std::move(_r); }  break;
+        case 7: _t->update(); break;
+        case 8: _t->PlayerTurn(); break;
+        case 9: _t->on_Btn2_clicked(); break;
+        case 10: _t->on_Btn3_clicked(); break;
+        case 11: _t->on_Btn4_clicked(); break;
+        case 12: _t->on_Btn5_clicked(); break;
+        case 13: _t->on_Btn6_clicked(); break;
+        case 14: _t->on_Btn7_clicked(); break;
+        case 15: _t->on_Btn8_clicked(); break;
+        case 16: _t->on_Btn9_clicked(); break;
+        case 17: _t->on_Btn10_clicked(); break;
+        case 18: _t->on_EndTurn_clicked(); break;
         default: ;
         }
     }
@@ -193,13 +199,13 @@ int MatrixWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 19)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 19;
     }
     return _id;
 }

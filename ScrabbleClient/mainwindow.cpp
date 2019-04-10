@@ -48,11 +48,14 @@ void MainWindow::on_pushButton_3_clicked()
     d.Accept(writer);
     client = new Client(true,0);
     client->connection(54000);
-    client->comunication(buffer.GetString());
     client->turn = true;
+    client->comunication(buffer.GetString());
     this->hide();
+    cout << "hujiko" << endl;
     MatrixWindow matrixWindow;
-    this->client = matrixWindow.client;
+    matrixWindow.client = this->client;
+    matrixWindow.id = name;
+    matrixWindow.score = 0;
     matrixWindow.setModal(true);
     matrixWindow.exec();
     this->close();
@@ -83,7 +86,6 @@ void MainWindow::on_pushButton_4_clicked()
     if(d["access"].GetString() != "no"){
         this->hide();
         MatrixWindow matrixWindow;
-        this->client = matrixWindow.client;
         matrixWindow.setModal(true);
         matrixWindow.exec();
         this->close();

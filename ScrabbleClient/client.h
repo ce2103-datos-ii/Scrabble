@@ -21,7 +21,7 @@ class Client
 {
 public:
     bool in;
-    bool turn;
+    bool turn = true;
     int flag;
     int sock;
     int port;

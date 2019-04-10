@@ -17,7 +17,7 @@ CXX           = g++
 DEFINES       = -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I../ScrabbleClient -I. -I../../../rapidjson-master/include/rapidjson -I../../5.12.2/gcc_64/include -I../../5.12.2/gcc_64/include/QtWidgets -I../../5.12.2/gcc_64/include/QtGui -I../../5.12.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../5.12.2/gcc_64/mkspecs/linux-g++
+INCPATH       = -I../ScrabbleClient -I. -I../../../rapidjson-master/include -I../../5.12.2/gcc_64/include -I../../5.12.2/gcc_64/include/QtWidgets -I../../5.12.2/gcc_64/include/QtGui -I../../5.12.2/gcc_64/include/QtCore -I. -isystem /usr/include/libdrm -I. -I../../5.12.2/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -844,13 +844,33 @@ moc_mainwindow.cpp: ../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../ScrabbleClient/client.h \
-		../ScrabbleClient/connection.h \
-		../ScrabbleClient/mainwindow.h \
-		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
-		../../5.12.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/mainwindow.h -o moc_mainwindow.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/mainwindow.h -o moc_mainwindow.cpp
 
 moc_matrixwindow.cpp: ../ScrabbleClient/matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
@@ -962,16 +982,39 @@ moc_matrixwindow.cpp: ../ScrabbleClient/matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qframe.h \
 		../ScrabbleClient/listnode.h \
 		../ScrabbleClient/nodelist.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QMainWindow \
 		../../5.12.2/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../ScrabbleClient/client.h \
-		../ScrabbleClient/connection.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/matrixwindow.h -o moc_matrixwindow.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/matrixwindow.h -o moc_matrixwindow.cpp
 
 moc_instructions.cpp: ../ScrabbleClient/instructions.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
@@ -1078,9 +1121,33 @@ moc_instructions.cpp: ../ScrabbleClient/instructions.h \
 		../../5.12.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../5.12.2/gcc_64/include/QtGui/qvector2d.h \
 		../../5.12.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		moc_predefs.h \
 		../../5.12.2/gcc_64/bin/moc
-	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/instructions.h -o moc_instructions.cpp
+	/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/bin/moc $(DEFINES) --include /home/joseagus00/Escritorio/Qt/Scrabble/build-ScrabbleClient-Desktop_Qt_5_12_2_GCC_64bit-Debug/moc_predefs.h -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/mkspecs/linux-g++ -I/home/joseagus00/Escritorio/Qt/Scrabble/ScrabbleClient -I/home/joseagus00/Escritorio/rapidjson-master/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtWidgets -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtGui -I/home/joseagus00/Escritorio/Qt/5.12.2/gcc_64/include/QtCore -I. -I/usr/include/c++/7 -I/usr/include/x86_64-linux-gnu/c++/7 -I/usr/include/c++/7/backward -I/usr/lib/gcc/x86_64-linux-gnu/7/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../ScrabbleClient/instructions.h -o moc_instructions.cpp
 
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
@@ -1223,9 +1290,30 @@ main.o: ../ScrabbleClient/main.cpp ../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../ScrabbleClient/client.h \
-		../ScrabbleClient/connection.h \
-		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
-		../../5.12.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QApplication \
 		../../5.12.2/gcc_64/include/QtWidgets/qapplication.h \
 		../../5.12.2/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1343,9 +1431,30 @@ mainwindow.o: ../ScrabbleClient/mainwindow.cpp ../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../ScrabbleClient/client.h \
-		../ScrabbleClient/connection.h \
-		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
-		../../5.12.2/gcc_64/include/QtWidgets/qdialog.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		ui_mainwindow.h \
 		../../5.12.2/gcc_64/include/QtCore/QVariant \
 		../../5.12.2/gcc_64/include/QtWidgets/QApplication \
@@ -1377,10 +1486,12 @@ mainwindow.o: ../ScrabbleClient/mainwindow.cpp ../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QToolBar \
 		../../5.12.2/gcc_64/include/QtWidgets/qtoolbar.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QWidget \
+		../ScrabbleClient/instructions.h \
+		../../5.12.2/gcc_64/include/QtWidgets/QDialog \
+		../../5.12.2/gcc_64/include/QtWidgets/qdialog.h \
 		../ScrabbleClient/matrixwindow.h \
 		../ScrabbleClient/listnode.h \
-		../ScrabbleClient/nodelist.h \
-		../ScrabbleClient/instructions.h
+		../ScrabbleClient/nodelist.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../ScrabbleClient/mainwindow.cpp
 
 matrixwindow.o: ../ScrabbleClient/matrixwindow.cpp ../ScrabbleClient/matrixwindow.h \
@@ -1493,13 +1604,36 @@ matrixwindow.o: ../ScrabbleClient/matrixwindow.cpp ../ScrabbleClient/matrixwindo
 		../../5.12.2/gcc_64/include/QtWidgets/qframe.h \
 		../ScrabbleClient/listnode.h \
 		../ScrabbleClient/nodelist.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		../ScrabbleClient/mainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/QMainWindow \
 		../../5.12.2/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../5.12.2/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../5.12.2/gcc_64/include/QtGui/qicon.h \
 		../ScrabbleClient/client.h \
-		../ScrabbleClient/connection.h \
 		ui_matrixwindow.h \
 		../../5.12.2/gcc_64/include/QtCore/QVariant \
 		../../5.12.2/gcc_64/include/QtWidgets/QApplication \
@@ -1621,6 +1755,30 @@ instructions.o: ../ScrabbleClient/instructions.cpp ../ScrabbleClient/instruction
 		../../5.12.2/gcc_64/include/QtCore/qfiledevice.h \
 		../../5.12.2/gcc_64/include/QtGui/qvector2d.h \
 		../../5.12.2/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		ui_instructions.h \
 		../../5.12.2/gcc_64/include/QtCore/QVariant \
 		../../5.12.2/gcc_64/include/QtWidgets/QApplication \
@@ -1640,18 +1798,114 @@ instructions.o: ../ScrabbleClient/instructions.cpp ../ScrabbleClient/instruction
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o instructions.o ../ScrabbleClient/instructions.cpp
 
 List.o: ../ScrabbleClient/List.cpp ../ScrabbleClient/List.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h \
 		../ScrabbleClient/Node.h \
 		../ScrabbleClient/Node.cpp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o List.o ../ScrabbleClient/List.cpp
 
-nodelist.o: ../ScrabbleClient/nodelist.cpp ../ScrabbleClient/nodelist.h
+nodelist.o: ../ScrabbleClient/nodelist.cpp ../ScrabbleClient/nodelist.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o nodelist.o ../ScrabbleClient/nodelist.cpp
 
 listnode.o: ../ScrabbleClient/listnode.cpp ../ScrabbleClient/listnode.h \
-		../ScrabbleClient/nodelist.h
+		../ScrabbleClient/nodelist.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o listnode.o ../ScrabbleClient/listnode.cpp
 
-client.o: ../ScrabbleClient/client.cpp ../ScrabbleClient/client.h
+client.o: ../ScrabbleClient/client.cpp ../ScrabbleClient/client.h \
+		../../../rapidjson-master/include/rapidjson/rapidjson.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/stdint.h \
+		../../../rapidjson-master/include/rapidjson/msinttypes/inttypes.h \
+		../../../rapidjson-master/include/rapidjson/document.h \
+		../../../rapidjson-master/include/rapidjson/reader.h \
+		../../../rapidjson-master/include/rapidjson/allocators.h \
+		../../../rapidjson-master/include/rapidjson/stream.h \
+		../../../rapidjson-master/include/rapidjson/encodings.h \
+		../../../rapidjson-master/include/rapidjson/encodedstream.h \
+		../../../rapidjson-master/include/rapidjson/memorystream.h \
+		../../../rapidjson-master/include/rapidjson/internal/meta.h \
+		../../../rapidjson-master/include/rapidjson/internal/stack.h \
+		../../../rapidjson-master/include/rapidjson/internal/swap.h \
+		../../../rapidjson-master/include/rapidjson/internal/strtod.h \
+		../../../rapidjson-master/include/rapidjson/internal/ieee754.h \
+		../../../rapidjson-master/include/rapidjson/internal/biginteger.h \
+		../../../rapidjson-master/include/rapidjson/internal/diyfp.h \
+		../../../rapidjson-master/include/rapidjson/internal/pow10.h \
+		../../../rapidjson-master/include/rapidjson/error/error.h \
+		../../../rapidjson-master/include/rapidjson/internal/strfunc.h \
+		../../../rapidjson-master/include/rapidjson/stringbuffer.h \
+		../../../rapidjson-master/include/rapidjson/writer.h \
+		../../../rapidjson-master/include/rapidjson/internal/dtoa.h \
+		../../../rapidjson-master/include/rapidjson/internal/itoa.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o client.o ../ScrabbleClient/client.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

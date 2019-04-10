@@ -36,6 +36,7 @@ void Client::comunication(const char* word){
         sizeOfWord++;
     }
     char buf[4096];
+    memset(buf, 0, 4096);
     Document d;
     if(in == true){
         if(flag == 0){
@@ -48,13 +49,18 @@ void Client::comunication(const char* word){
             cout << dataServ << endl;
             port = d["port"].GetInt();
             this->connection(port);
+            cout << "pre recv" <<endl;
             recv(sock,buf,4096,0);
+            cout << "pos recv" <<endl;
             flag = 1;
         }else{
             if(turn){
-                int sendRes = send(sock, word, sizeof(word) + 1, 0);
+                cout << "9" << endl;
+                int sendRes = send(sock, word, sizeOfWord, 0);
+                cout << sendRes <<endl;
                 //memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
+                cout << bytesReceived << "10" << endl;
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
                 this->dataServ = (newWord).c_str();
                 d.Parse(dataServ);
