@@ -57,8 +57,6 @@ private slots:
 
     void on_Btn10_clicked();
 
-    void on_pushButton_clicked();
-
     void on_EndTurn_clicked();
 
 private:
