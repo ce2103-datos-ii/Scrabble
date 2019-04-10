@@ -51,7 +51,8 @@ FORMS += \
     instructions.ui \
     connection.ui
 
-INCLUDEPATH += "/home/joseagus00/Escritorio/rapidjson-master/include/rapidjson"
+INCLUDEPATH += "/home/jesquivel/Downloads/rapidjson-master/include"
+DEPENDPATH += "/home/jesquivel/Downloads/rapidjson-master/include"
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

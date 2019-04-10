@@ -21,15 +21,12 @@ static int currentRow = NULL;
 static int currentColumn = NULL;
 
 QString qs;
-MainWindow* M;
 
 MatrixWindow::MatrixWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MatrixWindow)
 {
-    M = new MainWindow();
     ui->setupUi(this);
-    QPixmap pix("/home/jesquivel/Downloads/MatrixImg.png");
     ui->Btn1->setStyleSheet("background-color:gray");
     ui->Btn2->setStyleSheet("background-color:gray");
     ui->Btn3->setStyleSheet("background-color:gray");
@@ -53,6 +50,15 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
     qs = ui->Lbl1->text();
+    PlayerTurn();
+}
+
+void MatrixWindow::PlayerTurn(){
+    if(MatrixWindow::client->turn){
+    }else{
+        update();
+        PlayerTurn();
+    }
 }
 
 MatrixWindow::~MatrixWindow(){
@@ -60,9 +66,6 @@ MatrixWindow::~MatrixWindow(){
 }
 
 void MatrixWindow::mousePressEvent(QMouseEvent *event){
-    if(!M->client->turn){
-        update();
-    }
     this->posX = event->x();
     this->posY = event->y();
     if (posX>37&&posX<75&&posY>37&&posY<75){
@@ -822,13 +825,14 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
 }
 
 void MatrixWindow::update(){
-    string Matrix[15][15];
-    Document d;
-    d.Parse(M->client->dataServ);
-    string MatrixString = d["matrix"].GetString();
     bool letter = false;
     int i = 0;
     int n = 0;
+    string Matrix[15][15];
+    MatrixWindow::client->comunication("");
+    Document d;
+    d.Parse(MatrixWindow::client->dataServ);
+    string MatrixString = d["matrix"].GetString();
     while (i < 15){
         while (n < 15){
             for (char &c: (MatrixString)) {
@@ -1100,10 +1104,6 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
     }
 }
 
-void MatrixWindow::on_pushButton_2_clicked(){
-}
-
-
 string MatrixWindow::transformer(ListNode list, string word, string letters){
     NodeList *temp = listscore->m_head;
     while(list.m_head != NULL){
@@ -1122,8 +1122,6 @@ void MatrixWindow::on_EndTurn_clicked(){
     string word;
     string letters;
     transformer(*listh, word, letters);
-    const char* wordC = word.c_str();
-    const char* lettersC = letters.c_str();
     NodeList *tempNode = listh->m_head;
     while(tempNode != NULL){
         g[tempNode->row][tempNode->column] = tempNode->element;
@@ -1141,19 +1139,24 @@ void MatrixWindow::on_EndTurn_clicked(){
             gAux += "}]";
     }
     const char* jsonClient = "{\n"
-                             "    \"word\": 3\n"
-                             "    \"letters\": null\n"
-                             "    \"matrix\": []\n"
-                             "}";
-    const char* gAuxC = gAux.c_str();
+                                 "    \"word\": 0,\n"
+                                 "    \"letters\": null,\n"
+                                 "    \"matrix\": 0\n"
+                                 "}";
     Document d;
     d.Parse(jsonClient);
-    d["word"].SetString(StringRef(wordC));
-    d["letters"].SetString(StringRef(lettersC));
-    d["matrix"].SetString(StringRef(gAuxC));
-    M->client->comunication(jsonClient);
+    d["word"].SetString(StringRef(word.c_str()));
+    d["letters"].SetString(StringRef(letters.c_str()));
+    d["matrix"].SetString(StringRef(gAux.c_str()));
+    StringBuffer buffer;
+    buffer.Clear();
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    MatrixWindow::client->comunication(buffer.GetString());
     listh->del_all();
     listscore->del_all();
+    PlayerTurn();
+
 }
 
 

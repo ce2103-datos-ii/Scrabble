@@ -5,6 +5,10 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include "rapidjson/rapidjson.h"
+#include "rapidjson/document.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/writer.h"
 
 #include "Node.h"
 #include "Node.cpp"

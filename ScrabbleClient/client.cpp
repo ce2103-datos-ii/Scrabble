@@ -2,10 +2,9 @@
 
 int sock;
 
-Client::Client(bool in, int flag, bool turn){
+Client::Client(bool in, int flag){
     this->in = in;
     this->flag = flag;
-    this->turn = turn;
 }
 
 int Client::connection(int port){
@@ -13,91 +12,100 @@ int Client::connection(int port){
     if (sock == -1){
         return 1;
     }
-    string ipAddress = "192.168.0.29";
+    string ipAddress = "192.168.0.30";
 
     sockaddr_in hint;
     hint.sin_family = AF_INET;
     hint.sin_port = htons(port);
     inet_pton(AF_INET, ipAddress.c_str(), &hint.sin_addr);
 
+    cout << "llegó" << endl;
+
     int connectRes = connect(sock, (sockaddr*)&hint, sizeof(hint));
     if (connectRes == -1){
         return 1;
     }
-    if(port != 54000){
-        return 0;
-    }else{
-        char* buf;
-        recv(sock,buf, 4096,0);
-        close(sock);
-        Document d;
-        d.Parse(buf);
-        port = d["port"].GetInt();
-        this->connection(port);
-    }
+    cout << "pasó" << endl;
+    return 0;
 }
 
 void Client::comunication(const char* word){
+    newWord = "";
+    sizeOfWord = 0;
+    for(char &c: string(word)){
+        sizeOfWord++;
+    }
     char buf[4096];
     Document d;
     if(in == true){
         if(flag == 0){
-            int sendRes = send(sock, word, sizeof(word) + 1, 0);
+            int sendRes = send(sock, word, sizeOfWord , 0);
             int bytesReceived = recv(sock, buf, 4096, 0);
-            flag=1;
-            this->dataServ = (string(buf)).c_str();
+            newWord = bytesTransformer(bytesReceived,buf,newWord);
+            this->dataServ = (newWord).c_str();
+            close(sock);
+            d.Parse(dataServ);
+            cout << dataServ << endl;
+            port = d["port"].GetInt();
+            this->connection(port);
+            recv(sock,buf,4096,0);
             turn = d["turn"].GetBool();
+            flag = 1;
         }else{
             if(turn){
                 int sendRes = send(sock, word, sizeof(word) + 1, 0);
-                if (sendRes == -1){
-                    cout << "Could not send to server! \r\n";
-                }
-                memset(buf, 0, 4096);
+                //memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
-                if (bytesReceived == -1){
-                    cout << "There was an error getting response from server\r\n";
-                }
-                this->dataServ = (string(buf)).c_str();
+                newWord = bytesTransformer(bytesReceived,buf,newWord);
+                this->dataServ = (newWord).c_str();
+                d.Parse(dataServ);
                 turn = d["turn"].GetBool();
             }else{
-                memset(buf, 0, 4096);
+                //memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
-                if (bytesReceived == -1){
-                    cout << "There was an error getting response from server\r\n";
-                }
-                this->dataServ = (string(buf)).c_str();
+                newWord = bytesTransformer(bytesReceived,buf,newWord);
+                this->dataServ = (newWord).c_str();
+                d.Parse(dataServ);
                 turn = d["turn"].GetBool();
             }
         }
     }else{
         if(flag == 0){
-            int sendRes = send(sock, word, sizeof(word) + 1, 0);
+            int sendRes = send(sock, word, sizeOfWord , 0);
             int bytesReceived = recv(sock, buf, 4096, 0);
-            flag=1;
-            this->dataServ = (string(buf)).c_str();
+            newWord = bytesTransformer(bytesReceived,buf,newWord);
+            this->dataServ = (newWord).c_str();
+            close(sock);
+            d.Parse(dataServ);
+            port = d["port"].GetInt();
+            this->connection(port);
+            recv(sock,buf,4096,0);
             turn = d["turn"].GetBool();
+            flag=1;
         }else{
             if(turn){
                 int sendRes = send(sock, word, sizeof(word) + 1, 0);
-                if (sendRes == -1){
-                    cout << "Could not send to server! \r\n";
-                }
-                memset(buf, 0, 4096);
+                //memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
-                if (bytesReceived == -1){
-                    cout << "There was an error getting response from server\r\n";
-                }
-                this->dataServ = (string(buf)).c_str();
+                newWord = bytesTransformer(bytesReceived,buf,newWord);
+                this->dataServ = (newWord).c_str();
+                d.Parse(dataServ);
                 turn = d["turn"].GetBool();
             }else{
                 memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
-                if (bytesReceived == -1){
-                    cout << "There was an error getting response from server\r\n";
-                }
+                newWord = bytesTransformer(bytesReceived,buf,newWord);
+                this->dataServ = (newWord).c_str();
+                d.Parse(dataServ);
                 turn = d["turn"].GetBool();
             }
         }
     }
+}
+
+string Client::bytesTransformer(int bytesReceived, char  buf[4096], string newWord){
+    for(int i = 0; i!=bytesReceived;i++){
+        newWord += buf[i];
+    }
+    return newWord;
 }

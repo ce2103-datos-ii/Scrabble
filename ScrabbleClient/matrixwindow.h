@@ -6,6 +6,11 @@
 #include <QLabel>
 #include "listnode.h"
 #include "mainwindow.h"
+#include "rapidjson/rapidjson.h"
+#include "rapidjson/document.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/writer.h"
+
 using namespace std;
 
 namespace Ui {
@@ -22,6 +27,7 @@ public:
     int posY;
     explicit MatrixWindow(QWidget *parent = nullptr);
     ~MatrixWindow();
+    Client *client;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -31,6 +37,7 @@ private slots:
     void validatespaceAux(int column, int row, string element, QLabel &label);
     string transformer(ListNode list, string word, string letters);
     void update();
+    void PlayerTurn();
 
     void on_Btn2_clicked();
 

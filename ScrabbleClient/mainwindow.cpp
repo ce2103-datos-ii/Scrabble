@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "matrixwindow.h"
 #include "instructions.h"
+#include "matrixwindow.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -25,26 +25,33 @@ void MainWindow::on_pushButton_2_clicked()
     this->show();
 }
 
+
 void MainWindow::on_pushButton_3_clicked()
 {
-    const char* name = ui->lineEdit->text().toUtf8().constData(); // nombre
-    const char* numPlayers = ui->lineEdit_2->text().toUtf8().constData(); // numero de jugadores
-    const char* code = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
+    string name = ui->lineEdit->text().toUtf8().constData(); // nombre
+    string playerCount = ui->lineEdit_2->text().toUtf8().constData(); // numero de jugadores
+    string code = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
     const char* jsonPlayerHost = "{\n"
-                                 "    \"id\": 3\n"
-                                 "    \"numPlayers\": 0\n"
-                                 "    \"code\": null\n"
+                                 "    \"playerCount\": 0,\n"
+                                 "    \"code\": null,\n"
+                                 "    \"id\": 3,\n"
+                                 "    \"port\": 0\n"
                                  "}";
-    Document d;
+    rapidjson::Document d;
     d.Parse(jsonPlayerHost);
-    d["id"].SetString(StringRef(name));
-    d["numPlayer"].SetString(StringRef(numPlayers));
-    d["code"].SetString(StringRef(code));
-    client = new Client(true,0,true);
+    d["id"].SetString(name.data(), name.size(), d.GetAllocator());
+    d["playerCount"].SetInt(atoi(playerCount.c_str()));
+    d["code"].SetInt(atoi(code.c_str()));
+    StringBuffer buffer;
+    buffer.Clear();
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    client = new Client(true,0);
     client->connection(54000);
-    client->comunication(jsonPlayerHost);
+    client->comunication(buffer.GetString());
     this->hide();
     MatrixWindow matrixWindow;
+    this->client = matrixWindow.client;
     matrixWindow.setModal(true);
     matrixWindow.exec();
     this->close();
@@ -53,22 +60,28 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
-    const char* name = ui->lineEdit->text().toUtf8().constData(); // nombre
-    const char* code = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
-    client = new Client(true,0,true);
+    string name = ui->lineEdit->text().toUtf8().constData(); // nombre
+    string code = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
     const char* jsonPlayerClient = "{\n"
-                                   "    \"id\": 3\n"
-                                   "    \"code\": null\n"
-                                   "}";
-    Document d;
+                                 "    \"playerCount\": 0,\n"
+                                 "    \"code\": null,\n"
+                                 "    \"port\": 0\n"
+                                 "}";
+    rapidjson::Document d;
     d.Parse(jsonPlayerClient);
-    d["id"].SetString(StringRef(name));
-    d["code"].SetString(StringRef(code));
+    d["id"].SetString(name.data(), name.size(), d.GetAllocator());
+    d["code"].SetInt(atoi(code.c_str()));
+    StringBuffer buffer;
+    buffer.Clear();
+    Writer<StringBuffer> writer(buffer);
+    d.Accept(writer);
+    client = new Client(false, 0);
     client->connection(54000);
-    client->comunication(jsonPlayerClient);
+    client->comunication(buffer.GetString());
     if(d["access"].GetString() != "no"){
         this->hide();
         MatrixWindow matrixWindow;
+        this->client = matrixWindow.client;
         matrixWindow.setModal(true);
         matrixWindow.exec();
         this->close();

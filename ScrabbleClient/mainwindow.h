@@ -5,11 +5,16 @@
 #include <thread>
 #include "client.h"
 #include <iostream>
-#include "connection.h"
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "rapidjson/rapidjson.h"
+#include "rapidjson/document.h"
+#include "rapidjson/stringbuffer.h"
+#include "rapidjson/writer.h"
+#include <string>
 
+using namespace rapidjson;
 using namespace std;
 
 namespace Ui {
