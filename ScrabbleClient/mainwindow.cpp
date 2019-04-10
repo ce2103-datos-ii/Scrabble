@@ -49,11 +49,14 @@ void MainWindow::on_pushButton_3_clicked()
     client = new Client(true,0);
     client->connection(54000);
     client->comunication(buffer.GetString());
-    client->turn = true;
+    cout << "bghnj" <<endl;
     this->hide();
+    cout << "bghnj" <<endl;
     MatrixWindow matrixWindow;
     this->client = matrixWindow.client;
+        cout << "bghnj" <<endl;
     matrixWindow.setModal(true);
+        cout << "bghnj" <<endl;
     matrixWindow.exec();
     this->close();
 
@@ -76,16 +79,18 @@ void MainWindow::on_pushButton_4_clicked()
     buffer.Clear();
     Writer<StringBuffer> writer(buffer);
     d.Accept(writer);
+    cout << buffer.GetString() << endl;
     client = new Client(false, 0);
-    client->connection(54000);
+    client->connection(53000);
     client->comunication(buffer.GetString());
-    client->turn = false;
-    if(d["access"].GetString() != "no"){
-        this->hide();
-        MatrixWindow matrixWindow;
-        this->client = matrixWindow.client;
-        matrixWindow.setModal(true);
-        matrixWindow.exec();
-        this->close();
-    }
+    this->hide();
+    cout << "bghnj" <<endl;
+    MatrixWindow matrixWindow;
+            cout << "bghnj" <<endl;
+    this->client = matrixWindow.client;
+    matrixWindow.setModal(true);
+            cout << "bghnj" <<endl;
+    matrixWindow.exec();
+    this->close();
+
 }

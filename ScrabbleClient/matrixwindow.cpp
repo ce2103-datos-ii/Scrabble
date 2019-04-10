@@ -50,7 +50,6 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
     ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
     qs = ui->Lbl1->text();
-    PlayerTurn();
 }
 
 void MatrixWindow::PlayerTurn(){

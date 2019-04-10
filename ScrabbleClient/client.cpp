@@ -48,7 +48,6 @@ void Client::comunication(const char* word){
             cout << dataServ << endl;
             port = d["port"].GetInt();
             this->connection(port);
-            recv(sock,buf,4096,0);
             flag = 1;
         }else{
             if(turn){
@@ -72,13 +71,17 @@ void Client::comunication(const char* word){
         if(flag == 0){
             int sendRes = send(sock, word, sizeOfWord , 0);
             int bytesReceived = recv(sock, buf, 4096, 0);
+            cout << bytesReceived << endl;
             newWord = bytesTransformer(bytesReceived,buf,newWord);
             this->dataServ = (newWord).c_str();
             close(sock);
             d.Parse(dataServ);
+            cout << dataServ << endl;
             port = d["port"].GetInt();
             this->connection(port);
+            cout << "hojk" << endl;
             recv(sock,buf,4096,0);
+            cout << "hojk" << endl;
             flag=1;
         }else{
             if(turn){
