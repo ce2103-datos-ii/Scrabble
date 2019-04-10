@@ -53,7 +53,7 @@ void MainWindow::on_pushButton_3_clicked()
     this->hide();
     cout << "bghnj" <<endl;
     MatrixWindow matrixWindow;
-    this->client = matrixWindow.client;
+    matrixWindow.client = this->client;
         cout << "bghnj" <<endl;
     matrixWindow.setModal(true);
         cout << "bghnj" <<endl;

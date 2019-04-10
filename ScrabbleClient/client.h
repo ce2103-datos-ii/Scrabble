@@ -21,7 +21,7 @@ class Client
 {
 public:
     bool in;
-    bool turn;
+    bool turn = false;
     int flag;
     int sock;
     int port;
@@ -34,6 +34,7 @@ public:
 private:
     void setData(char* data);
     string bytesTransformer(int bytesReceived, char buf[4096], string newWord);
+    void deleteArray(char arr[], int bytes);
 };
 
 #endif // CLIENTSOCKET_H

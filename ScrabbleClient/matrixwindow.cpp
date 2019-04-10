@@ -37,18 +37,18 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setStyleSheet("background-color:gray");
     ui->Btn9->setStyleSheet("background-color:gray");
     ui->Btn10->setStyleSheet("background-color:gray");
-    string hum[26] {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    string hum[26] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     srand(time(NULL));
-    ui->Btn1->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn2->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn3->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn4->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn5->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn6->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn7->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn8->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn9->setText(QString::fromStdString(hum[rand()%27]));
-    ui->Btn10->setText(QString::fromStdString(hum[rand()%27]));
+    ui->Btn1->setText(QString::fromStdString(hum[16]));
+    ui->Btn2->setText(QString::fromStdString(hum[0]));
+    ui->Btn3->setText(QString::fromStdString(hum[21]));
+    ui->Btn4->setText(QString::fromStdString(hum[10]));
+    ui->Btn5->setText(QString::fromStdString(hum[13]));
+    ui->Btn6->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn7->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn8->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn9->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn10->setText(QString::fromStdString(hum[rand()%26]));
     qs = ui->Lbl1->text();
 }
 
@@ -65,6 +65,7 @@ MatrixWindow::~MatrixWindow(){
 }
 
 void MatrixWindow::mousePressEvent(QMouseEvent *event){
+    PlayerTurn();
     this->posX = event->x();
     this->posY = event->y();
     if (posX>37&&posX<75&&posY>37&&posY<75){
@@ -854,9 +855,10 @@ void MatrixWindow::update(){
     }
     for(i = 0; i<15;i++){
         for(n = 0; n<15; n++){
-             g[i][n] = Matrix[i][n];
+            g[i][n] = Matrix[i][n];
         }
     }
+
     ui->Lbl1->setText(QString::fromStdString(Matrix[0][0]));
     ui->Lbl2->setText(QString::fromStdString(Matrix[0][1]));
     ui->Lbl3->setText(QString::fromStdString(Matrix[0][2]));
@@ -1129,24 +1131,25 @@ void MatrixWindow::on_EndTurn_clicked(){
         g[tempNode->row][tempNode->column] = tempNode->element;
         tempNode = tempNode->next;
     }
-    for (int i = 0; i == 15; i++){
-        for (int n = 0; n == 15; n++){
+    for (int i = 0; i != 14; i++){
+        for (int n = 0; n != 14; n++){
             gAux += g[i][n];
-            if (n == 14)
+            if (n == 13)
                 gAux += "}, {";
             else
                 gAux += ",";
         }
-        if (i == 14)
+        if (i == 13)
             gAux += "}]";
     }
     const char* jsonClient = "{\n"
-                                 "    \"id\": 0,\n"
-                                 "    \"score\": 0,\n"
-                                 "    \"word\": 0,\n"
-                                 "    \"letters\": null,\n"
-                                 "    \"matrix\": 0\n"
-                                 "}";
+                             "    \"id\": 0,\n"
+                             "    \"score\": 0,\n"
+                             "    \"word\": 0,\n"
+                             "    \"letters\": null,\n"
+                             "    \"turn\": true,\n"
+                             "    \"matrix\": 0\n"
+                             "}";
     Document d;
     d.Parse(jsonClient);
     assert(d.IsObject());
@@ -1160,10 +1163,12 @@ void MatrixWindow::on_EndTurn_clicked(){
     Writer<StringBuffer> writer(buffer);
     d.Accept(writer);
     MatrixWindow::client->comunication(buffer.GetString());
+    Document w;
+    w.Parse(MatrixWindow::client->dataServ);
+    ui->label->setText(QString::fromStdString(to_string(w["score"].GetInt())));
     listh->del_all();
     listscore->del_all();
     PlayerTurn();
-
 }
 
 
