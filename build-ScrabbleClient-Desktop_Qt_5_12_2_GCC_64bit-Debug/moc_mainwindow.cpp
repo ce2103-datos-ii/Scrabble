@@ -33,12 +33,11 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
     {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 23), // "on_pushButton_2_clicked"
-QT_MOC_LITERAL(2, 35, 0), // ""
 QT_MOC_LITERAL(3, 36, 23), // "on_pushButton_3_clicked"
 QT_MOC_LITERAL(4, 60, 23) // "on_pushButton_4_clicked"
 
     },
-    "MainWindow\0on_pushButton_2_clicked\0\0"
+    "MainWindow\0on_pushButton_2_clicked\0"
     "on_pushButton_3_clicked\0on_pushButton_4_clicked"
 };
 #undef QT_MOC_LITERAL

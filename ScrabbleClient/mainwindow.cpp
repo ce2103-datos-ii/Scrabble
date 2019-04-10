@@ -64,10 +64,10 @@ void MainWindow::on_pushButton_4_clicked()
     string name = ui->lineEdit->text().toUtf8().constData(); // nombre
     string code = ui->lineEdit_3->text().toUtf8().constData(); //código del jugador
     const char* jsonPlayerClient = "{\n"
-                                 "    \"playerCount\": 0,\n"
-                                 "    \"code\": null,\n"
-                                 "    \"port\": 0\n"
-                                 "}";
+                                   "    \"code\": null,\n"
+                                   "    \"id\": 3,\n"
+                                   "    \"port\": 0\n"
+                                   "}";
     rapidjson::Document d;
     d.Parse(jsonPlayerClient);
     d["id"].SetString(name.data(), name.size(), d.GetAllocator());

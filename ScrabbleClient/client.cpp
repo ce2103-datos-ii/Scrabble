@@ -49,7 +49,6 @@ void Client::comunication(const char* word){
             port = d["port"].GetInt();
             this->connection(port);
             recv(sock,buf,4096,0);
-            turn = d["turn"].GetBool();
             flag = 1;
         }else{
             if(turn){
@@ -80,7 +79,6 @@ void Client::comunication(const char* word){
             port = d["port"].GetInt();
             this->connection(port);
             recv(sock,buf,4096,0);
-            turn = d["turn"].GetBool();
             flag=1;
         }else{
             if(turn){
