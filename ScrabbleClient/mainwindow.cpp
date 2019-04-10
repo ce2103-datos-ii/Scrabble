@@ -49,6 +49,7 @@ void MainWindow::on_pushButton_3_clicked()
     client = new Client(true,0);
     client->connection(54000);
     client->comunication(buffer.GetString());
+    client->turn = true;
     this->hide();
     MatrixWindow matrixWindow;
     this->client = matrixWindow.client;
@@ -78,6 +79,7 @@ void MainWindow::on_pushButton_4_clicked()
     client = new Client(false, 0);
     client->connection(54000);
     client->comunication(buffer.GetString());
+    client->turn = false;
     if(d["access"].GetString() != "no"){
         this->hide();
         MatrixWindow matrixWindow;
