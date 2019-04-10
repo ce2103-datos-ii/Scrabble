@@ -71,15 +71,17 @@ void HashMap::createLetterList() {
         } else {
             i--;
         }
-    }
+    } cout << *lettersList << endl;
 }
 
 
 
 int HashMap::checkWordScore(string str) {
     int score = 0;
+    createScoreMap();
     for (char &c: str) {
-        string s(1, c);
+        string s;
+        s += c;
         score += wordsMap.at(s);
     }
     return score;

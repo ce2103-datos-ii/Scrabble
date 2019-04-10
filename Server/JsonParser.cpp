@@ -28,17 +28,36 @@ void JsonParser::jsonReceive() {
     memset(buf,0,4096);
 //    cout << Players::shared_instance().checkTurn()->getPort() << endl;
 //    cout << Players::shared_instance().player1->getPort() << endl;
+    cout << "btr" << endl;
+    try {
+        int bytesRecived = recv(Players::shared_instance().player1->getPlayerSocket(), buf, 4096, 0);
+
+    } catch (exception exception1){
+//        cout << exception1 << endl;
+        cout << "no corre" << endl;
+    }
+
     int bytesRecived = recv(Players::shared_instance().player1->getPlayerSocket(), buf, 4096, 0);
-    cout << bytesRecived << endl;
+    cout << "checkTurn: ";
+    cout << Players::shared_instance().checkTurn()->getId() << endl;
     d.Parse(buf);
-    cout << "bytesReceived" << endl;
-    const char* json = "";
+    cout << "buf:";
+    cout << buf << endl;
+    cout << "bytesReceived: ";
+    cout << bytesRecived << endl;
     assert(d.IsObject());
+    Players::shared_instance().setMatrix(d["matrix"].GetString());
     if (d.HasMember("word")){
         cout << d["word"].GetString() << endl;
-        if (fileReader.searchWord(string(json))) {
+        if (fileReader.searchWord(string(d["word"].GetString()))) {
             d["score"].SetInt(d["score"].GetInt() + hashMap.checkWordScore(d["letters"].GetString()));
             cout << d["score"].GetInt() << endl;
+            cout << "id: ";
+            cout << d["id"].GetString() << endl;
+            cout << "player id: ";
+            cout << Players::shared_instance().player1->getId() << endl;
+            HashMap hashMap;
+            Players::shared_instance().setLetters(hashMap.lettersToSend(d["letters"].GetString()));
             if (Players::shared_instance().player1->getId() == d["id"].GetString()) {
                 Players::shared_instance().player1->setScore(d["score"].GetInt());
                 StringBuffer buffer;
@@ -47,7 +66,8 @@ void JsonParser::jsonReceive() {
                 d.Accept(writer);
                 string buffString = buffer.GetString();
                 cout << buffer.GetString() << endl;
-                send(Players::shared_instance().player1->getPlayerSocket(), buffer.GetString(), checkJsonSize(buffString), 0);
+                Players::shared_instance().manageTurns(buffer.GetString());
+//                send(Players::shared_instance().player1->getPlayerSocket(), buffer.GetString(), checkJsonSize(buffString), 0);
             }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString())
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
@@ -55,8 +75,6 @@ void JsonParser::jsonReceive() {
                 Players::shared_instance().player3->setScore(d["score"].GetInt());
             else if (Players::shared_instance().player4->getId() == d["id"].GetString())
                 Players::shared_instance().player4->setScore(d["score"].GetInt());
-            Players::shared_instance().manageTurns(json);
-            deleteArray(buf, 100);
 //            return; //aquí función para pasar el string con el puntaje asociado
 //        return json;
         } else {
@@ -76,6 +94,7 @@ int JsonParser::checkJsonSize(string str) {
 void JsonParser::firstConnection() {
     char buf[4096];
     int clientSocket;
+    const char* json = "";
     if (portCount == 0) {
         clientSocket = communication.connection(port1);
         portCount++;
@@ -85,6 +104,7 @@ void JsonParser::firstConnection() {
     int bytesRecived = recv(clientSocket, buf, 4096, 0);
     Document d;
     d.Parse(buf);
+    cout << "buf:";
     cout << buf << endl;
     assert(d.IsObject());
     if (d.HasMember("playerCount")){
@@ -151,10 +171,13 @@ void JsonParser::firstConnection() {
     }deleteArray(buf, bytesRecived);
 }
 
+
 void JsonParser::checkGameState() {
     if (cont == 0 || !(cont == Players::shared_instance().getPlayerCount())){
         cout << "first" << endl;
+        cout << "cont: ";
         cout << cont << endl;
+        cout << "playerCount: ";
         cout << Players::shared_instance().getPlayerCount() << endl;
         firstConnection();
     } else {

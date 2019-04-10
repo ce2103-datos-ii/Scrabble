@@ -20,22 +20,35 @@ private:
     int playerCount;
     int code;
     HashMap hashMap;
+    string matrix;
+    string letters;
+public:
+    const string &getLetters() const;
+
+    void setLetters(const string &letters);
+
+public:
+    const string &getMatrix() const;
+
+    void setMatrix(const string &matrix);
+
+private:
     const char* jsonPlayer1 = "{\n"
                               "    \"turn\": false,\n"
-                              "    \"score\": 3\n"
-                              "    \"id\": 0\n"
-                              "    \"matrix\": null\n"
-                              "    \"letters\": []\n"
-                              "    \"word\": null\n"
+                              "    \"score\": 3,\n"
+                              "    \"id\": 0,\n"
+                              "    \"matrix\": null,\n"
+                              "    \"letters\": [],\n"
+                              "    \"word\": null,\n"
                               "    \"port\": 54001\n"
                               "}";
     const char* jsonPlayer2 = "{\n"
                               "    \"turn\": false,\n"
-                              "    \"score\": 3\n"
-                              "    \"id\": 0\n"
-                              "    \"matrix\": null\n"
-                              "    \"letters\": []\n"
-                              "    \"word\": null\n"
+                              "    \"score\": 3,\n"
+                              "    \"id\": 0,\n"
+                              "    \"matrix\": null,\n"
+                              "    \"letters\": [],\n"
+                              "    \"word\": null,\n"
                               "    \"port\": 54001\n"
                               "}";
     const char* jsonPlayer3 = "{\n"
