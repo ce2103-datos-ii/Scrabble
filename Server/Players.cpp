@@ -28,7 +28,7 @@ void Players::setCode(int code) {
     Players::code = code;
 }
 
-void Players::manageTurns() {
+void Players::manageTurns(const char* json) {
     Document d1;
     if (playerCount == 4) {
         if (d1["id"] == 1) {
@@ -119,4 +119,15 @@ void Players::setPorts() {
     player3->setPort(54003);
     player4->setPort(54004);
 
+}
+
+Player* Players::checkTurn() {
+    if (player1->isTurn())
+        return player1;
+    else if (player2->isTurn())
+        return player2;
+    else if (player3->isTurn())
+        return player3;
+    else if (player4->isTurn())
+        return player4;
 }

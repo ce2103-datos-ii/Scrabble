@@ -57,13 +57,14 @@ private:
                               "    \"port\": 54001\n"
                               "}";
 public:
-    void manageTurns();
+    void manageTurns(const char* json);
     long getCode() const;
     void setCode(int code);
     int getPlayerCount() const;
     void setPlayerCount(int playerCount);
     void deletePlayers();
     void setPorts();
+    Player *checkTurn();
     Player *player1 = new Player;
     Player *player2 = new Player;
     Player *player3 = new Player;

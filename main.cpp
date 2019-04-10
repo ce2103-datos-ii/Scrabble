@@ -15,6 +15,7 @@ int main(){
     hashMap.createLetterMap();
     hashMap.createLetterList();
     JsonParser jsonParser;
-    jsonParser.jsonReceive();
+    while (true)
+        jsonParser.checkGameState();
     return 0;
 }

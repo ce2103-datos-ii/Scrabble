@@ -42,14 +42,18 @@ private:
     int ports[4] = {54001, 54002, 54003, 54003};
 public:
     int checkJsonSize(string);
-    const char* charArrayToConstChar(char ch[]);
+//    void charArrayToConstChar(char ch[]);
 
     int cont = 0;
 //    extern Players players;
     static char* json;
 
 //    void jsonSend(const char*);
-    const char* jsonReceive();
+    void jsonReceive();
+
+    void firstConnection();
+
+    void checkGameState();
 
 };
 
