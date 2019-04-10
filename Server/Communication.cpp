@@ -26,7 +26,7 @@ using namespace std;
 
 int Communication::connection(int port)
 {
-    if (port != 54000){
+    if (port != 54000 || port != 53000){
         // Create a socket
         int listening = socket(AF_INET, SOCK_STREAM, 0);
         cout << "1" << endl;
@@ -82,6 +82,7 @@ int Communication::connection(int port)
         return clientSocket;
     }else{
         // Create a socket
+        cout << "h" <<endl;
         int listening = socket(AF_INET, SOCK_STREAM, 0);
         if (listening == -1) {
             cerr << "Can't create a socket! Quitting" << endl;
@@ -93,6 +94,7 @@ int Communication::connection(int port)
         hint.sin_family = AF_INET;
         hint.sin_port = htons(port);
         inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
+        cout << "h" <<endl;
 
         bind(listening, (sockaddr *) &hint, sizeof(hint));
 
@@ -102,9 +104,9 @@ int Communication::connection(int port)
         // Wait for a connection
         sockaddr_in client;
         socklen_t clientSize = sizeof(client);
-
+        cout << "h" <<endl;
         int clientSocket = accept(listening, (sockaddr *) &client, &clientSize);
-
+        cout << "h" <<endl;
         char host[NI_MAXHOST];      // Client's remote name
         char service[NI_MAXSERV];   // Service (i.e. port) the client is connect on
 
@@ -119,6 +121,7 @@ int Communication::connection(int port)
         }
 
         // Close listening socket
+
         close(listening);
         return clientSocket;
     }

@@ -40,6 +40,9 @@ class JsonParser {
 private:
     FileReader fileReader;
     int ports[4] = {54001, 54002, 54003, 54003};
+    int port1 = 54000;
+    int port2 = 53000;
+    int portCount = 0;
 public:
     int checkJsonSize(string);
 //    void charArrayToConstChar(char ch[]);
@@ -54,6 +57,8 @@ public:
     void firstConnection();
 
     void checkGameState();
+
+    void deleteArray(char arr[], int bytes);
 
 };
 
