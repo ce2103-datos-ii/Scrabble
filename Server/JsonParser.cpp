@@ -23,18 +23,32 @@ Communication communication;
 
 void JsonParser::jsonReceive() {
     Players::shared_instance().setPorts();
-    char buf[4096];
-    int bytesRecived = recv(Players::shared_instance().checkTurn()->getPlayerSocket(), buf, 4096, 0);
-    const char* json = "";
-    cout<<buf<<endl;
     Document d;
+    char buf[4096];
+    memset(buf,0,4096);
+//    cout << Players::shared_instance().checkTurn()->getPort() << endl;
+//    cout << Players::shared_instance().player1->getPort() << endl;
+    int bytesRecived = recv(Players::shared_instance().player1->getPlayerSocket(), buf, 4096, 0);
+    cout << bytesRecived << endl;
     d.Parse(buf);
+    cout << "bytesReceived" << endl;
+    const char* json = "";
     assert(d.IsObject());
     if (d.HasMember("word")){
+        cout << d["word"].GetString() << endl;
         if (fileReader.searchWord(string(json))) {
             d["score"].SetInt(d["score"].GetInt() + hashMap.checkWordScore(d["letters"].GetString()));
-            if (Players::shared_instance().player1->getId() == d["id"].GetString())
+            cout << d["score"].GetInt() << endl;
+            if (Players::shared_instance().player1->getId() == d["id"].GetString()) {
                 Players::shared_instance().player1->setScore(d["score"].GetInt());
+                StringBuffer buffer;
+                buffer.Clear();
+                Writer<StringBuffer> writer(buffer);
+                d.Accept(writer);
+                string buffString = buffer.GetString();
+                cout << buffer.GetString() << endl;
+                send(Players::shared_instance().player1->getPlayerSocket(), buffer.GetString(), checkJsonSize(buffString), 0);
+            }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString())
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
             else if (Players::shared_instance().player3->getId() == d["id"].GetString())
@@ -42,6 +56,7 @@ void JsonParser::jsonReceive() {
             else if (Players::shared_instance().player4->getId() == d["id"].GetString())
                 Players::shared_instance().player4->setScore(d["score"].GetInt());
             Players::shared_instance().manageTurns(json);
+            deleteArray(buf, 100);
 //            return; //aquí función para pasar el string con el puntaje asociado
 //        return json;
         } else {
@@ -91,7 +106,7 @@ void JsonParser::firstConnection() {
         cout << buffer.GetString() << endl;
         close(clientSocket);
         Players::shared_instance().player1->setPlayerSocket(communication.connection(Players::shared_instance().player1->getPort()));
-        JsonParser::cont += 1;
+        cont += 1;
 //        send(Players::shared_instance().player1->getPlayerSocket(),buffer.GetString(),checkJsonSize(buffString),0);
     } else if (d.HasMember("code")) {
         if (d["code"].GetInt() == Players::shared_instance().getCode()) {
@@ -106,9 +121,11 @@ void JsonParser::firstConnection() {
                 string buffString = buffer.GetString();
                 cout << "adf" << endl;
                 cout << buffer.GetString() << endl;
-                send(clientSocket, buffer.GetString(), checkJsonSize(buffString), 0);
+                send(clientSocket, buffer.GetString(), checkJsonSize(buffString) + 1, 0);
                 close(clientSocket);
-                Players::shared_instance().player2->setPlayerSocket(communication.connection(Players::shared_instance().player2->getPort()));
+                Players::shared_instance().player2->setPlayerSocket(
+                        communication.connection(Players::shared_instance().player2->getPort()));
+                cont++;
             } else if (cont == 2) {
                 Players::shared_instance().player3->setId(d["id"].GetString());
                 d["port"].SetInt(Players::shared_instance().player3->getPort());
@@ -120,7 +137,9 @@ void JsonParser::firstConnection() {
                 const char *jsonStart = "{\n"
                                         "    \"start\": true\n"
                                         "}";
-
+                string jsonStartString = jsonStart;
+                send(Players::shared_instance().player1->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
+                send(Players::shared_instance().player2->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
             }
 //            return json;
             // aceptar cliente y enviar json
@@ -129,15 +148,16 @@ void JsonParser::firstConnection() {
             // negar cliente
 //            close(communication.connection(#socketquelemandoelservidoralcliente));
         }
-    } close(clientSocket); deleteArray(buf, bytesRecived);
+    }deleteArray(buf, bytesRecived);
 }
 
 void JsonParser::checkGameState() {
     if (cont == 0 || !(cont == Players::shared_instance().getPlayerCount())){
         cout << "first" << endl;
+        cout << cont << endl;
+        cout << Players::shared_instance().getPlayerCount() << endl;
         firstConnection();
     } else {
-        cout << "picha" << endl;
         jsonReceive();
     }
 }
