@@ -38,68 +38,68 @@ void Players::manageTurns(const char* json) {
     string buffString1;
     const char* char2;
     string buffString2;
-
-    if (playerCount == 4) {
-        if (d1["id"].GetString() == player1->getId()) {
-            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player1->setTurn(false);
-            d1.Parse(jsonPlayer1);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player2->setTurn(true);
-            d1.Parse(jsonPlayer2);
-            d1["turn"].SetBool(true);
-        } else if (d1["id"].GetString() == player2->getId()) {
-            Players::shared_instance().player2->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player2->setTurn(false);
-            d1.Parse(jsonPlayer2);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player3->setTurn(true);
-            d1.Parse(jsonPlayer3);
-            d1["turn"].SetBool(true);
-        } else if (d1["id"].GetString() == player3->getId()) {
-            Players::shared_instance().player3->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player3->setTurn(false);
-            d1.Parse(jsonPlayer3);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player4->setTurn(true);
-            d1.Parse(jsonPlayer4);
-            d1["turn"].SetBool(true);
-        } else if (d1["id"].GetString() == player4->getId()) {
-            Players::shared_instance().player4->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player4->setTurn(false);
-            d1.Parse(jsonPlayer4);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player1->setTurn(true);
-            d1.Parse(jsonPlayer1);
-            d1["turn"].SetBool(true);
-        }
-    } else if (playerCount == 3){
-        if (d1["id"] == 1) {
-            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player1->setTurn(false);
-            d1.Parse(jsonPlayer1);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player2->setTurn(true);
-            d1.Parse(jsonPlayer2);
-            d1["turn"].SetBool(true);
-        } else if (d1["id"] == 2) {
-            Players::shared_instance().player2->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player2->setTurn(false);
-            d1.Parse(jsonPlayer2);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player3->setTurn(true);
-            d1.Parse(jsonPlayer3);
-            d1["turn"].SetBool(true);
-        } else if (d1["id"] == 3) {
-            Players::shared_instance().player3->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
-            Players::shared_instance().player3->setTurn(false);
-            d1.Parse(jsonPlayer3);
-            d1["turn"].SetBool(false);
-            Players::shared_instance().player1->setTurn(true);
-            d1.Parse(jsonPlayer1);
-            d1["turn"].SetBool(true);
-        }
-    } else if (playerCount == 2){
+//
+//    if (playerCount == 4) {
+//        if (d1["id"].GetString() == player1->getId()) {
+//            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player1->setTurn(false);
+//            d1.Parse(jsonPlayer1);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player2->setTurn(true);
+//            d1.Parse(jsonPlayer2);
+//            d1["turn"].SetBool(true);
+//        } else if (d1["id"].GetString() == player2->getId()) {
+//            Players::shared_instance().player2->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player2->setTurn(false);
+//            d1.Parse(jsonPlayer2);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player3->setTurn(true);
+//            d1.Parse(jsonPlayer3);
+//            d1["turn"].SetBool(true);
+//        } else if (d1["id"].GetString() == player3->getId()) {
+//            Players::shared_instance().player3->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player3->setTurn(false);
+//            d1.Parse(jsonPlayer3);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player4->setTurn(true);
+//            d1.Parse(jsonPlayer4);
+//            d1["turn"].SetBool(true);
+//        } else if (d1["id"].GetString() == player4->getId()) {
+//            Players::shared_instance().player4->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player4->setTurn(false);
+//            d1.Parse(jsonPlayer4);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player1->setTurn(true);
+//            d1.Parse(jsonPlayer1);
+//            d1["turn"].SetBool(true);
+//        }
+//    } else if (playerCount == 3){
+//        if (d1["id"] == 1) {
+//            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player1->setTurn(false);
+//            d1.Parse(jsonPlayer1);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player2->setTurn(true);
+//            d1.Parse(jsonPlayer2);
+//            d1["turn"].SetBool(true);
+//        } else if (d1["id"] == 2) {
+//            Players::shared_instance().player2->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player2->setTurn(false);
+//            d1.Parse(jsonPlayer2);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player3->setTurn(true);
+//            d1.Parse(jsonPlayer3);
+//            d1["turn"].SetBool(true);
+//        } else if (d1["id"] == 3) {
+//            Players::shared_instance().player3->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player3->setTurn(false);
+//            d1.Parse(jsonPlayer3);
+//            d1["turn"].SetBool(false);
+//            Players::shared_instance().player1->setTurn(true);
+//            d1.Parse(jsonPlayer1);
+//            d1["turn"].SetBool(true);
+//        }
+    if (playerCount == 2){
         cout << "dos" << endl;
         JsonParser jsonParser;
         if (d1["id"].GetString() == player1->getId()) {
@@ -117,7 +117,7 @@ void Players::manageTurns(const char* json) {
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
             d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player1->getScore());
-            send(54000, char1, jsonParser.checkJsonSize(buffString1), 0);
+            send(player1->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
             d2.Parse(jsonPlayer2);
             assert(d1.IsObject());
@@ -130,7 +130,7 @@ void Players::manageTurns(const char* json) {
             d2.Accept(writer2);
             char2 = buffer2.GetString();
             buffString2 = buffer2.GetString();
-            send(53000, char2, jsonParser.checkJsonSize(buffString2), 0);
+            send(player2->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
             cout << "buffer2: ";
@@ -149,7 +149,7 @@ void Players::manageTurns(const char* json) {
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
             d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player2->getScore());
-            send(53000, char1, jsonParser.checkJsonSize(buffString1), 0);
+            send(player2->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
             d2.Parse(jsonPlayer1);
             assert(d1.IsObject());
@@ -162,7 +162,7 @@ void Players::manageTurns(const char* json) {
             d2.Accept(writer2);
             char2 = buffer2.GetString();
             buffString2 = buffer2.GetString();
-            send(54000, char2, jsonParser.checkJsonSize(buffString2), 0);
+            send(player1->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
             cout << "buffer2: ";
@@ -210,5 +210,6 @@ void Players::setLetters(const string &letters) {
 
 void Players::setPlayerTurns() {
     player1->setTurn(true);
+    player2->setTurn(false);
     player2->setTurn(false);
 }

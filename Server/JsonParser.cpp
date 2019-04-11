@@ -80,18 +80,24 @@ void JsonParser::jsonReceive() {
                 Players::shared_instance().manageTurns(buffer.GetString());
 //                send(port1, buffer.GetString(), checkJsonSize(buffString), 0);
             }
-            else if (Players::shared_instance().player2->getId() == d["id"].GetString())
+            else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
+                StringBuffer buffer;
+                buffer.Clear();
+                Writer <StringBuffer> writer(buffer);
+                d.Accept(writer);
+                string buffString = buffer.GetString();
+                cout << buffer.GetString() << endl;
+                Players::shared_instance().manageTurns(buffer.GetString());
+            }
             else if (Players::shared_instance().player3->getId() == d["id"].GetString())
                 Players::shared_instance().player3->setScore(d["score"].GetInt());
             else if (Players::shared_instance().player4->getId() == d["id"].GetString())
                 Players::shared_instance().player4->setScore(d["score"].GetInt());
 //            return; //aquí función para pasar el string con el puntaje asociado
 //        return json;
-        } else {
-//            return; //devuelve 0 al cliente
         }
-    }
+    } deleteArray(buf, bytesReceived);
 }
 
 int JsonParser::checkJsonSize(string str) {
