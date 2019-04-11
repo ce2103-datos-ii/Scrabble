@@ -172,22 +172,19 @@ void JsonParser::firstConnection() {
                 Players::shared_instance().player4->setId(d["id"].GetString());
                 d["port"].SetInt(Players::shared_instance().player4->getPort());
             }
-            if (cont == Players::shared_instance().getPlayerCount()) {
-                const char *jsonStart = "{\n"
-                                        "    \"start\": true\n"
-                                        "}";
-                string jsonStartString = jsonStart;
-                send(port1, jsonStart, checkJsonSize(jsonStartString), 0);
-                send(port2, jsonStart, checkJsonSize(jsonStartString), 0);
-            }
-//            return json;
-            // aceptar cliente y enviar json
-//            communication.connection(#socketquelemandoelservidoralcliente);
-        } else {
-            // negar cliente
-//            close(communication.connection(#socketquelemandoelservidoralcliente));
         }
+    }
+    if (cont == Players::shared_instance().getPlayerCount()) {
+        const char *jsonStart = "{\n"
+                                "    \"start\": true\n"
+                                "}";
+        string jsonStartString = jsonStart;
+        send(Players::shared_instance().player1->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
+        send(Players::shared_instance().player2->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
     }deleteArray(buf, bytesRecived);
+//            return json;
+    // aceptar cliente y enviar json
+//            communication.connection(#socketquelemandoelservidoralcliente);
 }
 
 

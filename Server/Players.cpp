@@ -173,18 +173,23 @@ void Players::manageTurns(const char* json) {
 
 void Players::setPorts() {
 
-    player1->setPort(54001);
-    player2->setPort(54002);
+    player1->setPort(54000);
+    player2->setPort(53000);
     player3->setPort(54003);
     player4->setPort(54004);
 
 }
 
 int Players::checkTurn() {
-    if (player1->isTurn())
+    if (player1->isTurn()) {
+        cout << "player 1 socket: ";
+        cout << player1->getPlayerSocket() << endl;
         return player1->getPlayerSocket();
-    else if (player2->isTurn())
+    } else if (player2->isTurn()) {
+        cout << "player 2 socket: ";
+        cout << player2->getPlayerSocket() << endl;
         return player2->getPlayerSocket();
+    }
 }
 
 const string &Players::getMatrix() const {
@@ -201,4 +206,9 @@ const string &Players::getLetters() const {
 
 void Players::setLetters(const string &letters) {
     Players::letters = letters;
+}
+
+void Players::setPlayerTurns() {
+    player1->setTurn(true);
+    player2->setTurn(false);
 }

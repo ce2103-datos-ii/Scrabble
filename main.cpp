@@ -17,6 +17,7 @@ int main(){
     hashMap.createLetterMap();
     hashMap.createLetterList();
     FileReader fileReader;
+    Players::shared_instance().setPlayerTurns();
     while(true){
         jsonParser.checkGameState();
     }
