@@ -51,7 +51,6 @@ void MainWindow::on_pushButton_3_clicked()
     client->turn = true;
     client->comunication(buffer.GetString());
     this->hide();
-    cout << "hujiko" << endl;
     MatrixWindow matrixWindow;
     matrixWindow.client = this->client;
     matrixWindow.id = name;

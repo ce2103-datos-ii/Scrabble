@@ -21,10 +21,14 @@ int Client::connection(int port){
 
     cout << "llegó" << endl;
 
-    int connectRes = connect(sock, (sockaddr*)&hint, sizeof(hint));
-    if (connectRes == -1){
-        return 1;
+    while(true){
+        int connectRes = connect(sock, (sockaddr*)&hint, sizeof(hint));
+        if(connectRes == -1){
+        }else {
+            return 0;
+        }
     }
+
     cout << "pasó" << endl;
     return 0;
 }
@@ -36,37 +40,29 @@ void Client::comunication(const char* word){
         sizeOfWord++;
     }
     char buf[4096];
-    memset(buf, 0, 4096);
+    //memset(buf, 0, 4096);
     Document d;
     if(in == true){
         if(flag == 0){
-            cout<<word<<endl;
-            int sendRes = send(sock, word, sizeOfWord , 0);
+            int sendRes = send(this->sock, word, sizeOfWord , 0);
             int bytesReceived = recv(sock, buf, 4096, 0);
-            newWord = bytesTransformer(bytesReceived,buf,newWord);
-            this->dataServ = (newWord).c_str();
-            close(sock);
-            d.Parse(dataServ);
-            cout << dataServ << endl;
-            port = d["port"].GetInt();
-            this->connection(port);
-            cout << "pre recv" <<endl;
-            recv(sock,buf,4096,0);
-            cout << "pos recv" <<endl;
+            cout<<buf<<endl;
+            recv(this->sock,buf,4096,0);
             flag = 1;
+            deleteArray(buf,bytesReceived);
         }else{
             if(turn){
-                cout<<word<<endl;
-                cout << "9" << endl;
                 int sendRes = send(this->sock, word, sizeOfWord, 0);
-                cout << sendRes <<endl;
+                cout<<"envió en cliente"<<endl;
                 memset(buf, 0, 4096);
                 int bytesReceived = recv(this->sock, buf, 4096, 0);
-                cout << bytesReceived << "10" << endl;
+                cout<<"recibió en cliente"<<endl;
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
                 this->dataServ = (newWord).c_str();
+                cout<<"Se recibió en cliente: "<<dataServ<<endl;
                 d.Parse(dataServ);
                 turn = d["turn"].GetBool();
+                deleteArray(buf,bytesReceived);
             }else{
                 memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
@@ -74,6 +70,7 @@ void Client::comunication(const char* word){
                 this->dataServ = (newWord).c_str();
                 d.Parse(dataServ);
                 turn = d["turn"].GetBool();
+                deleteArray(buf,bytesReceived);
             }
         }
     }else{
@@ -82,6 +79,7 @@ void Client::comunication(const char* word){
             int bytesReceived = recv(sock, buf, 4096, 0);
             newWord = bytesTransformer(bytesReceived,buf,newWord);
             this->dataServ = (newWord).c_str();
+            cout<<this->dataServ<<endl;
             close(sock);
             d.Parse(dataServ);
             port = d["port"].GetInt();
@@ -90,7 +88,7 @@ void Client::comunication(const char* word){
             flag=1;
         }else{
             if(turn){
-                int sendRes = send(sock, word, sizeof(word) + 1, 0);
+                int sendRes = send(sock, word, sizeOfWord, 0);
                 //memset(buf, 0, 4096);
                 int bytesReceived = recv(sock, buf, 4096, 0);
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
@@ -114,4 +112,9 @@ string Client::bytesTransformer(int bytesReceived, char  buf[4096], string newWo
         newWord += buf[i];
     }
     return newWord;
+}
+
+void Client::deleteArray(char arr[], int bytes) {
+    for (int i = 0; i < bytes; i++)
+        *&arr[i] = NULL;
 }

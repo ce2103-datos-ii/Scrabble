@@ -40,15 +40,15 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     string hum[26] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     srand(time(NULL));
     ui->Btn1->setText(QString::fromStdString("a"));
-    ui->Btn2->setText(QString::fromStdString(hum[rand()%26]));
-    ui->Btn3->setText(QString::fromStdString(hum[rand()%26]));
-    ui->Btn4->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn2->setText(QString::fromStdString("b"));
+    ui->Btn3->setText(QString::fromStdString("b"));
+    ui->Btn4->setText(QString::fromStdString("b"));
     ui->Btn5->setText(QString::fromStdString("a"));
-    ui->Btn6->setText(QString::fromStdString(hum[rand()%26]));
-    ui->Btn7->setText(QString::fromStdString(hum[rand()%26]));
-    ui->Btn8->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn6->setText(QString::fromStdString("b"));
+    ui->Btn7->setText(QString::fromStdString("b"));
+    ui->Btn8->setText(QString::fromStdString("b"));
     ui->Btn9->setText(QString::fromStdString("l"));
-    ui->Btn10->setText(QString::fromStdString(hum[rand()%26]));
+    ui->Btn10->setText(QString::fromStdString("b"));
     qs = ui->Lbl1->text();
 }
 
@@ -824,37 +824,42 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
 }
 
 void MatrixWindow::update(){
-    bool letter = false;
+    Document w;
+    w.Parse(MatrixWindow::client->dataServ);
     int i = 0;
     int n = 0;
+    string prev = "";
+    string current = "";
     string Matrix[15][15];
     MatrixWindow::client->comunication("");
     Document d;
     d.Parse(MatrixWindow::client->dataServ);
     string MatrixString = d["matrix"].GetString();
-    while (i < 15){
-        while (n < 15){
-            for (char &c: (MatrixString)) {
-                string s(1, c);
-                if (s == "{")
-                    letter = true;
-                else if (i == 15)
-                    return;
-                if (letter == true){
-                    Matrix[i][n] = s;
-                    letter = false;
-                    n++;
-                    if (n == 15){
-                        i++;
-                        n = 0;
-                    }
-                }
-            }
+    for(char &c: (MatrixString)){
+        current += c;
+        if(n >= 15){
+            i++;
+            n = 0;
+        }if ((current == "," && prev == "{") || (current == "}" && prev == ",")){
+            Matrix[i][n] = "";
+            n++;
+        }else if(current == "," && prev == ","){
+            Matrix[i][n] = "";
+            n++;
+        }else if(current == "{" || current == "}" || current == "[" || current == "]" || current == " " || current == ","){
+
+        }else{
+            Matrix[i][n] = current;
+            n++;
         }
+        prev = current ;
+        current = "";
     }
-    for(i = 0; i<15;i++){
-        for(n = 0; n<15; n++){
+
+    for(i = 0; i < 15; i++){
+        for(n = 0; n < 15; n++){
             g[i][n] = Matrix[i][n];
+            cout << g[i][n] << "=" << Matrix[i][n] << endl;
         }
     }
     ui->Lbl1->setText(QString::fromStdString(Matrix[0][0]));
@@ -1082,6 +1087,7 @@ void MatrixWindow::update(){
     ui->Lbl223->setText(QString::fromStdString(Matrix[14][12]));
     ui->Lbl224->setText(QString::fromStdString(Matrix[14][13]));
     ui->Lbl225->setText(QString::fromStdString(Matrix[14][14]));
+    ui->label->setText((QString::fromStdString("Score: " + to_string(w["score"].GetInt()))));
 }
 
 void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel &label){
@@ -1131,6 +1137,7 @@ void MatrixWindow::on_EndTurn_clicked(){
     }
     for (int i = 0; i < 15; i++){
         for (int n = 0; n < 15; n++){
+            string aux = g[i][n];
             gAux += g[i][n];
             if (n == 14)
                 gAux += "}, {";
@@ -1150,36 +1157,32 @@ void MatrixWindow::on_EndTurn_clicked(){
                              "}";
     Document d;
     d.Parse(jsonClient);
-    cout << "1" << endl;
     assert(d.IsObject());
-    cout << "2" << endl;
     d["word"].SetString(word.data(), word.size(), d.GetAllocator());
-    cout << "3" << endl;
     d["letters"].SetString(letters.data(), letters.size(), d.GetAllocator());
-    cout << "4" << endl;
     d["matrix"].SetString(gAux.data(), gAux.size(), d.GetAllocator());
-    cout << "5" << endl;
     d["id"].SetString(this->id.data(), this->id.size(), d.GetAllocator());
-    cout << "6" << endl;
     d["score"].SetInt(this->score);
-    cout << "7" << endl;
     StringBuffer buffer;
     buffer.Clear();
     Writer<StringBuffer> writer(buffer);
     d.Accept(writer);
-    cout << "8" << endl;
-    cout << buffer.GetString() << endl;
+    cout<<"se envía: "<<buffer.GetString()<<endl;
+    assert(d.IsObject());
+    cout<<"enviando"<<endl;
     MatrixWindow::client->comunication(buffer.GetString());
+    cout<<"enviado"<<endl;
+    Document w;
+    w.Parse(MatrixWindow::client->dataServ);
+    cout<<"Pasó comunicación"<<endl;
+    string m = "Score: " + to_string(w["score"].GetInt());
+    cout<<m<<endl;
+    ui->label->setText((QString::fromStdString(m)));
     listh->del_all();
     listscore->del_all();
+    PlayerTurn();
 
 }
-
-
-
-
-
-
 
 void MatrixWindow::on_Btn1_clicked(){
     b = ui->Btn1->text().toUtf8().constData();

@@ -257,6 +257,7 @@ public:
     QLabel *Lbl225;
     QLabel *Lbl216;
     QLabel *Lbl221;
+    QLabel *label;
 
     void setupUi(QDialog *MatrixWindow)
     {
@@ -1655,6 +1656,10 @@ public:
         Lbl221->setFont(font);
         Lbl221->setFrameShape(QFrame::WinPanel);
         Lbl221->setIndent(5);
+        label = new QLabel(MatrixWindow);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(20, 10, 71, 17));
+        label->setFrameShape(QFrame::WinPanel);
 
         retranslateUi(MatrixWindow);
 
@@ -1904,6 +1909,7 @@ public:
         Lbl225->setText(QString());
         Lbl216->setText(QString());
         Lbl221->setText(QString());
+        label->setText(QApplication::translate("MatrixWindow", "score: ", nullptr));
     } // retranslateUi
 
 };

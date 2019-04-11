@@ -33,6 +33,7 @@ public:
     void comunication(const char* word);
 private:
     void setData(char* data);
+    void deleteArray(char buf[],int bytes);
     string bytesTransformer(int bytesReceived, char buf[4096], string newWord);
 };
 
