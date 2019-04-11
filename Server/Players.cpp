@@ -103,23 +103,24 @@ void Players::manageTurns(const char* json) {
         cout << "dos" << endl;
         JsonParser jsonParser;
         if (d1["id"].GetString() == player1->getId()) {
-            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
             Players::shared_instance().player1->setTurn(false);
-            d1.Parse(jsonPlayer1);
+            d1.Parse(player1->getJson());
             assert(d1.IsObject());
+            d1["turn"].SetBool(false);
+            d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
+            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
+            d1["score"].SetInt(player1->getScore());
             StringBuffer buffer1;
             buffer1.Clear();
             Writer<StringBuffer> writer(buffer1);
             d1.Accept(writer);
             char1 = buffer1.GetString();
             buffString1 = buffer1.GetString();
-            d1["turn"].SetBool(false);
-            d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
-            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
-            d1["score"].SetInt(player1->getScore());
+            player1->setJson(char1);
             send(player1->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
-            d2.Parse(jsonPlayer2);
+            d2.Parse(player2->getJson());
             assert(d1.IsObject());
             d2["turn"].SetBool(true);
             d2["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
@@ -130,28 +131,33 @@ void Players::manageTurns(const char* json) {
             d2.Accept(writer2);
             char2 = buffer2.GetString();
             buffString2 = buffer2.GetString();
+            player2->setJson(char2);
+            cout << "send" << endl;
             send(player2->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
             cout << "buffer2: ";
             cout << char2 << endl;
         } else if (d1["id"].GetString() == player2->getId()) {
-            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
+//            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
             Players::shared_instance().player1->setTurn(false);
-            d1.Parse(jsonPlayer2);
+            d1.Parse(player2->getJson());
             assert(d1.IsObject());
+            d1["turn"].SetBool(false);
+            d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
+            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
+            d1["score"].SetInt(player2->getScore());
             StringBuffer buffer1;
             buffer1.Clear();
             Writer<StringBuffer> writer(buffer1);
             d1.Accept(writer);
             buffString1 = buffer1.GetString();
-            d1["turn"].SetBool(false);
-            d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
-            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
-            d1["score"].SetInt(player2->getScore());
+            char1 = buffer1.GetString();
+            buffString1 = char1;
+            player2->setJson(char1);
             send(player2->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
-            d2.Parse(jsonPlayer1);
+            d2.Parse(player1->getJson());
             assert(d1.IsObject());
             d2["turn"].SetBool(true);
             d2["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
@@ -161,7 +167,8 @@ void Players::manageTurns(const char* json) {
             Writer<StringBuffer> writer2(buffer2);
             d2.Accept(writer2);
             char2 = buffer2.GetString();
-            buffString2 = buffer2.GetString();
+            buffString2 = char2;
+            player1->setJson(char2);
             send(player1->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
@@ -212,4 +219,11 @@ void Players::setPlayerTurns() {
     player1->setTurn(true);
     player2->setTurn(false);
     player2->setTurn(false);
+}
+
+void Players::setPlayerJsons() {
+    player1->setJson(jsonPlayer1);
+    player2->setJson(jsonPlayer2);
+    player3->setJson(jsonPlayer3);
+    player4->setJson(jsonPlayer4);
 }

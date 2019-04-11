@@ -13,13 +13,9 @@
 using namespace std;
 
 class HashMap {
-
-private:
+public:
     map<string, int> wordsMap;
     map<string, int> lettersMap;
-    int posLetterList = 0;
-
-public:
     string lettersList[94];
 //    const string *getLettersList() const;
     void createScoreMap();
@@ -28,6 +24,13 @@ public:
     string lettersArrayToString();
     int checkWordScore(string);
     string lettersToSend(string letters);
+
+//public:
+//    static HashMap &shared_instance() {static HashMap hashMap; return hashMap;}
+//
+//private:
+//    // Make constructor private. Only shared_instance() method will create an instance.
+//    HashMap() {/*whatever initialisation you need*/}
 
 };
 

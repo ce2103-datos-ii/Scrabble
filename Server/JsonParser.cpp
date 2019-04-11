@@ -60,6 +60,8 @@ void JsonParser::jsonReceive() {
     Players::shared_instance().setMatrix(d["matrix"].GetString());
     if (d.HasMember("word")){
         cout << d["word"].GetString() << endl;
+        cout << "letters: ";
+        cout << d["letters"].GetString() << endl;
         if (fileReader.searchWord(string(d["word"].GetString()))) {
             d["score"].SetInt(d["score"].GetInt() + hashMap.checkWordScore(d["letters"].GetString()));
             cout << d["score"].GetInt() << endl;
@@ -68,8 +70,8 @@ void JsonParser::jsonReceive() {
             cout << "player id: ";
             cout << Players::shared_instance().player1->getId() << endl;
             HashMap hashMap;
-            Players::shared_instance().setLetters(hashMap.lettersToSend(d["letters"].GetString()));
             if (Players::shared_instance().player1->getId() == d["id"].GetString()) {
+                Players::shared_instance().player1->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
                 Players::shared_instance().player1->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -81,6 +83,7 @@ void JsonParser::jsonReceive() {
 //                send(port1, buffer.GetString(), checkJsonSize(buffString), 0);
             }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
+                Players::shared_instance().player2->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -96,6 +99,17 @@ void JsonParser::jsonReceive() {
                 Players::shared_instance().player4->setScore(d["score"].GetInt());
 //            return; //aquí función para pasar el string con el puntaje asociado
 //        return json;
+        } else {
+            if (Players::shared_instance().player1->getId() == d["id"].GetString()){
+                Players::shared_instance().player1->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+            } else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
+                Players::shared_instance().player2->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+            }
+            StringBuffer buffer;
+            buffer.Clear();
+            Writer <StringBuffer> writer(buffer);
+            d.Accept(writer);
+            Players::shared_instance().manageTurns(buffer.GetString());
         }
     } deleteArray(buf, bytesReceived);
 }

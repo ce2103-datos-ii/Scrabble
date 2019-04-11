@@ -101,11 +101,38 @@ string HashMap::lettersArrayToString() {
 }
 
 string HashMap::lettersToSend(string letters) {
+    HashMap hashMap;
+    hashMap.createLetterMap();
+    hashMap.createLetterList();
     string str;
-    for (int i = 0; i < letters.length(); i++){
-        str += lettersList[posLetterList];
-        posLetterList++;
+    int len = 0;
+    int cont = 0;
+    int posLetterList = 0;
+    cout << "len before: ";
+    cout << len << endl;
+    for (char &c: letters)
+        len++;
+    cout << "len: ";
+    cout << len << endl;
+    cout << "letterArray: ";
+    cout << lettersArrayToString() << endl;
+    while (cont < len){
+        cout << "lettersList[posLetterList]: ";
+        cout << lettersList[posLetterList] << endl;
+        if (lettersList[posLetterList] != "null"){
+            cout << "entro al if" << endl;
+            str += lettersList[posLetterList];
+            lettersList[posLetterList] = "null";
+            posLetterList++;
+            cont++;
+        } else {
+            posLetterList++;
+        }
     }
+    cout << "lettersReceived:";
+    cout << letters << endl;
+    cout << "letters: ";
+    cout << str << endl;
     return str;
 }
 

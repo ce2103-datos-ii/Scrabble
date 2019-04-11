@@ -19,7 +19,6 @@ class Players {
 private:
     int playerCount;
     int code;
-    HashMap hashMap;
     string matrix;
     string letters;
 public:
@@ -31,8 +30,6 @@ public:
     const string &getMatrix() const;
 
     void setMatrix(const string &matrix);
-
-private:
     const char* jsonPlayer1 = "{\n"
                               "    \"turn\": false,\n"
                               "    \"score\": 3,\n"
@@ -70,6 +67,7 @@ private:
                               "    \"port\": 54001\n"
                               "}";
 public:
+    void setPlayerJsons();
     void manageTurns(const char* json);
     long getCode() const;
     void setCode(int code);

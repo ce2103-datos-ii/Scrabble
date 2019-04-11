@@ -21,8 +21,13 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
+#include "../rapidjson/rapidjson.h"
+#include "../rapidjson/document.h"
+#include "../rapidjson/stringbuffer.h"
+#include "../rapidjson/writer.h"
 
 using namespace std;
+using namespace rapidjson;
 
 class Player {
 
@@ -33,6 +38,18 @@ private:
     string id;
     int port;
     int playerSocket;
+    const char* json;
+    string letters;
+public:
+    const string &getLetters() const;
+
+    void setLetters(const string &letters);
+
+public:
+    const char *getJson() const;
+
+    void setJson(const char *json);
+
 public:
     void setPlayerSocket(int playerSocket);
 

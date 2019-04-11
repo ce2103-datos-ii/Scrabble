@@ -16,7 +16,8 @@ int main(){
     hashMap.createScoreMap();
     hashMap.createLetterMap();
     hashMap.createLetterList();
-    FileReader fileReader;
+    cout << hashMap.lettersArrayToString() << endl;
+    Players::shared_instance().setPlayerJsons();
     Players::shared_instance().setPlayerTurns();
     while(true){
         jsonParser.checkGameState();
