@@ -117,7 +117,7 @@ void Players::manageTurns(const char* json) {
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
             d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player1->getScore());
-            send(player1->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
+            send(54000, char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
             d2.Parse(jsonPlayer2);
             assert(d1.IsObject());
@@ -130,7 +130,7 @@ void Players::manageTurns(const char* json) {
             d2.Accept(writer2);
             char2 = buffer2.GetString();
             buffString2 = buffer2.GetString();
-            send(player2->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
+            send(53000, char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
             cout << "buffer2: ";
@@ -149,7 +149,7 @@ void Players::manageTurns(const char* json) {
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
             d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player2->getScore());
-            send(player2->getPlayerSocket(), char1, jsonParser.checkJsonSize(buffString1), 0);
+            send(53000, char1, jsonParser.checkJsonSize(buffString1), 0);
             Players::shared_instance().player2->setTurn(true);
             d2.Parse(jsonPlayer1);
             assert(d1.IsObject());
@@ -162,7 +162,7 @@ void Players::manageTurns(const char* json) {
             d2.Accept(writer2);
             char2 = buffer2.GetString();
             buffString2 = buffer2.GetString();
-            send(player1->getPlayerSocket(), char2, jsonParser.checkJsonSize(buffString2), 0);
+            send(54000, char2, jsonParser.checkJsonSize(buffString2), 0);
             cout << "buffer1: ";
             cout << char1 << endl;
             cout << "buffer2: ";
@@ -180,15 +180,11 @@ void Players::setPorts() {
 
 }
 
-Player* Players::checkTurn() {
+int Players::checkTurn() {
     if (player1->isTurn())
-        return player1;
+        return player1->getPlayerSocket();
     else if (player2->isTurn())
-        return player2;
-    else if (player3->isTurn())
-        return player3;
-    else if (player4->isTurn())
-        return player4;
+        return player2->getPlayerSocket();
 }
 
 const string &Players::getMatrix() const {

@@ -77,7 +77,7 @@ public:
     void setPlayerCount(int playerCount);
     void deletePlayers();
     void setPorts();
-    Player *checkTurn();
+    int checkTurn();
     Player *player1 = new Player;
     Player *player2 = new Player;
     Player *player3 = new Player;

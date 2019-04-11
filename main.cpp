@@ -17,14 +17,8 @@ int main(){
     hashMap.createLetterMap();
     hashMap.createLetterList();
     FileReader fileReader;
-    string word = "gato";
-    cout << "word: ";
-    cout << fileReader.searchWord(word) << endl;
-    cout << "score: ";
-    cout << hashMap.checkWordScore(word) << endl;
-    cout << "letters list: ";
-    cout << hashMap.lettersArrayToString() << endl;
-    while (true)
+    while(true){
         jsonParser.checkGameState();
+    }
     return 0;
 }

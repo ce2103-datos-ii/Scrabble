@@ -22,29 +22,40 @@ Communication communication;
 //}
 
 void JsonParser::jsonReceive() {
-    Players::shared_instance().setPorts();
     Document d;
     char buf[4096];
-    memset(buf,0,4096);
+//    memset(buf,0,4096);
 //    cout << Players::shared_instance().checkTurn()->getPort() << endl;
 //    cout << Players::shared_instance().player1->getPort() << endl;
-    cout << "btr" << endl;
-    try {
-        int bytesRecived = recv(Players::shared_instance().player1->getPlayerSocket(), buf, 4096, 0);
-
-    } catch (exception exception1){
+//    cout << "btr" << endl;
+//    try {
+//        int bytesRecived = recv(port1, buf, 4096, 0);
+//
+//    } catch (exception exception1){
 //        cout << exception1 << endl;
-        cout << "no corre" << endl;
-    }
-
-    int bytesRecived = recv(Players::shared_instance().player1->getPlayerSocket(), buf, 4096, 0);
+//        cout << "no corre" << endl;
+//    }
+//    sleep(3);
+//    const char *jsonStart = "{\n"
+//                            "    \"start\": true\n"
+//                            "}";
+//    string jsonStartString = jsonStart;
+//    cout << "sent1" << endl;
+//    send(port1, jsonStart, checkJsonSize(jsonStartString), 0);
+//    cout << "sent2" << endl;
+//    send(port2, jsonStart, checkJsonSize(jsonStartString), 0);
+    cout << "player1 id: ";
+    cout << Players::shared_instance().player1->getId() << endl;
+    cout << "player socket: ";
+    cout << Players::shared_instance().checkTurn() << endl;
+    int bytesReceived = recv(Players::shared_instance().checkTurn(), buf, 4096, 0);
     cout << "checkTurn: ";
-    cout << Players::shared_instance().checkTurn()->getId() << endl;
+    cout << Players::shared_instance().checkTurn() << endl;
     d.Parse(buf);
     cout << "buf:";
     cout << buf << endl;
     cout << "bytesReceived: ";
-    cout << bytesRecived << endl;
+    cout << bytesReceived << endl;
     assert(d.IsObject());
     Players::shared_instance().setMatrix(d["matrix"].GetString());
     if (d.HasMember("word")){
@@ -67,7 +78,7 @@ void JsonParser::jsonReceive() {
                 string buffString = buffer.GetString();
                 cout << buffer.GetString() << endl;
                 Players::shared_instance().manageTurns(buffer.GetString());
-//                send(Players::shared_instance().player1->getPlayerSocket(), buffer.GetString(), checkJsonSize(buffString), 0);
+//                send(port1, buffer.GetString(), checkJsonSize(buffString), 0);
             }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString())
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
@@ -95,11 +106,18 @@ void JsonParser::firstConnection() {
     char buf[4096];
     int clientSocket;
     const char* json = "";
+    memset(buf, 0, 4096);
+    cout << "portCount: ";
+    cout << portCount << endl;
     if (portCount == 0) {
         clientSocket = communication.connection(port1);
+        Players::shared_instance().player1->setPlayerSocket(clientSocket);
+        cout << "port1" << endl;
         portCount++;
     } else {
         clientSocket = communication.connection(port2);
+        Players::shared_instance().player2->setPlayerSocket(clientSocket);
+        cout << "port 2" << endl;
     }
     int bytesRecived = recv(clientSocket, buf, 4096, 0);
     Document d;
@@ -111,29 +129,32 @@ void JsonParser::firstConnection() {
 //        communication.connection(#porthost);
         cout << "int" << endl;
         assert(d["playerCount"].GetInt());
+        cout << "playerCount before change: ";
+        cout << Players::shared_instance().getPlayerCount() << endl;
         Players::shared_instance().setPlayerCount(d["playerCount"].GetInt());
+        cout << "playerCount after change: ";
+        cout << Players::shared_instance().getPlayerCount() << endl;
         Players::shared_instance().deletePlayers();
         Players::shared_instance().setCode(d["code"].GetInt());
         Players::shared_instance().player1->setId(d["id"].GetString());
-        d["port"].SetInt(Players::shared_instance().player1->getPort());
-        cout << d["port"].GetInt() << endl;
+//        d["port"].SetInt(Players::shared_instance().player1->getPort());
+//        cout << d["port"].GetInt() << endl;
         StringBuffer buffer;
         buffer.Clear();
         Writer<StringBuffer> writer(buffer);
         d.Accept(writer);
         string buffString = buffer.GetString();
-        send(clientSocket, buffer.GetString(), checkJsonSize(buffString), 0);
+        send(clientSocket, buffer.GetString(), checkJsonSize(buffString) + 1, 0);
         cout << buffer.GetString() << endl;
-        close(clientSocket);
-        Players::shared_instance().player1->setPlayerSocket(communication.connection(Players::shared_instance().player1->getPort()));
+//        close(clientSocket);
         cont += 1;
-//        send(Players::shared_instance().player1->getPlayerSocket(),buffer.GetString(),checkJsonSize(buffString),0);
+//        send(Players::shared_instance().checkTurn(),buffer.GetString(),checkJsonSize(buffString),0);
     } else if (d.HasMember("code")) {
         if (d["code"].GetInt() == Players::shared_instance().getCode()) {
             cout << "code" << endl;
             if (cont == 1) {
                 Players::shared_instance().player2->setId(d["id"].GetString());
-                d["port"].SetInt(Players::shared_instance().player2->getPort());
+//                d["port"].SetInt(Players::shared_instance().player2->getPort());
                 StringBuffer buffer;
                 buffer.Clear();
                 Writer<StringBuffer> writer(buffer);
@@ -142,9 +163,7 @@ void JsonParser::firstConnection() {
                 cout << "adf" << endl;
                 cout << buffer.GetString() << endl;
                 send(clientSocket, buffer.GetString(), checkJsonSize(buffString) + 1, 0);
-                close(clientSocket);
-                Players::shared_instance().player2->setPlayerSocket(
-                        communication.connection(Players::shared_instance().player2->getPort()));
+//                close(clientSocket);
                 cont++;
             } else if (cont == 2) {
                 Players::shared_instance().player3->setId(d["id"].GetString());
@@ -158,8 +177,8 @@ void JsonParser::firstConnection() {
                                         "    \"start\": true\n"
                                         "}";
                 string jsonStartString = jsonStart;
-                send(Players::shared_instance().player1->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
-                send(Players::shared_instance().player2->getPlayerSocket(), jsonStart, checkJsonSize(jsonStartString), 0);
+                send(port1, jsonStart, checkJsonSize(jsonStartString), 0);
+                send(port2, jsonStart, checkJsonSize(jsonStartString), 0);
             }
 //            return json;
             // aceptar cliente y enviar json
