@@ -19,7 +19,6 @@ static ListNode *listh = new ListNode();
 static ListNode *listscore = new ListNode();
 static int currentRow = NULL;
 static int currentColumn = NULL;
-
 QString qs;
 
 MatrixWindow::MatrixWindow(QWidget *parent) :
@@ -37,19 +36,19 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setStyleSheet("background-color:gray");
     ui->Btn9->setStyleSheet("background-color:gray");
     ui->Btn10->setStyleSheet("background-color:gray");
-    string hum[26] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
     srand(time(NULL));
-    ui->Btn1->setText(QString::fromStdString(hum[16]));
-    ui->Btn2->setText(QString::fromStdString(hum[0]));
-    ui->Btn3->setText(QString::fromStdString(hum[21]));
-    ui->Btn4->setText(QString::fromStdString(hum[10]));
-    ui->Btn5->setText(QString::fromStdString(hum[13]));
+    ui->Btn1->setText(QString::fromStdString(hum[0]));
+    ui->Btn2->setText(QString::fromStdString(hum[4]));
+    ui->Btn3->setText(QString::fromStdString(hum[8]));
+    ui->Btn4->setText(QString::fromStdString(hum[14]));
+    ui->Btn5->setText(QString::fromStdString(hum[20]));
     ui->Btn6->setText(QString::fromStdString(hum[7]));
     ui->Btn7->setText(QString::fromStdString(hum[1]));
-    ui->Btn8->setText(QString::fromStdString(hum[0]));
+    ui->Btn8->setText(QString::fromStdString(hum[18]));
     ui->Btn9->setText(QString::fromStdString(hum[23]));
     ui->Btn10->setText(QString::fromStdString(hum[19]));
     qs = ui->Lbl1->text();
+
 }
 
 void MatrixWindow::PlayerTurn(){
@@ -747,7 +746,7 @@ void MatrixWindow::mousePressEvent(QMouseEvent *event){
 
 void MatrixWindow::validatespace(int column, int row, string element, QLabel &label){
     if(listh->m_head == NULL){
-        if(label.text() != qs || label.text() != " "){
+        if(label.text() != qs || label.text() != ""){
             listh->add_head(label.text().toUtf8().constData(), column, row);
         }else{
             validatespaceAux(column, row, element, label);
@@ -755,7 +754,7 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
     }
     else if (listh->m_head->next == NULL) {
         if((listh->m_head->row) + 1 == row && (listh->m_head->column) == column){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
@@ -763,7 +762,7 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
             currentRow = 1;
         }
         else if((listh->m_head->row) - 1 == row && (listh->m_head->column) == column){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
@@ -771,7 +770,7 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
             currentRow = -1;
         }
         else if ((listh->m_head->column + 1 == column && listh->m_head->row == row )){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
@@ -779,7 +778,7 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
             currentColumn = 1;
         }
         else if(listh->m_head->column - 1 == column && listh->m_head->row == row ){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
@@ -795,36 +794,77 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
             validatespaceAux(column, row, element, label);
         }
         else if(currentRow == 1 && row == listh->m_head->row + 1 && column == listh->m_head->column){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
 
             }else{
                 validatespaceAux(column, row, element, label);
             }
         }else if (currentRow == -1 && row == listh->m_head->row -1 && column == listh->m_head->column) {
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
             }
         }
         else if(currentColumn == 1 && column == listh->m_head->column +1 && row == listh->m_head->row){
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
             }
         }else if (currentColumn == -1 && column == listh->m_head->column -1 && row == listh->m_head->row) {
-            if(label.text() != qs){
+            if(label.text() != qs || label.text() != ""){
                 listh->add_head(label.text().toUtf8().constData(), column, row);
             }else{
                 validatespaceAux(column, row, element, label);
             }
         }
     }
+
+    listscore->print();
 }
 
 void MatrixWindow::update(){
+    if(counter != 0){
+        Document w;
+        w.Parse(MatrixWindow::client->dataServ);
+        string newletters = "";
+        NodeList *tempNode = listscore->m_head;
+        while(tempNode != NULL){
+            string random = hum[rand()%24];
+            newletters += random;
+            if(tempNode->element == ui->Btn1->text().toUtf8().constData()){
+                ui->Btn1->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn2->text().toUtf8().constData()) {
+                ui->Btn2->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn3->text().toUtf8().constData()) {
+                ui->Btn3->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn4->text().toUtf8().constData()) {
+                ui->Btn4->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn5->text().toUtf8().constData()) {
+                ui->Btn5->setText(QString::fromStdString(random));
+            }else if(tempNode->element == ui->Btn6->text().toUtf8().constData()){
+                ui->Btn6->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn7->text().toUtf8().constData()) {
+                ui->Btn7->setText(QString::fromStdString(random));
+            }else if(tempNode->element == ui->Btn8->text().toUtf8().constData()){
+                ui->Btn8->setText(QString::fromStdString(random));
+            }else if(tempNode->element == ui->Btn9->text().toUtf8().constData()){
+                ui->Btn9->setText(QString::fromStdString(random));
+            }else if (tempNode->element == ui->Btn10->text().toUtf8().constData()) {
+                ui->Btn10->setText(QString::fromStdString(random));
+            }
+            tempNode = tempNode->next;
+        }
+        w["letters"].SetString(newletters.data(), newletters.size(), w.GetAllocator());
+        StringBuffer buffer2;
+        buffer2.Clear();
+        Writer<StringBuffer> writer2(buffer2);
+        w.Accept(writer2);
+        cout << buffer2.GetString() << endl;
+        listscore->del_all();
+    }
     int i = 0;
     int n = 0;
     string Matrix[15][15];
@@ -1105,7 +1145,6 @@ void MatrixWindow::validatespaceAux(int column, int row, string element, QLabel 
         cout << "list h" << endl;
         listh->print();
         cout << "list score" << endl;
-        listscore->print();
         label.setText(QString::fromStdString(b));
         b = "";
     }
@@ -1173,8 +1212,8 @@ void MatrixWindow::on_EndTurn_clicked(){
     w.Parse(MatrixWindow::client->dataServ);
     ui->label->setText(QString::fromStdString("Score: " + to_string(w["score"].GetInt())));
     listh->del_all();
-    listscore->del_all();
     PlayerTurn();
+    counter ++;
 }
 
 

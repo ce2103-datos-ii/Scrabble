@@ -30,6 +30,10 @@ public:
     Client *client;
     string id;
     int score;
+    string hum[24] = {"a","b","c","d","e","f","g","h","i","j"
+                    , "l","m","n","o","p","q","r","s","t"
+                    ,"u","v","x","y","z"};
+    int counter = 0;
 
 private slots:
     void on_pushButton_2_clicked();
@@ -61,6 +65,7 @@ private slots:
     void on_Btn10_clicked();
 
     void on_EndTurn_clicked();
+
 
 private:
     Ui::MatrixWindow *ui;
