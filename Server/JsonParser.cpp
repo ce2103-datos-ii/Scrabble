@@ -49,8 +49,6 @@ void JsonParser::jsonReceive() {
     cout << "player socket: ";
     cout << Players::shared_instance().checkTurn() << endl;
     int bytesReceived = recv(Players::shared_instance().checkTurn(), buf, 4096, 0);
-    cout << "checkTurn: ";
-    cout << Players::shared_instance().checkTurn() << endl;
     d.Parse(buf);
     cout << "buf:";
     cout << buf << endl;
@@ -59,30 +57,13 @@ void JsonParser::jsonReceive() {
     assert(d.IsObject());
     Players::shared_instance().setMatrix(d["matrix"].GetString());
     if (d.HasMember("word")){
-        cout << "word: ";
-        cout << d["word"].GetString() << endl;
-        cout << "letters: ";
-        cout << d["letters"].GetString() << endl;
         string wordToCheck = d["word"].GetString();
         string lettersToCheck = d["letters"].GetString();
         if (fileReader.searchWord(wordToCheck)) {
             d["score"].SetInt(d["score"].GetInt() + HashMap::shared_instance().checkWordScore(lettersToCheck));
-            cout << d["score"].GetInt() << endl;
-            cout << "id: ";
-            cout << d["id"].GetString() << endl;
-            cout << "player id: ";
-            cout << Players::shared_instance().player1->getId() << endl;
 //            HashMap hashMap;
             if (Players::shared_instance().player1->getId() == d["id"].GetString()) {
-                cout << "d[letters]: ";
-                cout << d["letters"].GetString() << endl;
-                cout << "pasa test: ";
-                cout << HashMap::shared_instance().lettersToSend("pasa") << endl;
-                cout << "pasa real:";
-                cout << HashMap::shared_instance().lettersToSend(d["letters"].GetString()) << endl;
                 Players::shared_instance().player1->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
-                cout << "getLetters:";
-                cout << Players::shared_instance().player1->getLetters() << endl;
                 Players::shared_instance().player1->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -94,7 +75,7 @@ void JsonParser::jsonReceive() {
 //                send(port1, buffer.GetString(), checkJsonSize(buffString), 0);
             }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
-                Players::shared_instance().player2->setLetters(HashMap::shared_instance().lettersToSend(lettersToCheck));
+                Players::shared_instance().player2->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -116,6 +97,14 @@ void JsonParser::jsonReceive() {
             } else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
                 Players::shared_instance().player2->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
             }
+            string word = wordToCheck;
+            string messageString = "python3.6 ../cmake-build-debug/sendsms.py " + word;
+//            system("cd");
+//            system("sudo virtualenv sendsms");
+//            system("89292");
+//            system("source sendsms/bin/activate");
+            system(messageString.c_str());
+//            system(mensajeString.c_str());
             StringBuffer buffer;
             buffer.Clear();
             Writer <StringBuffer> writer(buffer);
@@ -138,13 +127,13 @@ void JsonParser::firstConnection() {
     int clientSocket;
     const char* json = "";
     memset(buf, 0, 4096);
-    cout << "nada listo" << endl;
-    HashMap::shared_instance().createScoreMap();
-    cout << "createScoreMap listo" << endl;
-    HashMap::shared_instance().createLetterMap();
-    cout << "createLetterMap listo" << endl;
-    HashMap::shared_instance().createLetterList();
-    cout << "createLetterList listo" << endl;
+//    cout << "nada listo" << endl;
+//    HashMap::shared_instance().createScoreMap();
+//    cout << "createScoreMap listo" << endl;
+//    HashMap::shared_instance().createLetterMap();
+//    cout << "createLetterMap listo" << endl;
+//    HashMap::shared_instance().createLetterList();
+//    cout << "createLetterList listo" << endl;
     cout << "portCount: ";
     cout << portCount << endl;
     if (portCount == 0) {
@@ -165,13 +154,8 @@ void JsonParser::firstConnection() {
     assert(d.IsObject());
     if (d.HasMember("playerCount")){
 //        communication.connection(#porthost);
-        cout << "int" << endl;
         assert(d["playerCount"].GetInt());
-        cout << "playerCount before change: ";
-        cout << Players::shared_instance().getPlayerCount() << endl;
         Players::shared_instance().setPlayerCount(d["playerCount"].GetInt());
-        cout << "playerCount after change: ";
-        cout << Players::shared_instance().getPlayerCount() << endl;
         Players::shared_instance().deletePlayers();
         Players::shared_instance().setCode(d["code"].GetInt());
         Players::shared_instance().player1->setId(d["id"].GetString());
@@ -198,8 +182,6 @@ void JsonParser::firstConnection() {
                 Writer<StringBuffer> writer(buffer);
                 d.Accept(writer);
                 string buffString = buffer.GetString();
-                cout << "adf" << endl;
-                cout << buffer.GetString() << endl;
                 send(clientSocket, buffer.GetString(), checkJsonSize(buffString) + 1, 0);
 //                close(clientSocket);
                 cont++;
@@ -210,6 +192,8 @@ void JsonParser::firstConnection() {
                 Players::shared_instance().player4->setId(d["id"].GetString());
                 d["port"].SetInt(Players::shared_instance().player4->getPort());
             }
+        } else{
+            close(clientSocket);
         }
     }
     if (cont == Players::shared_instance().getPlayerCount()) {
@@ -228,9 +212,6 @@ void JsonParser::firstConnection() {
 
 void JsonParser::checkGameState() {
     if (cont == 0 || !(cont == Players::shared_instance().getPlayerCount())){
-        cout << "first" << endl;
-        cout << "cont: ";
-        cout << cont << endl;
         cout << "playerCount: ";
         cout << Players::shared_instance().getPlayerCount() << endl;
         firstConnection();

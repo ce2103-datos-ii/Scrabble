@@ -61,18 +61,17 @@ void HashMap::createLetterMap() {
 void HashMap::createLetterList() {
     srand(time(NULL));
     string allLetters[23] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
-    for (int i = 0; i < 50; i++){
-        int randomNum = rand() % 23;
+    for (int i = 0; i < 92; i++){
+        int randomNum = rand() % 22;
         if (lettersMap.at(allLetters[randomNum]) != 0){
 //            cout << lettersList[i] << endl;
 //            cout << allLetters[randomNum] + to_string(lettersMap[allLetters[randomNum]]) << endl;
             lettersList[i] = allLetters[randomNum];
             lettersMap[allLetters[randomNum]] --;
-            cout << "asdñflkjasdñlfkajsñldfkjasñldfkjasñdlfkj" << endl;
         } else {
-            i--; cout << "ya" << endl;
+            i--;
         }
-    } cout << *lettersList << endl;
+    }
 }
 
 

@@ -12,39 +12,29 @@ int Communication::connection(int port)
     if (port != 54000 || port != 53000){
         // Create a socket
         int listening = socket(AF_INET, SOCK_STREAM, 0);
-        cout << "1" << endl;
         if (listening == -1) {
-            cout << "2" << endl;
             cerr << "Can't create a socket! Quitting" << endl;
-            cout << "3" << endl;
             return -1;
         }
 
         // Bind the ip address and port to a socket
         sockaddr_in hint;
-        cout << "4" << endl;
         hint.sin_family = AF_INET;
-        cout << "5" << endl;
         hint.sin_port = htons(port);
-        cout << "6" << endl;
         inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
-        cout << "7" << endl;
 
         bind(listening, (sockaddr *) &hint, sizeof(hint));
-        cout << "8" << endl;
 
         // Tell Winsock the socket is for listening
         listen(listening, SOMAXCONN);
-        cout << "9" << endl;
 
         // Wait for a connection
         sockaddr_in client;
-        cout << "10" << endl;
         socklen_t clientSize = sizeof(client);
 
-        cout<<"Holaaa"<<endl;
+        cout<<"Esperando conexión"<<endl;
         int clientSocket = accept(listening, (sockaddr *) &client, &clientSize);
-        cout<<"Hola"<<endl;
+        cout<<"Conexión aceptada"<<endl;
 
         char host[NI_MAXHOST];      // Client's remote name
         char service[NI_MAXSERV];   // Service (i.e. port) the client is connect on
@@ -61,10 +51,6 @@ int Communication::connection(int port)
 
         // Close listening socket
         close(listening);
-
-        cout << "clientSocket Communication: ";
-        cout << clientSocket << endl;
-
         return clientSocket;
     }else{
         // Create a socket

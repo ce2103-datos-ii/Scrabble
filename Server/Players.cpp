@@ -100,7 +100,6 @@ void Players::manageTurns(const char* json) {
 //            d1["turn"].SetBool(true);
 //        }
     if (playerCount == 2){
-        cout << "dos" << endl;
         JsonParser jsonParser;
         if (d1["id"].GetString() == player1->getId()) {
 //            Players::shared_instance().player1->setScore(d1["score"].GetInt() + hashMap.checkWordScore(d1["letters"].GetString()));
@@ -109,9 +108,8 @@ void Players::manageTurns(const char* json) {
             assert(d1.IsObject());
             d1["turn"].SetBool(false);
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
-            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
-            cout << "letters player1: ";
-            cout << getLetters() << endl;
+//            cout << checkTurnInstance()->getLetters() << endl;
+//            d1["letters"].SetString(checkTurnInstance()->getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player1->getScore());
             StringBuffer buffer1;
             buffer1.Clear();
@@ -147,9 +145,7 @@ void Players::manageTurns(const char* json) {
             assert(d1.IsObject());
             d1["turn"].SetBool(false);
             d1["matrix"].SetString(getMatrix().data(), getMatrix().size(), d1.GetAllocator());
-            d1["letters"].SetString(getLetters().data(), getLetters().size(), d1.GetAllocator());
-            cout << "letters player2: ";
-            cout << getLetters() << endl;
+//            d1["letters"].SetString(checkTurnInstance()->getLetters().data(), getLetters().size(), d1.GetAllocator());
             d1["score"].SetInt(player2->getScore());
             StringBuffer buffer1;
             buffer1.Clear();
