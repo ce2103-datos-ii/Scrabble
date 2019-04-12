@@ -61,15 +61,16 @@ void HashMap::createLetterMap() {
 void HashMap::createLetterList() {
     srand(time(NULL));
     string allLetters[23] = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "z"};
-    for (int i = 0; i < 93; i++){
+    for (int i = 0; i < 50; i++){
         int randomNum = rand() % 23;
         if (lettersMap.at(allLetters[randomNum]) != 0){
 //            cout << lettersList[i] << endl;
 //            cout << allLetters[randomNum] + to_string(lettersMap[allLetters[randomNum]]) << endl;
             lettersList[i] = allLetters[randomNum];
             lettersMap[allLetters[randomNum]] --;
+            cout << "asdñflkjasdñlfkajsñldfkjasñldfkjasñdlfkj" << endl;
         } else {
-            i--;
+            i--; cout << "ya" << endl;
         }
     } cout << *lettersList << endl;
 }
@@ -101,9 +102,6 @@ string HashMap::lettersArrayToString() {
 }
 
 string HashMap::lettersToSend(string letters) {
-    HashMap hashMap;
-    hashMap.createLetterMap();
-    hashMap.createLetterList();
     string str;
     int len = 0;
     int cont = 0;
@@ -129,6 +127,9 @@ string HashMap::lettersToSend(string letters) {
             posLetterList++;
         }
     }
+    cout << "lettersArrayToString: ";
+
+    cout << lettersArrayToString() << endl;
     cout << "lettersReceived:";
     cout << letters << endl;
     cout << "letters: ";

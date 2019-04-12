@@ -4,7 +4,7 @@
 
 #include "JsonParser.h"
 
-HashMap hashMap;
+//HashMap hashMap;
 Communication communication;
 
 //void JsonParser::jsonSend(const char* json) {
@@ -59,19 +59,30 @@ void JsonParser::jsonReceive() {
     assert(d.IsObject());
     Players::shared_instance().setMatrix(d["matrix"].GetString());
     if (d.HasMember("word")){
+        cout << "word: ";
         cout << d["word"].GetString() << endl;
         cout << "letters: ";
         cout << d["letters"].GetString() << endl;
-        if (fileReader.searchWord(string(d["word"].GetString()))) {
-            d["score"].SetInt(d["score"].GetInt() + hashMap.checkWordScore(d["letters"].GetString()));
+        string wordToCheck = d["word"].GetString();
+        string lettersToCheck = d["letters"].GetString();
+        if (fileReader.searchWord(wordToCheck)) {
+            d["score"].SetInt(d["score"].GetInt() + HashMap::shared_instance().checkWordScore(lettersToCheck));
             cout << d["score"].GetInt() << endl;
             cout << "id: ";
             cout << d["id"].GetString() << endl;
             cout << "player id: ";
             cout << Players::shared_instance().player1->getId() << endl;
-            HashMap hashMap;
+//            HashMap hashMap;
             if (Players::shared_instance().player1->getId() == d["id"].GetString()) {
-                Players::shared_instance().player1->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+                cout << "d[letters]: ";
+                cout << d["letters"].GetString() << endl;
+                cout << "pasa test: ";
+                cout << HashMap::shared_instance().lettersToSend("pasa") << endl;
+                cout << "pasa real:";
+                cout << HashMap::shared_instance().lettersToSend(d["letters"].GetString()) << endl;
+                Players::shared_instance().player1->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
+                cout << "getLetters:";
+                cout << Players::shared_instance().player1->getLetters() << endl;
                 Players::shared_instance().player1->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -83,7 +94,7 @@ void JsonParser::jsonReceive() {
 //                send(port1, buffer.GetString(), checkJsonSize(buffString), 0);
             }
             else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
-                Players::shared_instance().player2->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+                Players::shared_instance().player2->setLetters(HashMap::shared_instance().lettersToSend(lettersToCheck));
                 Players::shared_instance().player2->setScore(d["score"].GetInt());
                 StringBuffer buffer;
                 buffer.Clear();
@@ -101,9 +112,9 @@ void JsonParser::jsonReceive() {
 //        return json;
         } else {
             if (Players::shared_instance().player1->getId() == d["id"].GetString()){
-                Players::shared_instance().player1->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+                Players::shared_instance().player1->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
             } else if (Players::shared_instance().player2->getId() == d["id"].GetString()) {
-                Players::shared_instance().player2->setLetters(hashMap.lettersToSend(d["letters"].GetString()));
+                Players::shared_instance().player2->setLetters(HashMap::shared_instance().lettersToSend(d["letters"].GetString()));
             }
             StringBuffer buffer;
             buffer.Clear();
@@ -127,6 +138,13 @@ void JsonParser::firstConnection() {
     int clientSocket;
     const char* json = "";
     memset(buf, 0, 4096);
+    cout << "nada listo" << endl;
+    HashMap::shared_instance().createScoreMap();
+    cout << "createScoreMap listo" << endl;
+    HashMap::shared_instance().createLetterMap();
+    cout << "createLetterMap listo" << endl;
+    HashMap::shared_instance().createLetterList();
+    cout << "createLetterList listo" << endl;
     cout << "portCount: ";
     cout << portCount << endl;
     if (portCount == 0) {

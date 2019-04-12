@@ -48,26 +48,9 @@ public:
                               "    \"word\": null,\n"
                               "    \"port\": 54001\n"
                               "}";
-    const char* jsonPlayer3 = "{\n"
-                              "    \"turn\": false,\n"
-                              "    \"score\": 3\n"
-                              "    \"id\": 0\n"
-                              "    \"matrix\": null\n"
-                              "    \"letters\": []\n"
-                              "    \"word\": null\n"
-                              "    \"port\": 54001\n"
-                              "}";
-    const char* jsonPlayer4 = "{\n"
-                              "    \"turn\": false,\n"
-                              "    \"score\": 3\n"
-                              "    \"id\": 0\n"
-                              "    \"matrix\": null\n"
-                              "    \"letters\": []\n"
-                              "    \"word\": null\n"
-                              "    \"port\": 54001\n"
-                              "}";
 public:
-    void setPlayerJsons();
+    Player* checkTurnInstance();
+//    void setPlayerJsons();
     void manageTurns(const char* json);
     long getCode() const;
     void setCode(int code);

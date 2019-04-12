@@ -25,12 +25,12 @@ public:
     int checkWordScore(string);
     string lettersToSend(string letters);
 
-//public:
-//    static HashMap &shared_instance() {static HashMap hashMap; return hashMap;}
-//
-//private:
-//    // Make constructor private. Only shared_instance() method will create an instance.
-//    HashMap() {/*whatever initialisation you need*/}
+public:
+    static HashMap &shared_instance() {static HashMap hashMap; return hashMap;}
+
+private:
+    // Make constructor private. Only shared_instance() method will create an instance.
+    HashMap() {/*whatever initialisation you need*/}
 
 };
 

@@ -38,7 +38,15 @@ private:
     string id;
     int port;
     int playerSocket;
-    const char* json;
+    const char* json = "{\n"
+                       "    \"turn\": false,\n"
+                       "    \"score\": 3,\n"
+                       "    \"id\": 0,\n"
+                       "    \"matrix\": null,\n"
+                       "    \"letters\": [],\n"
+                       "    \"word\": null,\n"
+                       "    \"port\": 54001\n"
+                       "}";
     string letters;
 public:
     const string &getLetters() const;
@@ -46,9 +54,7 @@ public:
     void setLetters(const string &letters);
 
 public:
-    const char *getJson() const;
-
-    void setJson(const char *json);
+    const char* getJson() const;
 
 public:
     void setPlayerSocket(int playerSocket);
