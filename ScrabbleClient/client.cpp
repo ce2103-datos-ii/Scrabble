@@ -59,7 +59,6 @@ void Client::comunication(const char* word){
                 cout<<"recibió en cliente"<<endl;
                 newWord = bytesTransformer(bytesReceived,buf,newWord);
                 this->dataServ = (newWord).c_str();
-                cout<<"Se recibió en cliente: "<<dataServ<<endl;
                 d.Parse(dataServ);
                 turn = d["turn"].GetBool();
                 deleteArray(buf,bytesReceived);

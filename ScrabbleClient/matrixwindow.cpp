@@ -37,18 +37,16 @@ MatrixWindow::MatrixWindow(QWidget *parent) :
     ui->Btn8->setStyleSheet("background-color:gray");
     ui->Btn9->setStyleSheet("background-color:gray");
     ui->Btn10->setStyleSheet("background-color:gray");
-    string hum[26] {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"};
-    srand(time(NULL));
     ui->Btn1->setText(QString::fromStdString("a"));
-    ui->Btn2->setText(QString::fromStdString("b"));
-    ui->Btn3->setText(QString::fromStdString("b"));
-    ui->Btn4->setText(QString::fromStdString("b"));
+    ui->Btn2->setText(QString::fromStdString("p"));
+    ui->Btn3->setText(QString::fromStdString("e"));
+    ui->Btn4->setText(QString::fromStdString("h"));
     ui->Btn5->setText(QString::fromStdString("a"));
-    ui->Btn6->setText(QString::fromStdString("b"));
-    ui->Btn7->setText(QString::fromStdString("b"));
-    ui->Btn8->setText(QString::fromStdString("b"));
-    ui->Btn9->setText(QString::fromStdString("l"));
-    ui->Btn10->setText(QString::fromStdString("b"));
+    ui->Btn6->setText(QString::fromStdString("i"));
+    ui->Btn7->setText(QString::fromStdString("r"));
+    ui->Btn8->setText(QString::fromStdString("o"));
+    ui->Btn9->setText(QString::fromStdString("s"));
+    ui->Btn10->setText(QString::fromStdString("u"));
     qs = ui->Lbl1->text();
 }
 
@@ -826,6 +824,42 @@ void MatrixWindow::validatespace(int column, int row, string element, QLabel &la
 void MatrixWindow::update(){
     Document w;
     w.Parse(MatrixWindow::client->dataServ);
+
+    string newletters = "";
+    NodeList *tempNode = listscore->m_head;
+    while(tempNode != NULL){
+        string random = hum[rand()%24];
+        newletters += random;
+        if(tempNode->element == ui->Btn1->text().toUtf8().constData()){
+            ui->Btn1->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn2->text().toUtf8().constData()) {
+            ui->Btn2->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn3->text().toUtf8().constData()) {
+            ui->Btn3->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn4->text().toUtf8().constData()) {
+            ui->Btn4->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn5->text().toUtf8().constData()) {
+            ui->Btn5->setText(QString::fromStdString(random));
+        }else if(tempNode->element == ui->Btn6->text().toUtf8().constData()){
+            ui->Btn6->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn7->text().toUtf8().constData()) {
+            ui->Btn7->setText(QString::fromStdString(random));
+        }else if(tempNode->element == ui->Btn8->text().toUtf8().constData()){
+            ui->Btn8->setText(QString::fromStdString(random));
+        }else if(tempNode->element == ui->Btn9->text().toUtf8().constData()){
+            ui->Btn9->setText(QString::fromStdString(random));
+        }else if (tempNode->element == ui->Btn10->text().toUtf8().constData()) {
+            ui->Btn10->setText(QString::fromStdString(random));
+        }
+        tempNode = tempNode->next;
+    }
+    w["letters"].SetString(newletters.data(), newletters.size(), w.GetAllocator());
+    StringBuffer buffer2;
+    buffer2.Clear();
+    Writer<StringBuffer> writer2(buffer2);
+    w.Accept(writer2);
+    cout<<"Se recibió en cliente: "<< buffer2.GetString() <<endl;
+    listscore->del_all();
     int i = 0;
     int n = 0;
     string prev = "";
@@ -859,7 +893,6 @@ void MatrixWindow::update(){
     for(i = 0; i < 15; i++){
         for(n = 0; n < 15; n++){
             g[i][n] = Matrix[i][n];
-            cout << g[i][n] << "=" << Matrix[i][n] << endl;
         }
     }
     ui->Lbl1->setText(QString::fromStdString(Matrix[0][0]));
@@ -1175,11 +1208,11 @@ void MatrixWindow::on_EndTurn_clicked(){
     Document w;
     w.Parse(MatrixWindow::client->dataServ);
     cout<<"Pasó comunicación"<<endl;
-    string m = "Score: " + to_string(w["score"].GetInt());
-    cout<<m<<endl;
-    ui->label->setText((QString::fromStdString(m)));
+    string score = "Score: " + to_string(w["score"].GetInt());
+    cout<<score<<endl;
+    ui->label->setText((QString::fromStdString(score)));
+    cout<<"Pasó el label"<<endl;
     listh->del_all();
-    listscore->del_all();
     PlayerTurn();
 
 }
